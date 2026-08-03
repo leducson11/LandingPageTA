@@ -1,3 +1,214 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent;
+  }
+
+  .text-ink-900 {
+    color: #1a1a1a;
+  }
+
+  .text-ink-800 {
+    color: #2d2d2d;
+  }
+
+  .text-ink-700 {
+    color: #404040;
+  }
+
+  .text-ink-600 {
+    color: #666666;
+  }
+
+  .text-ink-500 {
+    color: #808080;
+  }
+
+  .text-ink-400 {
+    color: #999999;
+  }
+
+  .text-ink-300 {
+    color: #b3b3b3;
+  }
+
+  .bg-ink-50 {
+    background-color: #fafafa;
+  }
+
+  .bg-ink-100 {
+    background-color: #f5f5f5;
+  }
+
+  .bg-ink-950 {
+    background-color: #0a0a0a;
+  }
+
+  .text-brand-600 {
+    color: #2563eb;
+  }
+
+  .text-brand-700 {
+    color: #1d4ed8;
+  }
+
+  .text-brand-400 {
+    color: #60a5fa;
+  }
+
+  .bg-brand-50 {
+    background-color: #eff6ff;
+  }
+
+  .bg-brand-100 {
+    background-color: #dbeafe;
+  }
+
+  .bg-brand-600 {
+    background-color: #2563eb;
+  }
+
+  .bg-brand-700 {
+    background-color: #1d4ed8;
+  }
+
+  .from-brand-600 {
+    --tw-gradient-from: #2563eb;
+  }
+
+  .to-brand-400 {
+    --tw-gradient-to: #60a5fa;
+  }
+
+  .to-brand-500 {
+    --tw-gradient-to: #3b82f6;
+  }
+
+  .ring-brand-100 {
+    --tw-ring-color: #dbeafe;
+  }
+
+  .ring-brand-200 {
+    --tw-ring-color: #bfdbfe;
+  }
+
+  .ring-brand-400 {
+    --tw-ring-color: #60a5fa;
+  }
+
+  .ring-brand-500 {
+    --tw-ring-color: #3b82f6;
+  }
+
+  .ring-ink-100 {
+    --tw-ring-color: #f5f5f5;
+  }
+
+  .shadow-brand-500\/30 {
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+  }
+
+  .shadow-brand-500\/40 {
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+  }
+
+  .text-accent-600 {
+    color: #dc2626;
+  }
+
+  .text-accent-700 {
+    color: #b91c1c;
+  }
+
+  .bg-accent-100 {
+    background-color: #fee2e2;
+  }
+
+  .ring-accent-200 {
+    --tw-ring-color: #fecaca;
+  }
+
+  .text-success-600 {
+    color: #16a34a;
+  }
+
+  .text-success-700 {
+    color: #15803d;
+  }
+
+  .bg-success\/10 {
+    background-color: rgba(22, 163, 74, 0.1);
+  }
+
+  .text-amber-600 {
+    color: #d97706;
+  }
+
+  .text-amber-800 {
+    color: #92400e;
+  }
+
+  .text-amber-900 {
+    color: #78350f;
+  }
+
+  .bg-amber-50 {
+    background-color: #fef3c7;
+  }
+
+  .ring-amber-200 {
+    --tw-ring-color: #fde68a;
+  }
+
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer base {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}

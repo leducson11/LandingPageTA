@@ -59,7 +59,7 @@ export default function LeadForm() {
             </p>
             <ul className="mt-8 space-y-3">
               {[
-                'Tư vấn miễn phí 1-1 với giáo viên 8.0+ IELTS',
+                'Tư vấn miễn phí 1-1 với giáo viên 8.0+ IELTS & 900+ TOEIC',
                 'Test trình độ & đề xuất lộ trình riêng',
                 'Học thử 1 buổi thực tế — không thu phí',
               ].map((t) => (

@@ -19,7 +19,7 @@ const pains = [
   {
     icon: TrendingDown,
     title: 'Thi nhiều lần tốn tiền',
-    desc: 'Mỗi lần thi IELTS tốn hơn 4,6 triệu. Thi trượt nhiều lần vừa tốn tiền vừa mất động lực.',
+    desc: 'Mỗi lần thi IELTS/TOEIC tốn hàng triệu đồng. Thi trượt nhiều lần vừa tốn tiền vừa mất động lực.',
   },
   {
     icon: BookOpen,

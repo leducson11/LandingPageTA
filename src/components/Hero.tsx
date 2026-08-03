@@ -40,11 +40,11 @@ export default function Hero() {
             </div>
 
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
-              Chinh phục <span className="gradient-text">IELTS 7.0+</span> chỉ sau 90 ngày
+              Chinh phục <span className="gradient-text">IELTS & TOEIC</span> chỉ sau 90 ngày
             </h1>
 
             <p className="mt-5 text-lg text-ink-600 leading-relaxed max-w-xl">
-              Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS đồng hành 1-1, luyện tập trên
+              Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS & 900+ TOEIC đồng hành 1-1, luyện tập trên
               nền tảng AI chấm chữa chi tiết. Cam kết đầu ra bằng văn bản — không đạt, học lại miễn phí.
             </p>
 
@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
               <img
                 src="https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Học viên đang học IELTS online"
+                alt="Học viên đang học tiếng Anh online"
                 className="w-full h-[26rem] lg:h-[34rem] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
@@ -106,8 +106,9 @@ export default function Hero() {
               </div>
             </div>
             <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-2xl shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
-              <p className="text-xs text-ink-500 font-medium">Điểm IELTS trung bình</p>
-              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">7.5 <span className="text-sm font-semibold text-success-600">+1.5</span></p>
+              <p className="text-xs text-ink-500 font-medium">Điểm trung bình</p>
+              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">IELTS 7.5 <span className="text-sm font-semibold text-success-600">+1.5</span></p>
+              <p className="text-sm font-bold text-ink-900 mt-1">TOEIC 850+ <span className="text-xs font-semibold text-success-600">+150</span></p>
               <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
                 <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-brand-500 to-brand-400" />
               </div>

@@ -10,10 +10,10 @@ const testimonials = [
   },
   {
     name: 'Trần Quốc Bảo',
-    achievement: '6.0 → 8.0 IELTS',
-    duration: '4 tháng',
+    achievement: '600 → 850 TOEIC',
+    duration: '3 tháng',
     avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200',
-    text: 'Nền tảng AI chấm Speaking cực xịn. Mình luyện nói mỗi ngày, AI sửa phát âm và từ vựng ngay lập tức. Lên 8.0 Speaking mà không cần đến trung tâm.',
+    text: 'Mình cần TOEIC gấp để xin việc. Lộ trình cấp tốc của HuyWay rất hiệu quả, mình đạt 850 điểm chỉ sau 3 tháng. Giáo viên rất nhiệt tình.',
   },
   {
     name: 'Lê Phương Linh',
@@ -24,10 +24,10 @@ const testimonials = [
   },
   {
     name: 'Phạm Minh Đức',
-    achievement: '6.5 → 7.5 IELTS',
+    achievement: '500 → 750 TOEIC',
     duration: '2 tháng',
     avatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=200',
-    text: 'Đang đi làm nên chỉ học được buổi tối. Tính linh hoạt của HuyWay rất hợp. 2 tháng ôn luyện tập trung, mình thi đạt 7.5 đúng cam kết.',
+    text: 'Đang đi làm nên chỉ học được buổi tối. Tính linh hoạt của HuyWay rất hợp. 2 tháng ôn luyện tập trung, mình thi đạt 750 TOEIC đúng cam kết.',
   },
   {
     name: 'Vũ Thị Mai',
@@ -38,10 +38,10 @@ const testimonials = [
   },
   {
     name: 'Hoàng Anh Tuấn',
-    achievement: '6.0 → 7.0 IELTS',
+    achievement: '550 → 800 TOEIC',
     duration: '3 tháng',
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=200',
-    text: 'Thi trượt 2 lần rồi mới biết đến HuyWay. Giáo viên phân tích điểm yếu rất chuẩn, mình tập trung sửa đúng chỗ. Lần 3 thi được 7.0, tiết kiệm biết bao tiền.',
+    text: 'Thi trượt 2 lần rồi mới biết đến HuyWay. Giáo viên phân tích điểm yếu rất chuẩn, mình tập trung sửa đúng chỗ. Lần 3 thi được 800 TOEIC, tiết kiệm biết bao tiền.',
   },
 ];
 

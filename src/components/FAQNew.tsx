@@ -15,7 +15,7 @@ const faqs = [
   {
     icon: GraduationCap,
     q: 'Giáo viên có trình độ như thế nào?',
-    a: 'Đội ngũ giảng viên có chứng chỉ IELTS 7.5 trở lên, có kinh nghiệm thực tế quốc tế và khả năng truyền cảm hứng tự học cho học sinh.',
+    a: 'Đội ngũ giảng viên có chứng chỉ IELTS 7.5+ và TOEIC 900+, có kinh nghiệm thực tế quốc tế và khả năng truyền cảm hứng tự học cho học sinh.',
   },
   {
     icon: ShieldCheck,
