@@ -6,8 +6,8 @@ const cols = [
     links: ['IELTS Foundation', 'IELTS Skill Building', 'IELTS Intensive', 'IELTS Combo 1-1', 'Toeic Cơ bản'],
   },
   {
-    title: 'Prep',
-    links: ['Về chúng tôi', 'Đội ngũ giáo viên', 'Tuyển dụng', 'Câu chuyện học viên', 'Báo chí nói về Prep'],
+    title: 'Huy',
+    links: ['Về chúng tôi', 'Đội ngũ giáo viên', 'Tuyển dụng', 'Câu chuyện học viên', 'Báo chí nói về HuyWay'],
   },
   {
     title: 'Hỗ trợ',
@@ -26,7 +26,7 @@ export default function Footer() {
                 <GraduationCap className="w-6 h-6" />
               </span>
               <span className="font-extrabold text-lg text-white">
-                Prep<span className="text-brand-400">IELTS</span>
+                Huy<span className="text-brand-400">Way</span>
               </span>
             </a>
             <p className="mt-4 text-sm text-ink-400 leading-relaxed max-w-sm">
@@ -37,12 +37,12 @@ export default function Footer() {
               <a href="tel:19001234" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Phone className="w-4 h-4 text-brand-400" /> Hotline: 1900 1234 (8h - 21h)
               </a>
-              <a href="mailto:hello@prepielts.vn" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 text-brand-400" /> hello@prepielts.vn
+              <a href="mailto:hello@huyway.vn" className="flex items-center gap-3 hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-brand-400" /> hello@huyway.vn
               </a>
               <p className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-brand-400 mt-0.5 shrink-0" />
-                <span>Tầng 5, Tòa nhà Bachko, 44 Đặng Văn Ngữ, P.14, Q.10, TP. HCM</span>
+                <span>58B Võ Văn Dũng, Hà Nội</span>
               </p>
             </div>
             <div className="mt-6 flex items-center gap-3">
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
-          <p>© 2025 Prep IELTS. Doanh nghiệp hoạt động minh bạch, rõ ràng.</p>
+          <p>© 2025 HuyWay. Doanh nghiệp hoạt động minh bạch, rõ ràng.</p>
           <p>Mã số doanh nghiệp: 0123456789 — Sở KH&amp;ĐT TP. HCM cấp ngày 01/01/2025</p>
         </div>
       </div>

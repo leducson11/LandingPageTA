@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import { Menu, X, GraduationCap } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Lợi ích', href: '#loi-ich' },
-  { label: 'Nội dung', href: '#noi-dung' },
-  { label: 'Học viên', href: '#hoc-vien' },
-  { label: 'Bảng giá', href: '#bang-gia' },
+  { label: 'Về chúng tôi', href: '#ve-chung-toi' },
+  { label: 'Các khóa học', href: '#cac-khoa-hoc' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Feedback', href: '#feedback' },
 ];
 
 export default function Header() {
@@ -35,7 +34,7 @@ export default function Header() {
               <GraduationCap className="w-6 h-6" />
             </span>
             <span className={`font-extrabold text-lg tracking-tight ${scrolled ? 'text-ink-900' : 'text-ink-900'}`}>
-              Prep<span className="text-brand-600">IELTS</span>
+              Huy<span className="text-brand-600">Way</span>
             </span>
           </a>
 
@@ -44,7 +43,7 @@ export default function Header() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-ink-600 hover:text-brand-600 transition-colors relative after:absolute after:bottom-[-6px] after:left-0 after:h-0.5 after:w-0 after:bg-brand-500 hover:after:w-full after:transition-all"
+                className="text-sm font-medium text-ink-600 hover:text-brand-600 hover:bg-brand-50 transition-colors relative after:absolute after:bottom-[-6px] after:left-0 after:h-0.5 after:w-0 after:bg-brand-500 hover:after:w-full after:transition-all px-3 py-2 rounded-lg"
               >
                 {l.label}
               </a>
@@ -52,14 +51,11 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="#dang-ky" className="text-sm font-semibold text-brand-700 hover:text-brand-800 transition-colors">
-              Đăng nhập
-            </a>
             <a
               href="#dang-ky"
               className="inline-flex items-center px-5 py-2.5 rounded-full bg-brand-600 text-white text-sm font-semibold shadow-lg shadow-brand-500/30 hover:bg-brand-700 hover:shadow-brand-500/40 transition-all hover:-translate-y-0.5"
             >
-              Nhận tư vấn miễn phí
+              Đăng ký học thử miễn phí
             </a>
           </div>
 
@@ -91,7 +87,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 mx-4 inline-flex items-center justify-center px-5 py-3 rounded-full bg-brand-600 text-white text-sm font-semibold"
             >
-              Nhận tư vấn miễn phí
+              Đăng ký học thử miễn phí
             </a>
           </nav>
         </div>

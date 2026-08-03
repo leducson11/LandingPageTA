@@ -49,10 +49,10 @@ export default function LeadForm() {
           {/* left copy */}
           <div className="text-white">
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white text-sm font-semibold backdrop-blur">
-              Đăng ký tư vấn miễn phí
+              Đăng ký học thử miễn phí
             </span>
             <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-balance">
-              Để lại thông tin — chuyên gia Prep gọi cho bạn trong 5 phút
+              Để lại thông tin — chuyên gia HuyWay gọi cho bạn trong 5 phút
             </h2>
             <p className="mt-4 text-brand-100 text-lg leading-relaxed">
               Bạn sẽ nhận được: lộ trình học cá nhân hóa, đánh giá trình độ miễn phí và ưu đãi giảm 40% chỉ dành cho 50 đăng ký đầu tiên.
@@ -82,7 +82,7 @@ export default function LeadForm() {
                 </div>
                 <h3 className="mt-5 text-2xl font-extrabold text-ink-900">Đăng ký thành công!</h3>
                 <p className="mt-2 text-ink-600">
-                  Cảm ơn bạn đã quan tâm. Chuyên gia Prep sẽ liên hệ trong vòng 5 phút.
+                  Cảm ơn bạn đã quan tâm. Chuyên gia HuyWay sẽ liên hệ trong vòng 5 phút.
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
@@ -93,7 +93,7 @@ export default function LeadForm() {
               </div>
             ) : (
               <>
-                <h3 className="text-2xl font-extrabold text-ink-900">Đăng ký nhận tư vấn</h3>
+                <h3 className="text-2xl font-extrabold text-ink-900">Đăng ký học thử</h3>
                 <p className="mt-1.5 text-sm text-ink-500">Chỉ 3 thông tin — mất chưa tới 30 giây</p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -173,7 +173,7 @@ export default function LeadForm() {
                     )}
                   </button>
                   <p className="text-center text-xs text-ink-400">
-                    Bằng việc đăng ký, bạn đồng ý với chính sách bảo mật của Prep.
+                    Bằng việc đăng ký, bạn đồng ý với chính sách bảo mật của HuyWay.
                   </p>
                 </form>
               </>

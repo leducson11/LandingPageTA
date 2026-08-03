@@ -1,30 +1,30 @@
 import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, DollarSign, MapPin, GraduationCap, ShieldCheck } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'Học viên mới bắt đầu hoặc mất gốc có theo được không?',
-    a: 'Hoàn toàn được. Lộ trình của HuyWay có giai đoạn Foundation dành riêng cho người mất gốc hoặc mới bắt đầu. Giáo viên sẽ đánh giá trình độ và thiết kế lộ trình từ ngữ pháp, từ vựng nền tảng trước khi vào kỹ năng IELTS. Rất nhiều học viên của HuyWay từng bắt đầu từ con số 0 và đạt 6.5 - 7.0+ IELTS.',
+    icon: DollarSign,
+    q: 'Học phí tại trung tâm là bao nhiêu?',
+    a: 'Mức phí dao động từ 200.000 – 300.000 đồng/giờ, thuộc phân khúc trung cấp đến cao cấp tùy vào gói dịch vụ.',
   },
   {
-    q: 'Chính sách cam kết đầu ra và hoàn tiền thế nào?',
-    a: 'Với gói Nâng cao và Combo 1-1, HuyWay cam kết đầu ra bằng văn bản. Nếu học viên hoàn thành đủ 80% lộ trình, làm đủ bài tập và thi thử nhưng chưa đạt band cam kết, HuyWay sẽ cho học lại miễn phí. Riêng gói Combo 1-1, nếu chưa đạt mục tiêu, HuyWay hoàn trả 100% học phí theo điều khoản trong hợp đồng.',
+    icon: MapPin,
+    q: 'Trung tâm dạy Online hay Offline?',
+    a: 'Ưu tiên hình thức Offline hoàn toàn để tạo môi trường gắn bó, hoặc Hybrid (kết hợp cả hai) để linh hoạt cho học viên.',
   },
   {
-    q: 'Lịch học có linh hoạt không? Tôi đi làm bận có học được không?',
-    a: 'Có. Toàn bộ bài giảng được ghi hình sẵn trên nền tảng, bạn có thể học bất cứ lúc nào, ở đâu trên web hoặc app. Lịch kèm 1-1 với giáo viên được linh hoạt sắp xếp theo giờ bạn rảnh, kể cả buổi tối hoặc cuối tuần. Học viên đi làm chiếm hơn 40% cộng đồng HuyWay.',
+    icon: GraduationCap,
+    q: 'Giáo viên có trình độ như thế nào?',
+    a: 'Đội ngũ giảng viên có chứng chỉ IELTS 7.5 trở lên, có kinh nghiệm thực tế quốc tế và khả năng truyền cảm hứng tự học cho học sinh.',
   },
   {
-    q: 'Học online chất lượng có bằng học ở trung tâm không?',
-    a: 'Học online tại HuyWay được thiết kế để tối ưu hơn học tại trung tâm: bạn được AI chấm chữa bài tức thì, luyện Speaking không giới hạn, xem lại bài giảng bao nhiêu lần tùy thích. Giáo viên vẫn đồng hành 1-1 qua video call. Nhiều học viên phản hồi học online giúp họ tập trung và chủ động hơn.',
-  },
-  {
-    q: 'Tôi có được học thử trước khi quyết định không?',
-    a: 'Có. Khi đăng ký tư vấn, bạn sẽ được test trình độ miễn phí, nhận lộ trình cá nhân hóa và học thử 1 buổi thực tế với giáo viên — hoàn toàn không thu phí. Sau buổi học thử, chuyên gia sẽ tư vấn gói học phù hợp và bạn quyết định có đăng ký hay không.',
+    icon: ShieldCheck,
+    q: 'Trung tâm có cam kết đầu ra không?',
+    a: 'Có cam kết rõ ràng theo từng nhóm mục tiêu và trình độ đầu vào của học viên.',
   },
 ];
 
-export default function FAQ() {
+export default function FAQNew() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -56,7 +56,12 @@ export default function FAQ() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                 >
-                  <span className="font-bold text-ink-900 text-[15px]">{f.q}</span>
+                  <div className="flex items-center gap-3">
+                    <span className={`grid place-items-center w-10 h-10 shrink-0 rounded-xl transition-all ${isOpen ? 'bg-brand-600 text-white' : 'bg-brand-100 text-brand-600'}`}>
+                      <f.icon className="w-5 h-5" />
+                    </span>
+                    <span className="font-bold text-ink-900 text-[15px]">{f.q}</span>
+                  </div>
                   <span className={`grid place-items-center w-8 h-8 shrink-0 rounded-full transition-all ${isOpen ? 'bg-brand-600 text-white rotate-180' : 'bg-white text-ink-500'}`}>
                     <ChevronDown className="w-5 h-5" />
                   </span>
@@ -66,7 +71,7 @@ export default function FAQ() {
                   style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-ink-600 leading-relaxed">{f.a}</p>
+                    <p className="px-5 pb-5 pl-20 text-ink-600 leading-relaxed">{f.a}</p>
                   </div>
                 </div>
               </div>

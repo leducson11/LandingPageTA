@@ -1,12 +1,11 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
-import ValueProposition from '@/components/ValueProposition';
-import Features from '@/components/Features';
-import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
+import AboutUs from '@/components/AboutUs';
+import Courses from '@/components/Courses';
+import FAQNew from '@/components/FAQNew';
+import Feedback from '@/components/Feedback';
 import LeadForm from '@/components/LeadForm';
-import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 
 export default function App() {
@@ -16,12 +15,11 @@ export default function App() {
       <main>
         <Hero />
         <PainPoints />
-        <ValueProposition />
-        <Features />
-        <Testimonials />
-        <Pricing />
+        <AboutUs />
+        <Courses />
+        <Feedback />
+        <FAQNew />
         <LeadForm />
-        <FAQ />
       </main>
       <Footer />
     </div>
