@@ -1,4 +1,4 @@
-import { Zap, BookOpen, GraduationCap, Clock, Users, Music, Smartphone, Globe, TrendingUp } from 'lucide-react';
+import { Zap, BookOpen, GraduationCap, Clock, Users, Music, Smartphone, Globe } from 'lucide-react';
 
 const courses = [
   {
@@ -27,18 +27,7 @@ const courses = [
   },
 ];
 
-const futurePlans = [
-  {
-    icon: TrendingUp,
-    title: 'VSTEP (Giai đoạn 2)',
-    description: 'Đào tạo chứng chỉ VSTEP',
-  },
-  {
-    icon: Users,
-    title: 'Giao tiếp thực tế',
-    description: 'Các lớp chuyên sâu giao tiếp',
-  },
-];
+
 
 const benefits = [
   {
@@ -115,24 +104,6 @@ export default function Courses() {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Future plans */}
-        <div className="bg-gradient-to-r from-accent-50 to-brand-50 rounded-3xl p-8 mb-16">
-          <h3 className="text-xl font-extrabold text-ink-900 mb-6 text-center">Dự kiến mở rộng</h3>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {futurePlans.map((plan, index) => (
-              <div key={index} className="bg-white rounded-xl p-5 ring-1 ring-ink-100 flex items-start gap-4">
-                <span className="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-brand-100 text-brand-600">
-                  <plan.icon className="w-5 h-5" />
-                </span>
-                <div>
-                  <h4 className="font-bold text-ink-900 text-sm">{plan.title}</h4>
-                  <p className="text-xs text-ink-600 mt-1">{plan.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Benefits */}

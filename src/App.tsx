@@ -7,6 +7,7 @@ import FAQNew from '@/components/FAQNew';
 import Feedback from '@/components/Feedback';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 import { useSmoothScroll } from '@/lib/useSmoothScroll';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <LeadForm />
       </main>
       <Footer />
+      <FloatingCTA />
     </div>
   );
 }

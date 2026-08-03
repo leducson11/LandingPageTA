@@ -1,8 +1,11 @@
-import { Star, PlayCircle, Users, ShieldCheck, ArrowRight } from 'lucide-react';
+import { PlayCircle, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-24">
+    <section
+      id="top"
+      className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-24"
+    >
       {/* background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-50 via-white to-white" />
@@ -12,8 +15,8 @@ export default function Hero() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 1px 1px, #1d57f5 1px, transparent 0)',
-            backgroundSize: '32px 32px',
+              "radial-gradient(circle at 1px 1px, #1d57f5 1px, transparent 0)",
+            backgroundSize: "32px 32px",
           }}
         />
       </div>
@@ -46,12 +49,14 @@ export default function Hero() {
             </div>
 
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
-              Chinh phục <span className="gradient-text">IELTS & TOEIC</span> chỉ sau 90 ngày
+              Chinh phục <span className="gradient-text">IELTS & TOEIC</span>{" "}
+              chỉ sau 90 ngày
             </h1>
 
             <p className="mt-5 text-lg text-ink-600 leading-relaxed max-w-xl">
-              Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS & 900+ TOEIC đồng hành 1-1, luyện tập trên
-              nền tảng AI chấm chữa chi tiết. Cam kết đầu ra bằng văn bản — không đạt, học lại miễn phí.
+              Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS & 900+ TOEIC đồng
+              hành 1-1, luyện tập trên nền tảng AI chấm chữa chi tiết. Cam kết
+              đầu ra bằng văn bản — không đạt, học lại miễn phí.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -63,18 +68,12 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#noi-dung"
+                href="#cac-khoa-hoc"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-ink-800 font-semibold border border-ink-200 hover:border-brand-300 hover:text-brand-700 transition-all"
               >
                 <PlayCircle className="w-5 h-5" />
                 Xem lộ trình học
               </a>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Stat icon={<Users className="w-5 h-5" />} value="50.000+" label="Học viên" />
-              <Stat icon={<Star className="w-5 h-5" />} value="4.9/5" label="Đánh giá" />
-              <Stat icon={<ShieldCheck className="w-5 h-5" />} value="92%" label="Đạt mục tiêu" />
             </div>
           </div>
 
@@ -89,7 +88,10 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
 
               {/* play button */}
-              <button className="absolute inset-0 grid place-items-center group" aria-label="Xem video giới thiệu">
+              <button
+                className="absolute inset-0 grid place-items-center group"
+                aria-label="Xem video giới thiệu"
+              >
                 <span className="relative">
                   <span className="absolute inset-0 rounded-full bg-white/40 animate-pulse-ring" />
                   <span className="relative grid place-items-center w-16 h-16 rounded-full bg-white/90 backdrop-blur shadow-xl group-hover:scale-110 transition-transform">
@@ -106,15 +108,31 @@ export default function Hero() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-ink-900">Cam kết đầu ra</p>
-                  <p className="text-xs text-ink-500">Không đạt — học lại free</p>
+                  <p className="text-sm font-bold text-ink-900">
+                    Cam kết đầu ra
+                  </p>
+                  <p className="text-xs text-ink-500">
+                    Không đạt — học lại free
+                  </p>
                 </div>
               </div>
             </div>
             <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-2xl shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
-              <p className="text-xs text-ink-500 font-medium">Điểm trung bình</p>
-              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">IELTS 7.5 <span className="text-sm font-semibold text-success-600">+1.5</span></p>
-              <p className="text-sm font-bold text-ink-900 mt-1">TOEIC 850+ <span className="text-xs font-semibold text-success-600">+150</span></p>
+              <p className="text-xs text-ink-500 font-medium">
+                Điểm trung bình
+              </p>
+              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">
+                IELTS 7.5{" "}
+                <span className="text-sm font-semibold text-success-600">
+                  +1.5
+                </span>
+              </p>
+              <p className="text-sm font-bold text-ink-900 mt-1">
+                TOEIC 850+{" "}
+                <span className="text-xs font-semibold text-success-600">
+                  +150
+                </span>
+              </p>
               <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
                 <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-brand-500 to-brand-400" />
               </div>
@@ -126,14 +144,4 @@ export default function Hero() {
   );
 }
 
-function Stat({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
-  return (
-    <div className="flex items-center gap-2.5">
-      <span className="grid place-items-center w-9 h-9 rounded-lg bg-brand-50 text-brand-600">{icon}</span>
-      <div>
-        <p className="text-lg font-extrabold text-ink-900 leading-none">{value}</p>
-        <p className="text-xs text-ink-500 mt-0.5">{label}</p>
-      </div>
-    </div>
-  );
-}
+

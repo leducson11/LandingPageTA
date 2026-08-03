@@ -8,7 +8,7 @@ const sections = [
       { label: 'Tên thương hiệu:', value: 'Huyway English' },
       { label: 'Slogan:', value: 'English to go far.' },
       { label: 'Đơn vị chủ quản:', value: 'Công ty Cổ phần Huy Phong' },
-      { label: 'Lịch sử hình thành:', value: 'Dự án bắt đầu triển khai mạnh mẽ từ tháng 7/2026 với sự hợp tác cùng đơn vị phát triển công ty Techcamp Việt Nam. Dự án được xây dựng dựa trên sự đam mê kinh doanh, mong muốn phát huy nguồn lực giáo viên tiếng Anh sẵn có và tạo ra giá trị xã hội thông qua giáo dục.' },
+      { label: 'Lịch sử hình thành:', value: 'Dự án bắt đầu triển khai mạnh mẽ từ tháng 7/2026, được xây dựng dựa trên sự đam mê kinh doanh, mong muốn phát huy nguồn lực giáo viên tiếng Anh sẵn có và tạo ra giá trị xã hội thông qua giáo dục.' },
       { label: 'Lĩnh vực hoạt động chính:', value: 'Đào tạo tiếng Anh chứng chỉ (TOEIC, IELTS, VSTEP), tiếng Anh giao tiếp chuyên sâu và tư vấn du học.' },
     ],
   },
@@ -34,7 +34,7 @@ const sections = [
     icon: Users,
     title: 'Đội ngũ nhân sự',
     content: [
-      { label: 'Ban lãnh đạo:', value: 'Dự án được dẫn dắt bởi ban lãnh đạo Công ty Huy Phong (như PGĐ Bùi Thị Nhân Huệ) phối hợp cùng đội ngũ chuyên gia công nghệ từ Techcamp Việt Nam.' },
+      { label: 'Ban lãnh đạo:', value: 'Dự án được dẫn dắt bởi ban lãnh đạo Công ty Huy Phong (như PGĐ Bùi Thị Nhân Huệ) phối hợp cùng đội ngũ chuyên gia công nghệ giàu kinh nghiệm.' },
       { label: 'Đội ngũ giảng viên:', value: 'Sở hữu trình độ chuyên môn cao (IELTS từ 7.5 trở lên đối với các lớp luyện thi). Có tư duy vĩ mô, khả năng sư phạm tâm huyết, không chỉ dạy kiến thức mà còn biết cách truyền cảm hứng và hướng dẫn học viên tự nghiên cứu tại nhà. Giảng viên đóng vai trò là người đồng hành, trực tiếp tương tác và can thiệp kịp thời vào tiến độ của học viên.' },
     ],
   },
@@ -42,7 +42,7 @@ const sections = [
     icon: Award,
     title: 'Thành tựu và Đối tác',
     content: [
-      { label: 'Đối tác chiến lược:', value: 'Hợp tác cùng Techcamp Việt Nam trong việc phát triển hệ thống quản lý học tập, website và ứng dụng hỗ trợ học viên. Ngoài ra, trung tâm định hướng liên doanh với các đơn vị tổ chức thi chứng chỉ quốc tế để hỗ trợ học viên tốt nhất.' },
+      { label: 'Đối tác chiến lược:', value: 'Trung tâm định hướng liên doanh với các đơn vị tổ chức thi chứng chỉ quốc tế để hỗ trợ học viên tốt nhất, đồng thời phát triển hệ thống quản lý học tập, website và ứng dụng hỗ trợ riêng.' },
       { label: 'Mô hình lớp học:', value: 'Duy trì mô hình lớp học nhỏ ưu việt từ 5–10 học viên nhằm đảm bảo sự tương tác tối đa và chất lượng chăm sóc đến từng cá nhân.' },
       { label: 'Cam kết chất lượng:', value: 'Cam kết đầu ra rõ ràng theo từng nhóm mục tiêu và cung cấp lộ trình tiếp nối từ học ngoại ngữ đến hỗ trợ hồ sơ du học/săn học bổng.' },
     ],
@@ -98,7 +98,7 @@ export default function AboutUs() {
             { icon: Users, label: '5-10 học viên/lớp', desc: 'Lớp học nhỏ chất lượng cao' },
             { icon: GraduationCap, label: 'IELTS 7.5+', desc: 'Trình độ giảng viên' },
             { icon: Calendar, label: '7/2026', desc: 'Bắt đầu triển khai' },
-            { icon: Handshake, label: 'Techcamp', desc: 'Đối tác chiến lược' },
+            { icon: Handshake, label: 'Cam kết đầu ra', desc: 'Không đạt — học lại miễn phí' },
           ].map((stat, i) => (
             <div key={i} className="text-center bg-gradient-to-b from-brand-50 to-white rounded-2xl p-6 ring-1 ring-brand-100">
               <div className="mx-auto grid place-items-center w-12 h-12 rounded-xl bg-brand-600 text-white mb-3">
