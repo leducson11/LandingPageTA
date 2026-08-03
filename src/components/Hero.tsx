@@ -39,7 +39,13 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
+            <div className="mt-6 flex items-center gap-2">
+              <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100 shadow-sm">
+                Huyway English • English to go far.
+              </span>
+            </div>
+
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
               Chinh phục <span className="gradient-text">IELTS & TOEIC</span> chỉ sau 90 ngày
             </h1>
 

@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: 'Nguyễn Thị Lan',
     role: 'Học viên Gói B',
-    text: 'Trước đây mình học ở lớp 25 người, giáo viên không thể quan tâm từng người. Lên HuyWay chỉ có 8 học viên, mình được sửa lỗi từng câu và tiến bộ nhanh hơn hẳn.',
+    text: 'Trước đây mình học ở lớp 25 người, giáo viên không thể quan tâm từng người. Lên Huyway English chỉ có 8 học viên, mình được sửa lỗi từng câu và tiến bộ nhanh hơn hẳn.',
     rating: 5,
   },
   {
@@ -57,7 +57,7 @@ export default function Feedback() {
             Feedback học viên
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
-            Học viên nói gì về HuyWay?
+            Học viên nói gì về Huyway English?
           </h2>
           <p className="mt-4 text-ink-600 text-lg leading-relaxed">
             Dựa trên kết quả khảo sát nhu cầu và giải quyết các "nỗi đau" mà học viên thường gặp phải ở những nơi khác.

@@ -5,7 +5,8 @@ const sections = [
     icon: Building2,
     title: 'Giới thiệu chung',
     content: [
-      { label: 'Tên thương hiệu:', value: 'HuyWay' },
+      { label: 'Tên thương hiệu:', value: 'Huyway English' },
+      { label: 'Slogan:', value: 'English to go far.' },
       { label: 'Đơn vị chủ quản:', value: 'Công ty Cổ phần Huy Phong' },
       { label: 'Lịch sử hình thành:', value: 'Dự án bắt đầu triển khai mạnh mẽ từ tháng 7/2026 với sự hợp tác cùng đơn vị phát triển công ty Techcamp Việt Nam. Dự án được xây dựng dựa trên sự đam mê kinh doanh, mong muốn phát huy nguồn lực giáo viên tiếng Anh sẵn có và tạo ra giá trị xã hội thông qua giáo dục.' },
       { label: 'Lĩnh vực hoạt động chính:', value: 'Đào tạo tiếng Anh chứng chỉ (TOEIC, IELTS, VSTEP), tiếng Anh giao tiếp chuyên sâu và tư vấn du học.' },
@@ -57,10 +58,10 @@ export default function AboutUs() {
             Về chúng tôi
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
-            HuyWay — Hành trình giáo dục chất lượng
+            Huyway English — English to go far
           </h2>
           <p className="mt-4 text-ink-600 text-lg leading-relaxed">
-            Khám phá câu chuyện về sự hình thành và phát triển của HuyWay, cùng với những giá trị cốt lõi
+            Khám phá câu chuyện về sự hình thành và phát triển của Huyway English, cùng với những giá trị cốt lõi
             mà chúng tôi mang đến cho hàng nghìn học viên.
           </p>
         </div>

@@ -38,7 +38,7 @@ export default function FAQNew() {
             Bạn còn thắc mắc?
           </h2>
           <p className="mt-4 text-ink-600 text-lg">
-            Những câu hỏi HuyWay được hỏi nhiều nhất — nếu chưa đủ, đội ngũ tư vấn luôn sẵn sàng giải đáp.
+            Những câu hỏi Huyway English được hỏi nhiều nhất — nếu chưa đủ, đội ngũ tư vấn luôn sẵn sàng giải đáp.
           </p>
         </div>
 

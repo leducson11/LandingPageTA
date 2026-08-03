@@ -181,7 +181,8 @@
   }
 
   @keyframes float-slow {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
@@ -210,5 +211,16 @@
 
   .animate-pulse-ring {
     animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  html {
+    /* scroll-behavior được xử lý bởi useSmoothScroll (requestAnimationFrame) */
+    scroll-padding-top: 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 5.5rem;
+    }
   }
 }

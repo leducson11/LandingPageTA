@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { User, Phone, Mail, Package, Send, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { User, Phone, Mail, Package, Send, CheckCircle2, Loader2, AlertCircle, Clock } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 const packages = ['Cơ bản', 'Nâng cao', 'Combo 1-1', 'Chưa quyết định'];
+const studyTimes = ['Ca Sáng', 'Ca Chiều', 'Ca Tối', 'Cuối tuần'];
 
 export default function LeadForm() {
-  const [form, setForm] = useState({ full_name: '', phone: '', email: '', course_package: 'Nâng cao' });
+  const [form, setForm] = useState({ full_name: '', phone: '', email: '', course_package: 'Nâng cao', study_time: 'Ca Tối' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
 
@@ -15,15 +16,31 @@ export default function LeadForm() {
     setStatus('loading');
     setError('');
     try {
+      // First attempt: try inserting with a separate study_time field (if column exists)
       const { error: err } = await supabase.from('leads').insert({
         full_name: form.full_name.trim(),
         phone: form.phone.trim(),
         email: form.email.trim(),
         course_package: form.course_package,
+        study_time: form.study_time,
       });
-      if (err) throw err;
+
+      if (err) {
+        // Fallback: if columns mismatch, store study_time inside course_package
+        if (err.message?.includes('study_time') || err.message?.includes('column') || err.code === 'PGRST204') {
+          const { error: fallbackErr } = await supabase.from('leads').insert({
+            full_name: form.full_name.trim(),
+            phone: form.phone.trim(),
+            email: form.email.trim(),
+            course_package: `${form.course_package} (Thời gian học: ${form.study_time})`,
+          });
+          if (fallbackErr) throw fallbackErr;
+        } else {
+          throw err;
+        }
+      }
       setStatus('success');
-      setForm({ full_name: '', phone: '', email: '', course_package: 'Nâng cao' });
+      setForm({ full_name: '', phone: '', email: '', course_package: 'Nâng cao', study_time: 'Ca Tối' });
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Không thể gửi đăng ký. Vui lòng thử lại.');
@@ -52,7 +69,7 @@ export default function LeadForm() {
               Đăng ký học thử miễn phí
             </span>
             <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-balance">
-              Để lại thông tin — chuyên gia HuyWay gọi cho bạn trong 5 phút
+              Để lại thông tin — chuyên gia Huyway English gọi cho bạn trong 5 phút
             </h2>
             <p className="mt-4 text-brand-100 text-lg leading-relaxed">
               Bạn sẽ nhận được: lộ trình học cá nhân hóa, đánh giá trình độ miễn phí và ưu đãi giảm 40% chỉ dành cho 50 đăng ký đầu tiên.
@@ -82,7 +99,7 @@ export default function LeadForm() {
                 </div>
                 <h3 className="mt-5 text-2xl font-extrabold text-ink-900">Đăng ký thành công!</h3>
                 <p className="mt-2 text-ink-600">
-                  Cảm ơn bạn đã quan tâm. Chuyên gia HuyWay sẽ liên hệ trong vòng 5 phút.
+                  Cảm ơn bạn đã quan tâm. Chuyên gia Huyway English sẽ liên hệ trong vòng 5 phút.
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
@@ -150,6 +167,28 @@ export default function LeadForm() {
                     </div>
                   </div>
 
+                  <div>
+                    <label className="text-sm font-semibold text-ink-700 flex items-center gap-1.5">
+                      <Clock className="w-4 h-4 text-ink-400" /> Thời gian học mong muốn
+                    </label>
+                    <div className="mt-2 grid grid-cols-2 gap-2">
+                      {studyTimes.map((t) => (
+                        <button
+                          type="button"
+                          key={t}
+                          onClick={() => setForm({ ...form, study_time: t })}
+                          className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                            form.study_time === t
+                              ? 'bg-brand-600 text-white shadow-md shadow-brand-500/30'
+                              : 'bg-ink-50 text-ink-700 hover:bg-brand-50 hover:text-brand-700'
+                          }`}
+                        >
+                          {t}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   {status === 'error' && (
                     <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 text-red-700 text-sm">
                       <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
@@ -173,7 +212,7 @@ export default function LeadForm() {
                     )}
                   </button>
                   <p className="text-center text-xs text-ink-400">
-                    Bằng việc đăng ký, bạn đồng ý với chính sách bảo mật của HuyWay.
+                    Bằng việc đăng ký, bạn đồng ý với chính sách bảo mật của Huyway English.
                   </p>
                 </form>
               </>

@@ -6,8 +6,8 @@ const cols = [
     links: ['IELTS Foundation', 'IELTS Skill Building', 'IELTS Intensive', 'IELTS Combo 1-1', 'Toeic Cơ bản'],
   },
   {
-    title: 'Huy',
-    links: ['Về chúng tôi', 'Đội ngũ giáo viên', 'Tuyển dụng', 'Câu chuyện học viên', 'Báo chí nói về HuyWay'],
+    title: 'Huyway English',
+    links: ['Về chúng tôi', 'Đội ngũ giáo viên', 'Tuyển dụng', 'Câu chuyện học viên', 'Báo chí nói về Huyway English'],
   },
   {
     title: 'Hỗ trợ',
@@ -26,9 +26,12 @@ export default function Footer() {
                 <GraduationCap className="w-6 h-6" />
               </span>
               <span className="font-extrabold text-lg text-white">
-                Huy<span className="text-brand-400">Way</span>
+                Huyway <span className="text-brand-400">English</span>
               </span>
             </a>
+            <p className="mt-1.5 text-xs font-semibold text-brand-400 uppercase tracking-wider">
+              English to go far.
+            </p>
             <p className="mt-4 text-sm text-ink-400 leading-relaxed max-w-sm">
               Nền tảng học IELTS online hàng đầu Việt Nam — kết hợp giáo viên 8.0+ IELTS và AI chấm chữa,
               cam kết đầu ra cho mọi học viên.
@@ -78,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
-          <p>© 2025 HuyWay. Doanh nghiệp hoạt động minh bạch, rõ ràng.</p>
+          <p>© 2025 Huyway English. Doanh nghiệp hoạt động minh bạch, rõ ràng.</p>
           <p>Mã số doanh nghiệp: 0123456789 — Sở KH&amp;ĐT TP. HCM cấp ngày 01/01/2025</p>
         </div>
       </div>

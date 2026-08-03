@@ -43,10 +43,10 @@ export default function ValueProposition() {
               Giải pháp & Lợi ích
             </span>
             <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
-              HuyWay — giải pháp toàn diện cho mọi nỗi đau
+              Huyway English — giải pháp toàn diện cho mọi nỗi đau
             </h2>
             <p className="mt-4 text-ink-600 text-lg leading-relaxed">
-              Không chỉ là kho video bài giảng. HuyWay là hệ sinh thái học IELTS kết hợp con người và AI,
+              Không chỉ là kho video bài giảng. Huyway English là hệ sinh thái học IELTS kết hợp con người và AI,
               giúp bạn đi thẳng từ vị trí hiện tại đến band điểm mục tiêu trong thời gian ngắn nhất.
             </p>
 

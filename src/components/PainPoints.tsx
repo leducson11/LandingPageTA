@@ -45,7 +45,7 @@ export default function PainPoints() {
             Bạn có đang gặp những tình cảnh này?
           </h2>
           <p className="mt-4 text-ink-600 text-lg">
-            Rất nhiều học viên đến với HuyWay trong trạng thái chán nản, mất phương hướng.
+            Rất nhiều học viên đến với Huyway English trong trạng thái chán nản, mất phương hướng.
             Nếu bạn thấy mình trong những mô tả dưới đây — đừng lo, giải pháp ở ngay phía dưới.
           </p>
         </div>

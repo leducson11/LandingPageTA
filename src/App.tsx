@@ -7,8 +7,12 @@ import FAQNew from '@/components/FAQNew';
 import Feedback from '@/components/Feedback';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
+import { useSmoothScroll } from '@/lib/useSmoothScroll';
 
 export default function App() {
+  // Intercepts all <a href="#…"> clicks globally → smooth + header-offset-aware scroll
+  useSmoothScroll();
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
