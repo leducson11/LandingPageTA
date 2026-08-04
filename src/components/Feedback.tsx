@@ -48,10 +48,15 @@ const testimonials = [
   },
 ];
 
+const cardDelays = ['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-300'];
+const testDelays = ['', 'anim-delay-200', 'anim-delay-400'];
+
 export default function Feedback() {
   return (
     <section id="feedback" className="relative py-20 lg:py-28 bg-gradient-to-b from-ink-50 to-white">
       <div className="max-w-7xl mx-auto container-px">
+
+        {/* Fade In — header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
             Feedback học viên
@@ -59,18 +64,22 @@ export default function Feedback() {
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
             Học viên nói gì về Huyway English?
           </h2>
-          <p className="mt-4 text-ink-600 text-lg leading-relaxed">
+          <p
+            data-anim="fade"
+            className="scroll-hidden mt-4 text-ink-600 text-lg leading-relaxed anim-delay-150"
+          >
             Dựa trên kết quả khảo sát nhu cầu và giải quyết các "nỗi đau" mà học viên thường gặp phải ở những nơi khác.
             Đây là cam kết chất lượng của trung tâm.
           </p>
         </div>
 
-        {/* Feedback highlights */}
+        {/* Fade In stagger — highlight cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {feedbackItems.map((item, index) => (
             <div
               key={item.title}
-              className="bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all"
+              data-anim="fade"
+              className={`scroll-hidden bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all ${cardDelays[index]}`}
             >
               <span className={`grid place-items-center w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br ${item.color} text-white shadow-lg mb-4`}>
                 <item.icon className="w-7 h-7" />
@@ -87,16 +96,21 @@ export default function Feedback() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">
               Chia sẻ từ học viên
             </h3>
-            <p className="mt-4 text-ink-600 text-lg">
+            <p
+              data-anim="fade"
+              className="scroll-hidden mt-4 text-ink-600 text-lg anim-delay-150"
+            >
               Những câu chuyện thật về sự thay đổi tư duy và phương pháp học tập
             </p>
           </div>
 
+          {/* Fly In từ phải — testimonial cards */}
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-lg transition-all"
+                data-anim="fly"
+                className={`scroll-hidden bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-lg transition-all ${testDelays[index]}`}
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -118,8 +132,11 @@ export default function Feedback() {
           </div>
         </div>
 
-        {/* Note */}
-        <div className="mt-12 bg-amber-50 rounded-2xl p-6 ring-1 ring-amber-200">
+        {/* Note — Fade In */}
+        <div
+          data-anim="fade"
+          className="scroll-hidden mt-12 bg-amber-50 rounded-2xl p-6 ring-1 ring-amber-200 anim-delay-200"
+        >
           <div className="flex items-start gap-3">
             <MessageCircle className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
             <div>

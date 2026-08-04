@@ -27,8 +27,6 @@ const courses = [
   },
 ];
 
-
-
 const benefits = [
   {
     icon: Users,
@@ -57,10 +55,15 @@ const benefits = [
   },
 ];
 
+const cardDelays = ['', 'anim-delay-100', 'anim-delay-200'];
+const benefitDelays = ['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-100', 'anim-delay-200'];
+
 export default function Courses() {
   return (
     <section id="cac-khoa-hoc" className="relative py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto container-px">
+
+        {/* Fade In — section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
             Các khóa học
@@ -68,17 +71,21 @@ export default function Courses() {
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
             Lộ trình đào tạo phù hợp với mọi nhu cầu
           </h2>
-          <p className="mt-4 text-ink-600 text-lg leading-relaxed">
+          <p
+            data-anim="fade"
+            className="scroll-hidden mt-4 text-ink-600 text-lg leading-relaxed anim-delay-150"
+          >
             Trung tâm định hướng phát triển 3 dòng sản phẩm chính dựa trên tốc độ và nhu cầu của người học
           </p>
         </div>
 
-        {/* Course packages */}
+        {/* Course packages — Fade In stagger */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {courses.map((course, index) => (
             <div
               key={course.title}
-              className="bg-gradient-to-br from-ink-50 to-white rounded-3xl p-8 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all"
+              data-anim="fade"
+              className={`scroll-hidden bg-gradient-to-br from-ink-50 to-white rounded-3xl p-8 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all ${cardDelays[index]}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="grid place-items-center w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg shadow-brand-500/30">
@@ -112,16 +119,21 @@ export default function Courses() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">
               Lợi ích khi học tại trung tâm
             </h3>
-            <p className="mt-4 text-ink-600 text-lg">
+            <p
+              data-anim="fade"
+              className="scroll-hidden mt-4 text-ink-600 text-lg anim-delay-150"
+            >
               Học viên sẽ nhận được những giá trị khác biệt mà các trung tâm đại trà chưa chú trọng
             </p>
           </div>
 
+          {/* Fade In stagger — benefit cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-lg hover:ring-brand-200 transition-all"
+                data-anim="fade"
+                className={`scroll-hidden bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-lg hover:ring-brand-200 transition-all ${benefitDelays[index]}`}
               >
                 <span className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg shadow-brand-500/30 mb-4">
                   <benefit.icon className="w-6 h-6" />

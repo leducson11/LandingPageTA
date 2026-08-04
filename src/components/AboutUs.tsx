@@ -68,9 +68,11 @@ export default function AboutUs() {
 
         <div className="space-y-12">
           {sections.map((section, index) => (
+            /* Fade In — từng section card */
             <div
               key={section.title}
-              className="bg-gradient-to-br from-ink-50 to-white rounded-3xl p-8 lg:p-10 ring-1 ring-ink-100 hover:shadow-xl transition-all"
+              data-anim="fade"
+              className={`scroll-hidden bg-gradient-to-br from-ink-50 to-white rounded-3xl p-8 lg:p-10 ring-1 ring-ink-100 hover:shadow-xl transition-all ${index % 2 === 1 ? 'anim-delay-100' : ''}`}
             >
               <div className="flex items-start gap-4 mb-6">
                 <span className="grid place-items-center w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg shadow-brand-500/30">
@@ -100,7 +102,12 @@ export default function AboutUs() {
             { icon: Calendar, label: '7/2026', desc: 'Bắt đầu triển khai' },
             { icon: Handshake, label: 'Cam kết đầu ra', desc: 'Không đạt — học lại miễn phí' },
           ].map((stat, i) => (
-            <div key={i} className="text-center bg-gradient-to-b from-brand-50 to-white rounded-2xl p-6 ring-1 ring-brand-100">
+            /* Fly In từ phải — stat cards */
+            <div
+              key={i}
+              data-anim="fly"
+              className={`scroll-hidden text-center bg-gradient-to-b from-brand-50 to-white rounded-2xl p-6 ring-1 ring-brand-100 ${['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-300'][i]}`}
+            >
               <div className="mx-auto grid place-items-center w-12 h-12 rounded-xl bg-brand-600 text-white mb-3">
                 <stat.icon className="w-6 h-6" />
               </div>

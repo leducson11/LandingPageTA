@@ -3,224 +3,203 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* ══════════════════════════════════════════
+     GRADIENT TEXT  (#448cfd → #ff8720 → #ff8de4)
+  ══════════════════════════════════════════ */
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent;
+    background: linear-gradient(90deg, #448cfd 0%, #ff8720 50%, #ff8de4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* blue → pink (2 màu) */
+  .gradient-text-bp {
+    background: linear-gradient(90deg, #448cfd 0%, #ff8de4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .text-ink-900 {
-    color: #1a1a1a;
+  /* ══════════════════════════════════════════
+     BUTTON GRADIENT  — thay thế bg-brand-600 trên nút
+  ══════════════════════════════════════════ */
+  .btn-g3 {
+    background: linear-gradient(135deg, #448cfd 0%, #ff8720 55%, #ff8de4 100%) !important;
+    background-size: 200% auto !important;
+    color: #ffffff !important;
+    transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-g3:hover {
+    background-position: right center !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(68, 140, 253, 0.38) !important;
+  }
+  .btn-g3:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 
-  .text-ink-800 {
-    color: #2d2d2d;
-  }
+  /* ══════════════════════════════════════════
+     INK PALETTE  (màu chữ — KHÔNG thay đổi)
+  ══════════════════════════════════════════ */
+  .text-ink-900 { color: #1a1a1a; }
+  .text-ink-800 { color: #2d2d2d; }
+  .text-ink-700 { color: #404040; }
+  .text-ink-600 { color: #666666; }
+  .text-ink-500 { color: #808080; }
+  .text-ink-400 { color: #999999; }
+  .text-ink-300 { color: #b3b3b3; }
 
-  .text-ink-700 {
-    color: #404040;
-  }
+  .bg-ink-50  { background-color: #fafafa; }
+  .bg-ink-100 { background-color: #f5f5f5; }
+  .bg-ink-950 { background-color: #0a0a0a; }
 
-  .text-ink-600 {
-    color: #666666;
-  }
+  /* ══════════════════════════════════════════
+     BRAND PALETTE  — đổi sang 3 màu gradient
+  ══════════════════════════════════════════ */
 
-  .text-ink-500 {
-    color: #808080;
-  }
+  /* Màu text brand (xanh anchor) — giữ nhất quán với icon */
+  .text-brand-400 { color: #448cfd; }
+  .text-brand-500 { color: #448cfd; }
+  .text-brand-600 { color: #448cfd; }
+  .text-brand-700 { color: #2272e8; }
 
-  .text-ink-400 {
-    color: #999999;
-  }
+  /* Background brand nhạt — làm nền pill/badge */
+  .bg-brand-50  { background-color: #eef5ff; }
+  .bg-brand-100 { background-color: #d6e9ff; }
 
-  .text-ink-300 {
-    color: #b3b3b3;
-  }
-
-  .bg-ink-50 {
-    background-color: #fafafa;
-  }
-
-  .bg-ink-100 {
-    background-color: #f5f5f5;
-  }
-
-  .bg-ink-950 {
-    background-color: #0a0a0a;
-  }
-
-  .text-brand-600 {
-    color: #2563eb;
-  }
-
-  .text-brand-700 {
-    color: #1d4ed8;
-  }
-
-  .text-brand-400 {
-    color: #60a5fa;
-  }
-
-  .bg-brand-50 {
-    background-color: #eff6ff;
-  }
-
-  .bg-brand-100 {
-    background-color: #dbeafe;
-  }
-
+  /* Background brand đậm → gradient 3 màu */
   .bg-brand-600 {
-    background-color: #2563eb;
+    background: linear-gradient(135deg, #448cfd 0%, #ff8720 55%, #ff8de4 100%) !important;
   }
-
   .bg-brand-700 {
-    background-color: #1d4ed8;
+    background: linear-gradient(135deg, #2272e8 0%, #e06a00 55%, #e860c8 100%) !important;
   }
 
-  .from-brand-600 {
-    --tw-gradient-from: #2563eb;
-  }
+  /* Gradient from/to — dùng trong from-brand-600 to-brand-400 */
+  .from-brand-400 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
+  .from-brand-500 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
+  .from-brand-600 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
+  .to-brand-400   { --tw-gradient-to: #ff8de4 var(--tw-gradient-to-position); }
+  .to-brand-500   { --tw-gradient-to: #ff8720 var(--tw-gradient-to-position); }
+  .to-brand-700   { --tw-gradient-to: #2272e8 var(--tw-gradient-to-position); }
 
-  .to-brand-400 {
-    --tw-gradient-to: #60a5fa;
-  }
+  /* Ring brand */
+  .ring-brand-100 { --tw-ring-color: #d6e9ff; }
+  .ring-brand-200 { --tw-ring-color: #aed3ff; }
+  .ring-brand-300 { --tw-ring-color: #76b6fe; }
+  .ring-brand-400 { --tw-ring-color: #448cfd; }
+  .ring-brand-500 { --tw-ring-color: #448cfd; }
+  .ring-ink-100   { --tw-ring-color: #f5f5f5; }
 
-  .to-brand-500 {
-    --tw-gradient-to: #3b82f6;
-  }
+  /* Shadow brand */
+  .shadow-brand-500\/30 { box-shadow: 0 10px 15px -3px rgba(68, 140, 253, 0.30); }
+  .shadow-brand-500\/40 { box-shadow: 0 10px 15px -3px rgba(68, 140, 253, 0.40); }
 
-  .ring-brand-100 {
-    --tw-ring-color: #dbeafe;
-  }
+  /* Border brand */
+  .border-brand-100 { border-color: #d6e9ff; }
+  .border-brand-200 { border-color: #aed3ff; }
+  .border-brand-300 { border-color: #76b6fe; }
 
-  .ring-brand-200 {
-    --tw-ring-color: #bfdbfe;
-  }
+  /* ══════════════════════════════════════════
+     ACCENT / SUCCESS / AMBER  (giữ nguyên)
+  ══════════════════════════════════════════ */
+  .text-accent-600 { color: #dc2626; }
+  .text-accent-700 { color: #b91c1c; }
+  .bg-accent-50    { background-color: #fff0f0; }
+  .bg-accent-100   { background-color: #fee2e2; }
+  .ring-accent-200 { --tw-ring-color: #fecaca; }
 
-  .ring-brand-400 {
-    --tw-ring-color: #60a5fa;
-  }
+  .text-success-600  { color: #16a34a; }
+  .text-success-700  { color: #15803d; }
+  .bg-success\/10    { background-color: rgba(22, 163, 74, 0.10); }
 
-  .ring-brand-500 {
-    --tw-ring-color: #3b82f6;
-  }
+  .text-amber-600 { color: #d97706; }
+  .text-amber-800 { color: #92400e; }
+  .text-amber-900 { color: #78350f; }
+  .bg-amber-50    { background-color: #fef3c7; }
+  .ring-amber-200 { --tw-ring-color: #fde68a; }
 
-  .ring-ink-100 {
-    --tw-ring-color: #f5f5f5;
-  }
-
-  .shadow-brand-500\/30 {
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-  }
-
-  .shadow-brand-500\/40 {
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
-  }
-
-  .text-accent-600 {
-    color: #dc2626;
-  }
-
-  .text-accent-700 {
-    color: #b91c1c;
-  }
-
-  .bg-accent-100 {
-    background-color: #fee2e2;
-  }
-
-  .ring-accent-200 {
-    --tw-ring-color: #fecaca;
-  }
-
-  .text-success-600 {
-    color: #16a34a;
-  }
-
-  .text-success-700 {
-    color: #15803d;
-  }
-
-  .bg-success\/10 {
-    background-color: rgba(22, 163, 74, 0.1);
-  }
-
-  .text-amber-600 {
-    color: #d97706;
-  }
-
-  .text-amber-800 {
-    color: #92400e;
-  }
-
-  .text-amber-900 {
-    color: #78350f;
-  }
-
-  .bg-amber-50 {
-    background-color: #fef3c7;
-  }
-
-  .ring-amber-200 {
-    --tw-ring-color: #fde68a;
-  }
-
-  .container-px {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
+  .container-px { @apply px-4 sm:px-6 lg:px-8; }
 }
 
 @layer base {
+  /* ══════════════════════════════════════════
+     KEYFRAMES
+  ══════════════════════════════════════════ */
   @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes float-slow {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
   }
-
   @keyframes pulse-ring {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
+    0%   { transform: scale(1);   opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fly-in-right {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounce-cta {
+    0%   { transform: scale(0.85); opacity: 0; }
+    60%  { transform: scale(1.06); opacity: 1; }
+    80%  { transform: scale(0.97); }
+    100% { transform: scale(1);    opacity: 1; }
+  }
+  @keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 0 0 0   rgba(68, 140, 253, 0.50); }
+    50%       { box-shadow: 0 0 0 9px rgba(68, 140, 253, 0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
   }
 
-  .animate-fade-up {
-    animation: fade-up 0.6s ease-out;
+  /* ══════════════════════════════════════════
+     ANIMATION CLASSES
+  ══════════════════════════════════════════ */
+  .animate-fade-up    { animation: fade-up    0.6s ease-out; }
+  .animate-float-slow { animation: float-slow 3s ease-in-out infinite; }
+  .animate-pulse-ring { animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+  /* Scroll-triggered */
+  .scroll-hidden { opacity: 0; }
+
+  .scroll-hidden.animate-fade-in {
+    animation: fade-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .scroll-hidden.animate-fly-right {
+    animation: fly-in-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .scroll-hidden.animate-bounce-cta {
+    animation: bounce-cta 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .animate-float-slow {
-    animation: float-slow 3s ease-in-out infinite;
-  }
+  /* Stagger delays */
+  .anim-delay-100 { animation-delay: 0.10s; }
+  .anim-delay-150 { animation-delay: 0.15s; }
+  .anim-delay-200 { animation-delay: 0.20s; }
+  .anim-delay-300 { animation-delay: 0.30s; }
+  .anim-delay-400 { animation-delay: 0.40s; }
+  .anim-delay-500 { animation-delay: 0.50s; }
 
-  .animate-pulse-ring {
-    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+  /* CTA pulse liên tục */
+  .cta-pulse { animation: cta-pulse 2.4s ease-in-out infinite; }
 
+  /* ══════════════════════════════════════════
+     LAYOUT
+  ══════════════════════════════════════════ */
   html {
-    /* scroll-behavior được xử lý bởi useSmoothScroll (requestAnimationFrame) */
     scroll-padding-top: 4.5rem;
   }
-
   @media (min-width: 1024px) {
-    html {
-      scroll-padding-top: 5.5rem;
-    }
+    html { scroll-padding-top: 5.5rem; }
   }
 }

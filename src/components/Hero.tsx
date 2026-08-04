@@ -8,14 +8,26 @@ export default function Hero() {
     >
       {/* background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-50 via-white to-white" />
-        <div className="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full bg-brand-200/40 blur-3xl" />
-        <div className="absolute top-40 -left-32 w-[30rem] h-[30rem] rounded-full bg-accent-100/50 blur-3xl" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(160deg, #eef5ff 0%, #fff4e6 50%, #fff0fc 100%)' }}
+        />
+        <div
+          className="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-40"
+          style={{ background: 'radial-gradient(circle, #448cfd44, transparent 70%)' }}
+        />
+        <div
+          className="absolute top-40 -left-32 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-30"
+          style={{ background: 'radial-gradient(circle, #ff8de444, transparent 70%)' }}
+        />
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] rounded-full blur-3xl opacity-20"
+          style={{ background: 'radial-gradient(circle, #ff872033, transparent 70%)' }}
+        />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, #1d57f5 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, #448cfd 1px, transparent 0)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -53,23 +65,30 @@ export default function Hero() {
               chỉ sau 90 ngày
             </h1>
 
-            <p className="mt-5 text-lg text-ink-600 leading-relaxed max-w-xl">
+            {/* Fade In — mô tả */}
+            <p
+              data-anim="fade"
+              className="scroll-hidden mt-5 text-lg text-ink-600 leading-relaxed max-w-xl anim-delay-200"
+            >
               Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS & 900+ TOEIC đồng
               hành 1-1, luyện tập trên nền tảng AI chấm chữa chi tiết. Cam kết
               đầu ra bằng văn bản — không đạt, học lại miễn phí.
             </p>
 
+            {/* Bounce — CTA buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href="#dang-ky"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-brand-600 text-white font-semibold shadow-xl shadow-brand-500/30 hover:bg-brand-700 hover:-translate-y-0.5 transition-all"
+                data-anim="bounce"
+                className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold shadow-xl anim-delay-300"
               >
                 Đăng ký học thử miễn phí
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#cac-khoa-hoc"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-ink-800 font-semibold border border-ink-200 hover:border-brand-300 hover:text-brand-700 transition-all"
+                data-anim="bounce"
+                className="scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-ink-800 font-semibold border border-ink-200 hover:border-brand-300 hover:text-brand-600 transition-all anim-delay-400"
               >
                 <PlayCircle className="w-5 h-5" />
                 Xem lộ trình học
@@ -77,8 +96,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* right - hero shot */}
-          <div className="relative animate-fade-up [animation-delay:150ms]">
+          {/* right - hero shot — Fly In từ phải */}
+          <div className="relative scroll-hidden animate-fade-up [animation-delay:150ms]" data-anim="fly">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
               <img
                 src="https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -134,7 +153,10 @@ export default function Hero() {
                 </span>
               </p>
               <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
-                <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-brand-500 to-brand-400" />
+                <div
+                  className="h-full w-[85%] rounded-full"
+                  style={{ background: 'linear-gradient(90deg, #448cfd, #ff8720, #ff8de4)' }}
+                />
               </div>
             </div>
           </div>

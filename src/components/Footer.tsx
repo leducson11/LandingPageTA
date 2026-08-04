@@ -22,7 +22,10 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <a href="#top" className="flex items-center gap-2.5">
-              <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white">
+              <span
+                className="grid place-items-center w-10 h-10 rounded-xl text-white"
+                style={{ background: 'linear-gradient(135deg, #448cfd, #ff8de4)' }}
+              >
                 <GraduationCap className="w-6 h-6" />
               </span>
               <span className="font-extrabold text-lg text-white">
@@ -53,8 +56,16 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="grid place-items-center w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-600 text-ink-300 hover:text-white transition-colors"
+                  className="grid place-items-center w-10 h-10 rounded-xl bg-white/5 text-ink-300 hover:text-white transition-all"
                   aria-label="social"
+                  style={{ transition: 'background 0.2s' }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background =
+                      'linear-gradient(135deg,#448cfd,#ff8720,#ff8de4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)';
+                  }}
                 >
                   <Icon className="w-5 h-5" />
                 </a>

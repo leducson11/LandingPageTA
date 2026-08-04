@@ -9,10 +9,12 @@ import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { useSmoothScroll } from '@/lib/useSmoothScroll';
+import { useScrollAnimation } from '@/lib/useScrollAnimation';
 
 export default function App() {
-  // Intercepts all <a href="#…"> clicks globally → smooth + header-offset-aware scroll
   useSmoothScroll();
+  // Kích hoạt Fade In / Fly In / Bounce trên toàn trang
+  useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-white">

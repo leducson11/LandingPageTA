@@ -30,6 +30,8 @@ export default function FAQNew() {
   return (
     <section id="faq" className="relative py-20 lg:py-28 bg-white">
       <div className="max-w-3xl mx-auto container-px">
+
+        {/* Fade In — header */}
         <div className="text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
             <HelpCircle className="w-4 h-4" /> Câu hỏi thường gặp
@@ -37,18 +39,23 @@ export default function FAQNew() {
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
             Bạn còn thắc mắc?
           </h2>
-          <p className="mt-4 text-ink-600 text-lg">
+          <p
+            data-anim="fade"
+            className="scroll-hidden mt-4 text-ink-600 text-lg anim-delay-150"
+          >
             Những câu hỏi Huyway English được hỏi nhiều nhất — nếu chưa đủ, đội ngũ tư vấn luôn sẵn sàng giải đáp.
           </p>
         </div>
 
+        {/* Fade In stagger — FAQ items */}
         <div className="mt-12 space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
               <div
                 key={f.q}
-                className={`rounded-2xl ring-1 transition-all ${
+                data-anim="fade"
+                className={`scroll-hidden rounded-2xl ring-1 transition-all anim-delay-${(i + 1) * 100} ${
                   isOpen ? 'bg-white ring-brand-200 shadow-md' : 'bg-ink-50 ring-ink-100 hover:ring-brand-200'
                 }`}
               >
@@ -79,11 +86,18 @@ export default function FAQNew() {
           })}
         </div>
 
+        {/* Bounce — CTA cuối FAQ */}
         <div className="mt-10 text-center">
-          <p className="text-ink-600">Vẫn chưa có câu trả lời bạn cần?</p>
+          <p
+            data-anim="fade"
+            className="scroll-hidden text-ink-600 anim-delay-100"
+          >
+            Vẫn chưa có câu trả lời bạn cần?
+          </p>
           <a
             href="#dang-ky"
-            className="mt-3 inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-600 text-white font-semibold shadow-lg shadow-brand-500/30 hover:bg-brand-700 hover:-translate-y-0.5 transition-all"
+            data-anim="bounce"
+            className="btn-g3 scroll-hidden cta-pulse mt-3 inline-flex items-center justify-center px-6 py-3 rounded-full text-white font-semibold shadow-lg hover:-translate-y-0.5 transition-all anim-delay-200"
           >
             Đăng ký học thử miễn phí
           </a>
