@@ -114,7 +114,7 @@ export default function LeadForm() {
                 <p className="mt-1.5 text-sm text-ink-500">Chỉ 3 thông tin — mất chưa tới 30 giây</p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                  <Field icon={<User className="w-5 h-5" />} label="Họ và tên">
+                  <Field icon={<User className="w-5 h-5" />} label="Họ và tên *">
                     <input
                       required
                       type="text"
@@ -124,7 +124,7 @@ export default function LeadForm() {
                       className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300"
                     />
                   </Field>
-                  <Field icon={<Phone className="w-5 h-5" />} label="Số điện thoại">
+                  <Field icon={<Phone className="w-5 h-5" />} label="Số điện thoại *">
                     <input
                       required
                       type="tel"
@@ -134,7 +134,7 @@ export default function LeadForm() {
                       className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300"
                     />
                   </Field>
-                  <Field icon={<Mail className="w-5 h-5" />} label="Email">
+                  <Field icon={<Mail className="w-5 h-5" />} label="Email *">
                     <input
                       required
                       type="email"

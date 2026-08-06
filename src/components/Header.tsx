@@ -11,7 +11,7 @@ import { scrollToHash } from '@/lib/useSmoothScroll';
 
 /* ─────────────────────────────────────────────
    Cấu hình mega menu — thứ tự khớp với trang:
-   Hero → PainPoints → AboutUs → Courses → Feedback → FAQ → LeadForm
+   Hero → PainPoints → AboutUs → Courses → FAQ → Feedback → LeadForm
 ───────────────────────────────────────────── */
 const megaNav = [
   {
@@ -62,26 +62,6 @@ const megaNav = [
     },
   },
   {
-    label: 'Feedback',
-    href: '#feedback',
-    cols: [
-      {
-        heading: 'Điều học viên nói',
-        items: [
-          { icon: Star,          label: 'Lớp học chất lượng',      href: '#feedback', desc: 'Giải quyết vấn đề sĩ số đông' },
-          { icon: MessageCircle, label: 'Thay đổi tư duy',          href: '#feedback', desc: '"Học để dùng" thực sự' },
-          { icon: Users,         label: 'Giảng viên tâm huyết',     href: '#feedback', desc: 'Hướng dẫn tự học tại nhà' },
-          { icon: BookOpen,      label: 'Âm nhạc & từ vựng',        href: '#feedback', desc: 'Nhớ lâu, không còn sợ Speaking' },
-        ],
-      },
-    ],
-    highlight: {
-      label: 'IELTS 7.5 · TOEIC 850+',
-      desc: 'Điểm trung bình học viên sau khoá học',
-      badge: 'Kết quả thực tế',
-    },
-  },
-  {
     label: 'FAQ',
     href: '#faq',
     cols: [
@@ -99,6 +79,26 @@ const megaNav = [
       label: 'Tư vấn 1-1 miễn phí',
       desc: 'Gặp chuyên gia, test trình độ & nhận lộ trình riêng',
       badge: 'Hoàn toàn free',
+    },
+  },
+  {
+    label: 'Feedback',
+    href: '#feedback',
+    cols: [
+      {
+        heading: 'Điều học viên nói',
+        items: [
+          { icon: Star,          label: 'Lớp học chất lượng',      href: '#feedback', desc: 'Giải quyết vấn đề sĩ số đông' },
+          { icon: MessageCircle, label: 'Thay đổi tư duy',          href: '#feedback', desc: '"Học để dùng" thực sự' },
+          { icon: Users,         label: 'Giảng viên tâm huyết',     href: '#feedback', desc: 'Hướng dẫn tự học tại nhà' },
+          { icon: BookOpen,      label: 'Âm nhạc & từ vựng',        href: '#feedback', desc: 'Nhớ lâu, không còn sợ Speaking' },
+        ],
+      },
+    ],
+    highlight: {
+      label: 'IELTS 7.5 · TOEIC 850+',
+      desc: 'Điểm trung bình học viên sau khoá học',
+      badge: 'Kết quả thực tế',
     },
   },
 ];
@@ -120,6 +120,7 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null!);
+  const hoverTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -128,10 +129,42 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useClickOutside(navRef, () => setActiveMenu(null));
+  useEffect(() => {
+    return () => {
+      if (hoverTimerRef.current) {
+        window.clearTimeout(hoverTimerRef.current);
+      }
+    };
+  }, []);
+
+  useClickOutside(navRef, () => {
+    if (hoverTimerRef.current) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+    setActiveMenu(null);
+  });
+
+  const clearHoverTimer = () => {
+    if (hoverTimerRef.current) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  };
+
+  const openMenu = (label: string) => {
+    clearHoverTimer();
+    hoverTimerRef.current = window.setTimeout(() => setActiveMenu(label), 140);
+  };
+
+  const closeMenu = () => {
+    clearHoverTimer();
+    hoverTimerRef.current = window.setTimeout(() => setActiveMenu(null), 180);
+  };
 
   const go = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    clearHoverTimer();
     setActiveMenu(null);
     setMobileOpen(false);
     scrollToHash(href);
@@ -164,10 +197,17 @@ export default function Header() {
             {megaNav.map((item) => {
               const isActive = activeMenu === item.label;
               return (
-                <div key={item.label} className="relative">
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => openMenu(item.label)}
+                  onMouseLeave={() => closeMenu()}
+                >
                   <button
-                    onMouseEnter={() => setActiveMenu(item.label)}
-                    onClick={() => setActiveMenu(isActive ? null : item.label)}
+                    onClick={() => {
+                      clearHoverTimer();
+                      setActiveMenu(isActive ? null : item.label);
+                    }}
                     className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive
                         ? 'text-brand-600 bg-brand-50'
@@ -181,7 +221,6 @@ export default function Header() {
                   {/* Mega dropdown */}
                   {isActive && (
                     <div
-                      onMouseLeave={() => setActiveMenu(null)}
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max min-w-[480px] max-w-[640px] bg-white rounded-2xl shadow-2xl ring-1 ring-ink-100 overflow-hidden z-50"
                       style={{ animation: 'fade-in 0.18s ease-out' }}
                     >

@@ -24,8 +24,8 @@ export default function App() {
         <PainPoints />
         <AboutUs />
         <Courses />
-        <Feedback />
         <FAQNew />
+        <Feedback />
         <LeadForm />
       </main>
       <Footer />

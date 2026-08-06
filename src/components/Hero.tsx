@@ -37,23 +37,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* left */}
           <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brand-200 shadow-sm">
-              <span className="flex -space-x-1">
-                {[0, 1, 2].map((i) => (
-                  <img
-                    key={i}
-                    src={`https://images.pexels.com/photos/${[1239291, 415829, 762020][i]}/pexels-photo-${[1239291, 415829, 762020][i]}.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop`}
-                    alt="học viên"
-                    className="w-6 h-6 rounded-full border-2 border-white object-cover"
-                    loading="eager"
-                  />
-                ))}
-              </span>
-              <span className="text-xs font-semibold text-ink-700">
-                +50.000 học viên tin chọn
-              </span>
-            </div>
-
             <div className="mt-6 flex items-center gap-2">
               <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100 shadow-sm">
                 Huyway English • English to go far.
