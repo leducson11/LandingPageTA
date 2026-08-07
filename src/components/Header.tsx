@@ -42,13 +42,13 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-4">
+          <nav className="hidden lg:flex items-center gap-5 lg:gap-6">
             <a
-              href="#ve-chung-toi"
-              onClick={(e) => go(e, '#ve-chung-toi')}
+              href="#tai-sao-chon-chung-toi"
+              onClick={(e) => go(e, '#tai-sao-chon-chung-toi')}
               className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
             >
-              Về chúng tôi
+              Tại sao chọn chúng tôi
             </a>
             <a
               href="#cac-khoa-hoc"
@@ -58,18 +58,11 @@ export default function Header() {
               Các khóa học
             </a>
             <a
-              href="#faq"
-              onClick={(e) => go(e, '#faq')}
+              href="#mentor-team"
+              onClick={(e) => go(e, '#mentor-team')}
               className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
             >
-              FAQ
-            </a>
-            <a
-              href="#feedback"
-              onClick={(e) => go(e, '#feedback')}
-              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
-            >
-              Feedback
+              Đội ngũ giảng viên
             </a>
           </nav>
 
@@ -99,14 +92,12 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
           <nav className="container-px max-w-7xl mx-auto py-3 flex flex-col gap-1">
-            {['Về chúng tôi', 'Các khóa học', 'FAQ', 'Feedback'].map((label) => {
-              const href = label === 'Về chúng tôi'
-                ? '#ve-chung-toi'
+            {['Tại sao chọn chúng tôi', 'Các khóa học', 'Đội ngũ giảng viên'].map((label) => {
+              const href = label === 'Tại sao chọn chúng tôi'
+                ? '#tai-sao-chon-chung-toi'
                 : label === 'Các khóa học'
                 ? '#cac-khoa-hoc'
-                : label === 'FAQ'
-                ? '#faq'
-                : '#feedback';
+                : '#mentor-team';
               return (
                 <a
                   key={label}

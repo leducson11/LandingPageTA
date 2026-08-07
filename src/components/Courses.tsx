@@ -1,4 +1,4 @@
-import { Zap, BookOpen, GraduationCap, Clock, Users, Music, Smartphone, Globe } from 'lucide-react';
+import { Zap, BookOpen, GraduationCap, Clock, Users, Smartphone, Globe } from 'lucide-react';
 
 const courses = [
   {
@@ -34,11 +34,6 @@ const benefits = [
     description: 'Chỉ từ 5–10 học viên, đảm bảo sự tương tác tối đa và giáo viên có thể chăm sóc kỹ lưỡng từng cá nhân.',
   },
   {
-    icon: Music,
-    title: 'Phương pháp học qua Âm nhạc',
-    description: 'Tích hợp âm nhạc vào bài giảng để giúp ghi nhớ từ vựng, luyện ngữ điệu tự nhiên và tạo cảm hứng, tránh sự khô khan của sách vở.',
-  },
-  {
     icon: BookOpen,
     title: 'Tư duy hệ thống',
     description: 'Không dạy "mẹo" đối phó thi cử mà tập trung vào khả năng sử dụng thực tế và tư duy xử lý ngôn ngữ chủ động.',
@@ -56,7 +51,7 @@ const benefits = [
 ];
 
 const cardDelays = ['', 'anim-delay-100', 'anim-delay-200'];
-const benefitDelays = ['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-100', 'anim-delay-200'];
+const benefitDelays = ['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-100'];
 
 export default function Courses() {
   return (

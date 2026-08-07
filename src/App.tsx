@@ -3,8 +3,7 @@ import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
 import AboutUs from '@/components/AboutUs';
 import Courses from '@/components/Courses';
-import FAQNew from '@/components/FAQNew';
-import Feedback from '@/components/Feedback';
+import MentorTeam from '@/components/MentorTeam';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
@@ -24,8 +23,7 @@ export default function App() {
         <PainPoints />
         <AboutUs />
         <Courses />
-        <FAQNew />
-        <Feedback />
+        <MentorTeam />
         <LeadForm />
       </main>
       <Footer />
