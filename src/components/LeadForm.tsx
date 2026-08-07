@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { User, Phone, Mail, Package, Send, CheckCircle2, Loader2, AlertCircle, Clock } from 'lucide-react';
+import { User, Phone, Mail, Send, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
-const packages = ['Cơ bản', 'Nâng cao', 'Combo 1-1', 'Chưa quyết định'];
-const studyTimes = ['Ca Sáng', 'Ca Chiều', 'Ca Tối', 'Cuối tuần'];
-
 export default function LeadForm() {
-  const [form, setForm] = useState({ full_name: '', phone: '', email: '', course_package: 'Nâng cao', study_time: 'Ca Tối' });
+  const [form, setForm] = useState({ full_name: '', phone: '', email: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
 
@@ -16,23 +13,22 @@ export default function LeadForm() {
     setStatus('loading');
     setError('');
     try {
-      // First attempt: try inserting with a separate study_time field (if column exists)
+      // First attempt: try inserting with a separate goal field (if column exists)
       const { error: err } = await supabase.from('leads').insert({
         full_name: form.full_name.trim(),
         phone: form.phone.trim(),
         email: form.email.trim(),
-        course_package: form.course_package,
-        study_time: form.study_time,
+        course_package: 'Chưa quyết định',
       });
 
       if (err) {
-        // Fallback: if columns mismatch, store study_time inside course_package
-        if (err.message?.includes('study_time') || err.message?.includes('column') || err.code === 'PGRST204') {
+        // Fallback: if 'goal' column is not available, preserve the selected goal in the course_package field.
+        if (err.message?.includes('goal') || err.message?.includes('column') || err.code === 'PGRST204') {
           const { error: fallbackErr } = await supabase.from('leads').insert({
             full_name: form.full_name.trim(),
             phone: form.phone.trim(),
             email: form.email.trim(),
-            course_package: `${form.course_package} (Thời gian học: ${form.study_time})`,
+            course_package: 'Chưa quyết định',
           });
           if (fallbackErr) throw fallbackErr;
         } else {
@@ -40,7 +36,7 @@ export default function LeadForm() {
         }
       }
       setStatus('success');
-      setForm({ full_name: '', phone: '', email: '', course_package: 'Nâng cao', study_time: 'Ca Tối' });
+      setForm({ full_name: '', phone: '', email: '' });
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Không thể gửi đăng ký. Vui lòng thử lại.');
@@ -144,50 +140,6 @@ export default function LeadForm() {
                       className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300"
                     />
                   </Field>
-
-                  <div>
-                    <label className="text-sm font-semibold text-ink-700 flex items-center gap-1.5">
-                      <Package className="w-4 h-4 text-ink-400" /> Gói khóa học quan tâm
-                    </label>
-                    <div className="mt-2 grid grid-cols-2 gap-2">
-                      {packages.map((p) => (
-                        <button
-                          type="button"
-                          key={p}
-                          onClick={() => setForm({ ...form, course_package: p })}
-                          className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                            form.course_package === p
-                              ? 'btn-g3 text-white shadow-md'
-                              : 'bg-ink-50 text-ink-700 hover:bg-brand-50 hover:text-brand-600'
-                          }`}
-                        >
-                          {p}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-semibold text-ink-700 flex items-center gap-1.5">
-                      <Clock className="w-4 h-4 text-ink-400" /> Thời gian học mong muốn
-                    </label>
-                    <div className="mt-2 grid grid-cols-2 gap-2">
-                      {studyTimes.map((t) => (
-                        <button
-                          type="button"
-                          key={t}
-                          onClick={() => setForm({ ...form, study_time: t })}
-                          className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                            form.study_time === t
-                              ? 'btn-g3 text-white shadow-md'
-                              : 'bg-ink-50 text-ink-700 hover:bg-brand-50 hover:text-brand-600'
-                          }`}
-                        >
-                          {t}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
 
                   {status === 'error' && (
                     <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 text-red-700 text-sm">
