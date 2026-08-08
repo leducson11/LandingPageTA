@@ -4,7 +4,8 @@ const benefits = [
   {
     title: 'Sứ mệnh và Tầm nhìn',
     badge: 'Định hướng dài hạn',
-    summary: 'Huyway English giúp học viên học tiếng Anh theo hướng ứng dụng thực tế, tự tin giao tiếp và sẵn sàng chinh phục mục tiêu cá nhân.',
+    summary: 'Huyway English giúp học viên học tiếng Anh theo hướng ứng dụng thực tế...',
+    fullSummary: 'Huyway English giúp học viên học tiếng Anh theo hướng ứng dụng thực tế, tự tin giao tiếp và sẵn sàng chinh phục mục tiêu cá nhân.',
     highlights: ['Học để dùng, không chỉ để thi', 'Tạo nền tảng cho tương lai toàn cầu'],
     detail: 'Chúng tôi tin rằng tiếng Anh không chỉ là một chứng chỉ, mà là công cụ để mở ra cơ hội học tập, làm việc và phát triển bản thân.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
@@ -25,7 +26,8 @@ const benefits = [
   {
     title: 'Giá trị cốt lõi',
     badge: 'Học tập hiệu quả',
-    summary: 'Từ tư duy hệ thống, thực hành thực tế đến cá nhân hóa lộ trình, Huyway English luôn đặt chất lượng và trải nghiệm học viên lên hàng đầu.',
+    summary: 'Từ tư duy hệ thống, thực hành thực tế đến cá nhân hóa lộ trình, Huyway English...',
+    fullSummary: 'Từ tư duy hệ thống, thực hành thực tế đến cá nhân hóa lộ trình, Huyway English luôn đặt chất lượng và trải nghiệm học viên lên hàng đầu.',
     highlights: ['Nền tảng vững chắc', 'Lộ trình riêng cho từng người'],
     detail: 'Mỗi buổi học được thiết kế để học viên hiểu sâu, nhớ lâu và áp dụng linh hoạt trong môi trường thật.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
@@ -47,7 +49,8 @@ const benefits = [
   {
     title: 'Lý do học viên chọn HuyWay',
     badge: 'Tin cậy và đồng hành',
-    summary: 'Học viên chọn Huyway English vì môi trường học thân thiện, giáo viên tâm huyết và lộ trình rõ ràng giúp họ tiến bộ từng ngày.',
+    summary: 'Học viên chọn Huyway English vì môi trường học thân thiện, giáo viên tâm huyết...',
+    fullSummary: 'Học viên chọn Huyway English vì môi trường học thân thiện, giáo viên tâm huyết và lộ trình rõ ràng giúp họ tiến bộ từng ngày.',
     highlights: ['Giáo viên tận tâm', 'Cam kết đầu ra rõ ràng'],
     detail: 'Chúng tôi không chỉ dạy kiến thức mà còn đồng hành cùng học viên, giúp họ vượt qua khó khăn và giữ động lực học tập lâu dài.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
@@ -90,9 +93,9 @@ export default function AboutUs() {
             return (
               <div
                 key={item.title}
-                className={`group relative overflow-hidden rounded-[28px] bg-white shadow-lg ring-1 ring-ink-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${index % 2 === 1 ? 'lg:translate-y-6' : ''}`}
+                className="flex flex-col group relative overflow-hidden rounded-[28px] bg-white shadow-lg ring-1 ring-ink-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 shrink-0 overflow-hidden">
                   <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent" />
                   <div className="absolute left-4 right-4 bottom-4">
@@ -104,7 +107,7 @@ export default function AboutUs() {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="flex-1 p-6">
                   <p className="text-sm leading-7 text-ink-600">{item.summary}</p>
                   <ul className="mt-4 space-y-2">
                     {item.highlights.map((highlight) => (
@@ -116,9 +119,10 @@ export default function AboutUs() {
                   </ul>
                 </div>
 
-                <div className="absolute inset-0 flex items-center justify-center bg-brand-700/95 p-6 text-center text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 overflow-y-auto flex items-center justify-center bg-brand-700/95 p-6 text-center text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
                   <div>
-                    <p className="text-sm leading-7">{item.detail}</p>
+                    <p className="text-sm leading-7">{item.fullSummary}</p>
+                    <p className="mt-3 text-sm leading-7">{item.detail}</p>
                     <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-sm font-semibold">
                       <Handshake className="w-4 h-4" />
                       Huyway English
