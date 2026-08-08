@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
 import AboutUs from '@/components/AboutUs';
 import Courses from '@/components/Courses';
-import MentorTeam from '@/components/MentorTeam';
+import Instructor from '@/components/Instructor';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
@@ -23,7 +23,7 @@ export default function App() {
         <PainPoints />
         <AboutUs />
         <Courses />
-        <MentorTeam />
+        <Instructor />
         <LeadForm />
       </main>
       <Footer />

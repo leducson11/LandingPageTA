@@ -58,11 +58,11 @@ export default function Header() {
               Các khóa học
             </a>
             <a
-              href="#mentor-team"
-              onClick={(e) => go(e, '#mentor-team')}
+              href="#gap-gop-giang-vien"
+              onClick={(e) => go(e, '#gap-gop-giang-vien')}
               className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
             >
-              Đội ngũ giảng viên
+              Gặp gỡ giảng viên
             </a>
           </nav>
 
@@ -92,12 +92,12 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
           <nav className="container-px max-w-7xl mx-auto py-3 flex flex-col gap-1">
-            {['Tại sao chọn chúng tôi', 'Các khóa học', 'Đội ngũ giảng viên'].map((label) => {
+            {['Tại sao chọn chúng tôi', 'Các khóa học', 'Gặp gỡ giảng viên'].map((label) => {
               const href = label === 'Tại sao chọn chúng tôi'
                 ? '#tai-sao-chon-chung-toi'
                 : label === 'Các khóa học'
                 ? '#cac-khoa-hoc'
-                : '#mentor-team';
+                : '#gap-gop-giang-vien';
               return (
                 <a
                   key={label}
