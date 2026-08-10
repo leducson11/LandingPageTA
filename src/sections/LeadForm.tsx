@@ -1,9 +1,17 @@
 import { useState } from 'react';
-import { User, Phone, Mail, Send, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { User, Phone, Mail, Send, CheckCircle2, Loader2, AlertCircle, Calendar, Target, MessageSquare } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 export default function LeadForm() {
-  const [form, setForm] = useState({ full_name: '', phone: '', email: '' });
+  const [form, setForm] = useState({ 
+    full_name: '', 
+    phone: '', 
+    email: '',
+    birth_year: '',
+    current_level: '',
+    target_score: '',
+    message: ''
+  });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
 
@@ -18,12 +26,16 @@ export default function LeadForm() {
         full_name: form.full_name.trim(),
         phone: form.phone.trim(),
         email: form.email.trim(),
+        birth_year: form.birth_year.trim(),
+        current_level: form.current_level.trim(),
+        target_score: form.target_score.trim(),
+        message: form.message.trim(),
         course_package: 'Chưa quyết định',
       });
 
       if (err) {
-        // Fallback: if 'goal' column is not available, preserve the selected goal in the course_package field.
-        if (err.message?.includes('goal') || err.message?.includes('column') || err.code === 'PGRST204') {
+        // Fallback: if any new column is not available, preserve the selected info in the course_package field.
+        if (err.message?.includes('column') || err.code === 'PGRST204') {
           const { error: fallbackErr } = await supabase.from('leads').insert({
             full_name: form.full_name.trim(),
             phone: form.phone.trim(),
@@ -36,7 +48,15 @@ export default function LeadForm() {
         }
       }
       setStatus('success');
-      setForm({ full_name: '', phone: '', email: '' });
+      setForm({ 
+        full_name: '', 
+        phone: '', 
+        email: '',
+        birth_year: '',
+        current_level: '',
+        target_score: '',
+        message: ''
+      });
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Không thể gửi đăng ký. Vui lòng thử lại.');
@@ -107,7 +127,7 @@ export default function LeadForm() {
             ) : (
               <>
                 <h3 className="text-2xl font-extrabold text-ink-900">Đăng ký học thử</h3>
-                <p className="mt-1.5 text-sm text-ink-500">Chỉ 3 thông tin — mất chưa tới 30 giây</p>
+                <p className="mt-1.5 text-sm text-ink-500">Điền thông tin để nhận tư vấn miễn phí</p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                   <Field icon={<User className="w-5 h-5" />} label="Họ và tên *">
@@ -140,6 +160,56 @@ export default function LeadForm() {
                       className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300"
                     />
                   </Field>
+                  <Field icon={<Calendar className="w-5 h-5" />} label="Năm sinh">
+                    <input
+                      type="number"
+                      value={form.birth_year}
+                      onChange={(e) => setForm({ ...form, birth_year: e.target.value })}
+                      placeholder="2000"
+                      className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300"
+                    />
+                  </Field>
+                  <Field icon={<Target className="w-5 h-5" />} label="Trình độ hiện tại">
+                    <select
+                      value={form.current_level}
+                      onChange={(e) => setForm({ ...form, current_level: e.target.value })}
+                      className="w-full bg-transparent outline-none text-ink-900"
+                    >
+                      <option value="">Chọn trình độ</option>
+                      <option value="Mất gốc">Mất gốc</option>
+                      <option value="Cơ bản">Cơ bản</option>
+                      <option value="Trung bình">Trung bình</option>
+                      <option value="Khá">Khá</option>
+                      <option value="Tốt">Tốt</option>
+                    </select>
+                  </Field>
+                  <Field icon={<Target className="w-5 h-5" />} label="Mục tiêu đầu ra">
+                    <select
+                      value={form.target_score}
+                      onChange={(e) => setForm({ ...form, target_score: e.target.value })}
+                      className="w-full bg-transparent outline-none text-ink-900"
+                    >
+                      <option value="">Chọn mục tiêu</option>
+                      <option value="IELTS 5.5">IELTS 5.5</option>
+                      <option value="IELTS 6.0">IELTS 6.0</option>
+                      <option value="IELTS 6.5">IELTS 6.5</option>
+                      <option value="IELTS 7.0">IELTS 7.0</option>
+                      <option value="IELTS 7.5+">IELTS 7.5+</option>
+                      <option value="TOEIC 500">TOEIC 500</option>
+                      <option value="TOEIC 600">TOEIC 600</option>
+                      <option value="TOEIC 700">TOEIC 700</option>
+                      <option value="TOEIC 800+">TOEIC 800+</option>
+                    </select>
+                  </Field>
+                  <Field icon={<MessageSquare className="w-5 h-5" />} label="Nội dung/Câu hỏi">
+                    <textarea
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      placeholder="Để lại câu hỏi hoặc mong muốn của bạn..."
+                      rows={3}
+                      className="w-full bg-transparent outline-none text-ink-900 placeholder:text-ink-300 resize-none"
+                    />
+                  </Field>
 
                   {status === 'error' && (
                     <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 text-red-700 text-sm">
@@ -159,7 +229,7 @@ export default function LeadForm() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" /> Gửi đăng ký ngay
+                        <Send className="w-5 h-5" /> Nhận tư vấn
                       </>
                     )}
                   </button>

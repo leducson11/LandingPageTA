@@ -21,7 +21,7 @@ export default function Instructor() {
             Gặp gỡ giảng viên
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
-            Who Will Guide You?
+            Ai sẽ hướng dẫn bạn?
           </h2>
         </div>
 
