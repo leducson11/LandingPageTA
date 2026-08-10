@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUp, X } from "lucide-react";
-import { scrollToHash } from "@/lib/useSmoothScroll";
+import { scrollToHash } from "@/hooks/useSmoothScroll";
 
 /**
  * FloatingCTA

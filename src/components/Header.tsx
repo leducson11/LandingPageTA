@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, GraduationCap, ChevronDown, ArrowRight } from 'lucide-react';
-import { scrollToHash } from '@/lib/useSmoothScroll';
+import { scrollToHash } from '@/hooks/useSmoothScroll';
 
 export default function Header() {
   const [scrolled, setScrolled]   = useState(false);
