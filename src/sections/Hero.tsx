@@ -1,4 +1,4 @@
-import { PlayCircle, ShieldCheck, ArrowRight, Target, GraduationCap } from "lucide-react";
+import { PlayCircle, ArrowRight, Target, GraduationCap } from "lucide-react";
 
 const heroBenefits = [
   {
@@ -115,60 +115,6 @@ export default function Hero() {
                 alt="Học viên đang học tiếng Anh online"
                 className="w-full h-[26rem] lg:h-[34rem] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
-
-              {/* play button */}
-              <button
-                className="absolute inset-0 grid place-items-center group"
-                aria-label="Xem video giới thiệu"
-              >
-                <span className="relative">
-                  <span className="absolute inset-0 rounded-full bg-white/40 animate-pulse-ring" />
-                  <span className="relative grid place-items-center w-16 h-16 rounded-full bg-white/90 backdrop-blur shadow-xl group-hover:scale-110 transition-transform">
-                    <PlayCircle className="w-9 h-9 text-brand-600" />
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            {/* floating card */}
-            <div className="absolute -bottom-5 -left-3 lg:-left-8 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-56 animate-float-slow">
-              <div className="flex items-center gap-3">
-                <div className="grid place-items-center w-11 h-11 rounded-xl bg-success/10 text-success-600">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-ink-900">
-                    Cam kết đầu ra
-                  </p>
-                  <p className="text-xs text-ink-500">
-                    Không đạt — học lại free
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
-              <p className="text-xs text-ink-500 font-medium">
-                Điểm trung bình
-              </p>
-              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">
-                IELTS 7.5{" "}
-                <span className="text-sm font-semibold text-success-600">
-                  +1.5
-                </span>
-              </p>
-              <p className="text-sm font-bold text-ink-900 mt-1">
-                TOEIC 850+{" "}
-                <span className="text-xs font-semibold text-success-600">
-                  +150
-                </span>
-              </p>
-              <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
-                <div
-                  className="h-full w-[85%] rounded-full"
-                  style={{ background: 'linear-gradient(90deg, #6d28d9, #5b21b6, #29124d)' }}
-                />
-              </div>
             </div>
           </div>
         </div>

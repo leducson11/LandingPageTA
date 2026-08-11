@@ -9,6 +9,7 @@ import AboutUs from '@/sections/AboutUs';
 import Courses from '@/sections/Courses';
 import Testimonials from '@/sections/Testimonials';
 import Feedback from '@/sections/Feedback';
+import SocialProof from '@/sections/SocialProof';
 import Pricing from '@/sections/Pricing';
 import FAQ from '@/sections/FAQ';
 import Instructor from '@/sections/Instructor';
@@ -32,6 +33,7 @@ export default function App() {
         <Courses />
         <Instructor />
         <Feedback />
+        <SocialProof />
         <Testimonials />
         <Pricing />
         <FAQ />
