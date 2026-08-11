@@ -5,25 +5,25 @@ const feedbackItems = [
     icon: Users,
     title: 'Giải quyết vấn đề sĩ số',
     description: 'Học viên cảm thấy được quan tâm sát sao hơn so với các lớp đông 20-30 người ở những trung tâm lớn.',
-    color: 'from-blue-500 to-blue-400',
+    color: 'from-brand-600 to-brand-400',
   },
   {
     icon: Brain,
     title: 'Thay đổi tư duy học tập',
     description: 'Phản hồi về việc không còn sợ nói, không còn học vẹt ngữ pháp mà có thể "học để dùng" trong môi trường thực tế.',
-    color: 'from-purple-500 to-purple-400',
+    color: 'from-brand-800 to-brand-600',
   },
   {
     icon: Music,
     title: 'Hiệu quả từ phương pháp âm nhạc',
     description: 'Những chia sẻ về việc ghi nhớ từ vựng dễ dàng và tự nhiên hơn thông qua các giai điệu yêu thích.',
-    color: 'from-pink-500 to-pink-400',
+    color: 'from-teal-500 to-teal-400',
   },
   {
     icon: Heart,
     title: 'Sự hài lòng về giảng viên',
     description: 'Đánh giá về sự tâm huyết, khả năng sư phạm và cách giáo viên hướng dẫn học viên tự "câu cá" (tự nghiên cứu) tại nhà.',
-    color: 'from-red-500 to-red-400',
+    color: 'from-accent-600 to-accent-400',
   },
 ];
 

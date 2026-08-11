@@ -6,7 +6,7 @@ const plans = [
     name: 'Cơ bản',
     tagline: 'Khởi đầu vững chắc',
     icon: Zap,
-    color: 'from-emerald-500 to-emerald-400',
+    color: 'from-teal-500 to-teal-400',
     price: '2.990.000',
     oldPrice: '4.990.000',
     period: '/ khóa',
@@ -130,7 +130,7 @@ export default function Pricing() {
           {plans.map((p) => (
             <div
               key={p.name}
-              className={`relative bg-white rounded-3xl p-7 lg:p-8 ring-1 transition-all flex flex-col ${
+              className={`relative bg-white rounded-[20px] p-7 lg:p-8 ring-1 transition-all flex flex-col ${
                 p.popular
                   ? 'ring-brand-300 shadow-2xl shadow-brand-500/20 lg:-translate-y-3 scale-[1.02]'
                   : 'ring-ink-100 hover:ring-brand-200 hover:shadow-lg'
@@ -173,7 +173,7 @@ export default function Pricing() {
 
               <a
                 href="#dang-ky"
-                className={`mt-7 inline-flex items-center justify-center px-6 py-3.5 rounded-full font-semibold transition-all ${
+                className={`mt-7 inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold transition-all ${
                   p.popular
                     ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/30 hover:bg-brand-700 hover:-translate-y-0.5'
                     : 'bg-ink-50 text-ink-800 hover:bg-brand-50 hover:text-brand-700'
@@ -186,7 +186,7 @@ export default function Pricing() {
         </div>
 
         {/* bonuses */}
-        <div className="mt-10 rounded-3xl bg-gradient-to-r from-brand-600 to-brand-500 p-7 lg:p-9 text-white shadow-xl">
+        <div className="mt-10 rounded-[20px] bg-gradient-to-r from-brand-600 to-brand-500 p-7 lg:p-9 text-white shadow-xl">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
             <div className="lg:w-1/3">
               <h3 className="text-2xl font-extrabold flex items-center gap-2">

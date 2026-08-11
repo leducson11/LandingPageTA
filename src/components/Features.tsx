@@ -7,7 +7,7 @@ const modules = [
     name: 'Foundation',
     level: 'Band 3.0 - 4.5',
     duration: '4 tuần',
-    color: 'from-emerald-500 to-emerald-400',
+    color: 'from-teal-500 to-teal-400',
     desc: 'Xây nền tảng ngữ pháp, từ vựng cốt lõi và phát âm chuẩn. Dành cho người mới bắt đầu hoặc mất gốc.',
     lessons: ['Ngữ pháp nền tảng 12 thì', 'Từ vựng 1000+ theo chủ đề', 'Luyện phát âm chuẩn IPA', 'Kỹ năng đọc hiểu cơ bản'],
   },
@@ -34,7 +34,7 @@ const modules = [
     name: 'Mock Test & Cảm chiến',
     level: 'Band 6.5 - 7.5+',
     duration: '4 tuần',
-    color: 'from-rose-500 to-rose-400',
+    color: 'from-azure-600 to-azure-500',
     desc: 'Thi thử chuẩn như thi thật, được chấm và chữa chi tiết. Tự tin bước vào phòng thi thực tế.',
     lessons: ['10+ lần thi thử đầy đủ', 'Chấm chữa Writing/Speaking 1-1', 'Tâm lý & kỹ năng phòng thi', 'Cam kết đầu ra bằng văn bản'],
   },
@@ -100,7 +100,7 @@ export default function Features() {
 
           {/* panel */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-7 lg:p-9 ring-1 ring-ink-100 shadow-xl h-full">
+            <div className="bg-white rounded-[20px] p-7 lg:p-9 ring-1 ring-ink-100 shadow-xl h-full">
               <div className="flex items-center gap-3">
                 <span className={`grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br ${mod.color} text-white shadow-md`}>
                   <mod.icon className="w-6 h-6" />

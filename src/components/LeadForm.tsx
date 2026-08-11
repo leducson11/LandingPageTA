@@ -44,10 +44,10 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="dang-ky" className="relative py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1045a4 0%, #448cfd 35%, #ff8720 70%, #ff8de4 100%)' }}>
+    <section id="dang-ky" className="relative py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #6d28d9 0%, #5b21b6 55%, #29124d 100%)' }}>
       <div className="absolute inset-0 -z-0">
         <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, #ffffff, transparent 70%)' }} />
-        <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-15" style={{ background: 'radial-gradient(circle, #fff0fc, transparent 70%)' }} />
+        <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-15" style={{ background: 'radial-gradient(circle, #00dcdc, transparent 70%)' }} />
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -87,7 +87,7 @@ export default function LeadForm() {
           </div>
 
           {/* form card */}
-          <div className="bg-white rounded-3xl p-7 lg:p-9 shadow-2xl ring-1 ring-black/5">
+          <div className="bg-white rounded-[20px] p-7 lg:p-9 shadow-2xl ring-1 ring-black/5">
             {status === 'success' ? (
               <div className="text-center py-10">
                 <div className="mx-auto grid place-items-center w-16 h-16 rounded-full bg-success/10 text-success-600">
@@ -151,7 +151,7 @@ export default function LeadForm() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="btn-g3 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-semibold shadow-lg hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:cursor-not-allowed cta-pulse"
+                    className="btn-g3 w-full inline-flex items-center justify-center gap-2 px-6 py-4 font-semibold transition-all disabled:opacity-70 disabled:cursor-not-allowed cta-pulse"
                   >
                     {status === 'loading' ? (
                       <>
@@ -180,7 +180,7 @@ function Field({ icon, label, children }: { icon: React.ReactNode; label: string
   return (
     <div>
       <label className="text-sm font-semibold text-ink-700">{label}</label>
-      <div className="mt-1.5 flex items-center gap-3 px-4 py-3 rounded-xl bg-ink-50 ring-1 ring-ink-100 focus-within:ring-brand-400 focus-within:bg-white transition-all">
+      <div className="mt-1.5 flex items-center gap-3 px-4 py-3 rounded-lg bg-ink-50 ring-1 ring-ink-100 focus-within:ring-brand-400 focus-within:bg-white transition-all">
         <span className="text-ink-400">{icon}</span>
         {children}
       </div>

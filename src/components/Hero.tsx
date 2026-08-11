@@ -10,24 +10,24 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(160deg, #eef5ff 0%, #fff4e6 50%, #fff0fc 100%)' }}
+          style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f5f3ff 55%, #ede9fe 100%)' }}
         />
         <div
           className="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-40"
-          style={{ background: 'radial-gradient(circle, #448cfd44, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(109,40,217,0.20), transparent 70%)' }}
         />
         <div
           className="absolute top-40 -left-32 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-30"
-          style={{ background: 'radial-gradient(circle, #ff8de444, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.20), transparent 70%)' }}
         />
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #ff872033, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(54,93,255,0.16), transparent 70%)' }}
         />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, #448cfd 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, #6d28d9 1px, transparent 0)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -38,7 +38,7 @@ export default function Hero() {
           {/* left */}
           <div className="animate-fade-up">
             <div className="mt-6 flex items-center gap-2">
-              <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100 shadow-sm">
+              <span className="pill-label text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
                 Huyway English • English to go far.
               </span>
             </div>
@@ -63,7 +63,7 @@ export default function Hero() {
               <a
                 href="#dang-ky"
                 data-anim="bounce"
-                className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold shadow-xl anim-delay-300"
+                className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold anim-delay-300"
               >
                 Đăng ký học thử miễn phí
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -71,7 +71,7 @@ export default function Hero() {
               <a
                 href="#cac-khoa-hoc"
                 data-anim="bounce"
-                className="scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-ink-800 font-semibold border border-ink-200 hover:border-brand-300 hover:text-brand-600 transition-all anim-delay-400"
+                className="btn-outline-violet scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold transition-all anim-delay-400"
               >
                 <PlayCircle className="w-5 h-5" />
                 Xem lộ trình học
@@ -81,7 +81,7 @@ export default function Hero() {
 
           {/* right - hero shot — Fly In từ phải */}
           <div className="relative scroll-hidden animate-fade-up [animation-delay:150ms]" data-anim="fly">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
+            <div className="relative rounded-[20px] overflow-hidden shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
               <img
                 src="https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="Học viên đang học tiếng Anh online"
@@ -104,7 +104,7 @@ export default function Hero() {
             </div>
 
             {/* floating card */}
-            <div className="absolute -bottom-5 -left-3 lg:-left-8 bg-white rounded-2xl shadow-xl ring-1 ring-ink-100 p-4 w-56 animate-float-slow">
+            <div className="absolute -bottom-5 -left-3 lg:-left-8 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-56 animate-float-slow">
               <div className="flex items-center gap-3">
                 <div className="grid place-items-center w-11 h-11 rounded-xl bg-success/10 text-success-600">
                   <ShieldCheck className="w-6 h-6" />
@@ -119,7 +119,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-2xl shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
+            <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
               <p className="text-xs text-ink-500 font-medium">
                 Điểm trung bình
               </p>
@@ -138,7 +138,7 @@ export default function Hero() {
               <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
                 <div
                   className="h-full w-[85%] rounded-full"
-                  style={{ background: 'linear-gradient(90deg, #448cfd, #ff8720, #ff8de4)' }}
+                  style={{ background: 'linear-gradient(90deg, #6d28d9, #5b21b6, #29124d)' }}
                 />
               </div>
             </div>

@@ -4,111 +4,117 @@
 
 @layer utilities {
   /* ══════════════════════════════════════════
-     GRADIENT TEXT  (#448cfd → #ff8720 → #ff8de4)
+     HIGHLIGHT TEXT — theme dùng violet đặc (#6d28d9)
   ══════════════════════════════════════════ */
   .gradient-text {
-    background: linear-gradient(90deg, #448cfd 0%, #ff8720 50%, #ff8de4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #6d28d9;
+    -webkit-text-fill-color: #6d28d9;
   }
-  /* blue → pink (2 màu) */
   .gradient-text-bp {
-    background: linear-gradient(90deg, #448cfd 0%, #ff8de4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #6d28d9;
+    -webkit-text-fill-color: #6d28d9;
   }
 
   /* ══════════════════════════════════════════
-     BUTTON GRADIENT  — thay thế bg-brand-600 trên nút
+     BUTTON — nút chính violet, bo 8px, shadow tím
   ══════════════════════════════════════════ */
   .btn-g3 {
-    background: linear-gradient(135deg, #448cfd 0%, #ff8720 55%, #ff8de4 100%) !important;
-    background-size: 200% auto !important;
+    background: #6d28d9 !important;
     color: #ffffff !important;
-    transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px -2px rgba(109, 41, 218, 0.3) !important;
+    transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
   .btn-g3:hover {
-    background-position: right center !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(68, 140, 253, 0.38) !important;
+    opacity: 0.85;
+    box-shadow: 0 6px 20px -2px rgba(109, 41, 218, 0.38) !important;
   }
   .btn-g3:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
 
-  /* ══════════════════════════════════════════
-     INK PALETTE  (màu chữ — KHÔNG thay đổi)
-  ══════════════════════════════════════════ */
-  .text-ink-900 { color: #1a1a1a; }
-  .text-ink-800 { color: #2d2d2d; }
-  .text-ink-700 { color: #404040; }
-  .text-ink-600 { color: #666666; }
-  .text-ink-500 { color: #808080; }
-  .text-ink-400 { color: #999999; }
-  .text-ink-300 { color: #b3b3b3; }
-
-  .bg-ink-50  { background-color: #fafafa; }
-  .bg-ink-100 { background-color: #f5f5f5; }
-  .bg-ink-950 { background-color: #0a0a0a; }
-
-  /* ══════════════════════════════════════════
-     BRAND PALETTE  — đổi sang 3 màu gradient
-  ══════════════════════════════════════════ */
-
-  /* Màu text brand (xanh anchor) — giữ nhất quán với icon */
-  .text-brand-400 { color: #448cfd; }
-  .text-brand-500 { color: #448cfd; }
-  .text-brand-600 { color: #448cfd; }
-  .text-brand-700 { color: #2272e8; }
-
-  /* Background brand nhạt — làm nền pill/badge */
-  .bg-brand-50  { background-color: #eef5ff; }
-  .bg-brand-100 { background-color: #d6e9ff; }
-
-  /* Background brand đậm → gradient 3 màu */
-  .bg-brand-600 {
-    background: linear-gradient(135deg, #448cfd 0%, #ff8720 55%, #ff8de4 100%) !important;
+  /* Nút phụ — viền violet mờ, hover đậm lên */
+  .btn-outline-violet {
+    border: 2px solid rgba(109, 41, 217, 0.3);
+    border-radius: 8px;
+    color: #6d28d9;
+    background: #ffffff;
+    transition: border-color 0.25s ease, color 0.25s ease;
   }
-  .bg-brand-700 {
-    background: linear-gradient(135deg, #2272e8 0%, #e06a00 55%, #e860c8 100%) !important;
+  .btn-outline-violet:hover {
+    border-color: #6d28d9;
+    color: #5b21b6;
   }
 
-  /* Gradient from/to — dùng trong from-brand-600 to-brand-400 */
-  .from-brand-400 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
-  .from-brand-500 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
-  .from-brand-600 { --tw-gradient-from: #448cfd var(--tw-gradient-from-position); }
-  .to-brand-400   { --tw-gradient-to: #ff8de4 var(--tw-gradient-to-position); }
-  .to-brand-500   { --tw-gradient-to: #ff8720 var(--tw-gradient-to-position); }
-  .to-brand-700   { --tw-gradient-to: #2272e8 var(--tw-gradient-to-position); }
+  /* Pill nhãn section — viền teal nhạt như theme */
+  .pill-label {
+    border: 1px solid rgba(0, 220, 220, 0.5);
+    background: #ffffff;
+    color: #6d28d9;
+  }
+
+  /* ══════════════════════════════════════════
+     INK PALETTE  (màu chữ)
+  ══════════════════════════════════════════ */
+  .text-ink-900 { color: #000000; }
+  .text-ink-800 { color: #1c1c1e; }
+  .text-ink-700 { color: #3f3f42; }
+  .text-ink-600 { color: #717174; }
+  .text-ink-500 { color: #8a8a8d; }
+  .text-ink-400 { color: #a6a6a6; }
+  .text-ink-300 { color: #c4c4c6; }
+
+  .bg-ink-50  { background-color: #f8f8f9; }
+  .bg-ink-100 { background-color: #f1f3f4; }
+  .bg-ink-950 { background-color: #29124d; }
+
+  /* ══════════════════════════════════════════
+     BRAND PALETTE — violet LadiPage
+  ══════════════════════════════════════════ */
+  .text-brand-400 { color: #a78bfa; }
+  .text-brand-500 { color: #8b5cf6; }
+  .text-brand-600 { color: #6d28d9; }
+  .text-brand-700 { color: #5b21b6; }
+
+  .bg-brand-50  { background-color: #f5f3ff; }
+  .bg-brand-100 { background-color: #ede9fe; }
+  .bg-brand-600 { background-color: #6d28d9 !important; }
+  .bg-brand-700 { background-color: #5b21b6 !important; }
+
+  /* Gradient from/to */
+  .from-brand-400 { --tw-gradient-from: #a78bfa var(--tw-gradient-from-position); }
+  .from-brand-500 { --tw-gradient-from: #8b5cf6 var(--tw-gradient-from-position); }
+  .from-brand-600 { --tw-gradient-from: #6d28d9 var(--tw-gradient-from-position); }
+  .to-brand-400   { --tw-gradient-to: #a78bfa var(--tw-gradient-to-position); }
+  .to-brand-500   { --tw-gradient-to: #8b5cf6 var(--tw-gradient-to-position); }
+  .to-brand-700   { --tw-gradient-to: #5b21b6 var(--tw-gradient-to-position); }
 
   /* Ring brand */
-  .ring-brand-100 { --tw-ring-color: #d6e9ff; }
-  .ring-brand-200 { --tw-ring-color: #aed3ff; }
-  .ring-brand-300 { --tw-ring-color: #76b6fe; }
-  .ring-brand-400 { --tw-ring-color: #448cfd; }
-  .ring-brand-500 { --tw-ring-color: #448cfd; }
-  .ring-ink-100   { --tw-ring-color: #f5f5f5; }
+  .ring-brand-100 { --tw-ring-color: #ede9fe; }
+  .ring-brand-200 { --tw-ring-color: #ddd6fe; }
+  .ring-brand-300 { --tw-ring-color: #c4b5fd; }
+  .ring-brand-400 { --tw-ring-color: #a78bfa; }
+  .ring-brand-500 { --tw-ring-color: #8b5cf6; }
+  .ring-ink-100   { --tw-ring-color: #f1f3f4; }
 
   /* Shadow brand */
-  .shadow-brand-500\/30 { box-shadow: 0 10px 15px -3px rgba(68, 140, 253, 0.30); }
-  .shadow-brand-500\/40 { box-shadow: 0 10px 15px -3px rgba(68, 140, 253, 0.40); }
+  .shadow-brand-500\/30 { box-shadow: 0 4px 16px -2px rgba(109, 41, 218, 0.30); }
+  .shadow-brand-500\/40 { box-shadow: 0 6px 20px -2px rgba(109, 41, 218, 0.40); }
 
   /* Border brand */
-  .border-brand-100 { border-color: #d6e9ff; }
-  .border-brand-200 { border-color: #aed3ff; }
-  .border-brand-300 { border-color: #76b6fe; }
+  .border-brand-100 { border-color: #ede9fe; }
+  .border-brand-200 { border-color: #ddd6fe; }
+  .border-brand-300 { border-color: #c4b5fd; }
 
   /* ══════════════════════════════════════════
-     ACCENT / SUCCESS / AMBER  (giữ nguyên)
+     ACCENT / SUCCESS / AMBER
   ══════════════════════════════════════════ */
-  .text-accent-600 { color: #dc2626; }
-  .text-accent-700 { color: #b91c1c; }
-  .bg-accent-50    { background-color: #fff0f0; }
-  .bg-accent-100   { background-color: #fee2e2; }
-  .ring-accent-200 { --tw-ring-color: #fecaca; }
+  .text-accent-600 { color: #f36e36; }
+  .text-accent-700 { color: #d1541f; }
+  .bg-accent-50    { background-color: #fff3ec; }
+  .bg-accent-100   { background-color: #ffe3d4; }
+  .ring-accent-200 { --tw-ring-color: #ffc9ad; }
 
   .text-success-600  { color: #16a34a; }
   .text-success-700  { color: #15803d; }
@@ -124,6 +130,21 @@
 }
 
 @layer base {
+  /* ══════════════════════════════════════════
+     TYPOGRAPHY — Inter như theme gốc
+  ══════════════════════════════════════════ */
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  body {
+    color: #717174;
+    background-color: #ffffff;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    letter-spacing: -0.01em;
+  }
+
   /* ══════════════════════════════════════════
      KEYFRAMES
   ══════════════════════════════════════════ */
@@ -154,8 +175,8 @@
     100% { transform: scale(1);    opacity: 1; }
   }
   @keyframes cta-pulse {
-    0%, 100% { box-shadow: 0 0 0 0   rgba(68, 140, 253, 0.50); }
-    50%       { box-shadow: 0 0 0 9px rgba(68, 140, 253, 0); }
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.03); }
   }
   @keyframes shimmer {
     0%   { background-position: -200% center; }
@@ -190,8 +211,8 @@
   .anim-delay-400 { animation-delay: 0.40s; }
   .anim-delay-500 { animation-delay: 0.50s; }
 
-  /* CTA pulse liên tục */
-  .cta-pulse { animation: cta-pulse 2.4s ease-in-out infinite; }
+  /* CTA pulse liên tục — theme dùng scale pulse 3s */
+  .cta-pulse { animation: cta-pulse 3s ease-in-out infinite; }
 
   /* ══════════════════════════════════════════
      LAYOUT

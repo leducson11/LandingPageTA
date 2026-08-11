@@ -24,7 +24,7 @@ export default function Footer() {
             <a href="#top" className="flex items-center gap-2.5">
               <span
                 className="grid place-items-center w-10 h-10 rounded-xl text-white"
-                style={{ background: 'linear-gradient(135deg, #448cfd, #ff8de4)' }}
+                style={{ background: 'linear-gradient(135deg, #6d28d9, #29124d)' }}
               >
                 <GraduationCap className="w-6 h-6" />
               </span>
@@ -61,7 +61,7 @@ export default function Footer() {
                   style={{ transition: 'background 0.2s' }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.background =
-                      'linear-gradient(135deg,#448cfd,#ff8720,#ff8de4)';
+                      'linear-gradient(135deg,#6d28d9,#5b21b6,#29124d)';
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)';

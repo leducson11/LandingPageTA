@@ -35,12 +35,12 @@ export default function FloatingCTA() {
         aria-label="Về đầu trang"
         className="grid place-items-center w-11 h-11 rounded-full bg-white text-brand-600 shadow-xl ring-1 ring-ink-100 hover:-translate-y-0.5 transition-all"
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg,#448cfd,#ff8de4)';
+          (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg,#6d28d9,#14b8a6)';
           (e.currentTarget as HTMLElement).style.color = 'white';
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLElement).style.background = 'white';
-          (e.currentTarget as HTMLElement).style.color = '#448cfd';
+          (e.currentTarget as HTMLElement).style.color = '#6d28d9';
         }}
       >
         <ArrowUp className="w-5 h-5" />
@@ -54,7 +54,7 @@ export default function FloatingCTA() {
             e.preventDefault();
             scrollToHash("#dang-ky");
           }}
-          className="btn-g3 group inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-white text-sm font-semibold shadow-2xl hover:-translate-y-0.5 transition-all cta-pulse"
+          className="btn-g3 group inline-flex items-center gap-2 px-5 py-3.5 text-white text-sm font-semibold transition-all cta-pulse"
         >
           Đăng ký học thử miễn phí
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

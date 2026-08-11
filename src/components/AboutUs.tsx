@@ -10,14 +10,14 @@ const benefits = [
     detail: 'Chúng tôi tin rằng tiếng Anh không chỉ là một chứng chỉ, mà là công cụ để mở ra cơ hội học tập, làm việc và phát triển bản thân.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-        <rect width="800" height="500" fill="#eef6ff" />
-        <circle cx="180" cy="175" r="100" fill="#448cfd" opacity="0.16" />
-        <circle cx="635" cy="340" r="125" fill="#ff8de4" opacity="0.14" />
-        <rect x="140" y="140" width="250" height="190" rx="28" fill="#ffffff" stroke="#dfe9ff" stroke-width="6" />
-        <path d="M200 220h120" stroke="#1045a4" stroke-width="16" stroke-linecap="round" />
-        <path d="M200 185h90" stroke="#448cfd" stroke-width="16" stroke-linecap="round" />
-        <path d="M200 255h72" stroke="#ff8de4" stroke-width="16" stroke-linecap="round" />
-        <rect x="450" y="175" width="190" height="120" rx="26" fill="#1045a4" />
+        <rect width="800" height="500" fill="#f5f3ff" />
+        <circle cx="180" cy="175" r="100" fill="#6d28d9" opacity="0.16" />
+        <circle cx="635" cy="340" r="125" fill="#14b8a6" opacity="0.14" />
+        <rect x="140" y="140" width="250" height="190" rx="28" fill="#ffffff" stroke="#ede9fe" stroke-width="6" />
+        <path d="M200 220h120" stroke="#29124d" stroke-width="16" stroke-linecap="round" />
+        <path d="M200 185h90" stroke="#6d28d9" stroke-width="16" stroke-linecap="round" />
+        <path d="M200 255h72" stroke="#14b8a6" stroke-width="16" stroke-linecap="round" />
+        <rect x="450" y="175" width="190" height="120" rx="26" fill="#29124d" />
         <path d="M485 245l38-44 34 30 52-68" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     `)}`,
@@ -32,14 +32,14 @@ const benefits = [
     detail: 'Mỗi buổi học được thiết kế để học viên hiểu sâu, nhớ lâu và áp dụng linh hoạt trong môi trường thật.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-        <rect width="800" height="500" fill="#fef7f2" />
-        <circle cx="180" cy="165" r="90" fill="#ff8720" opacity="0.14" />
-        <circle cx="610" cy="330" r="115" fill="#448cfd" opacity="0.13" />
-        <rect x="180" y="150" width="220" height="170" rx="24" fill="#ffffff" stroke="#ffe4cf" stroke-width="6" />
-        <path d="M220 238c26-42 76-59 120-38" stroke="#ff8720" stroke-width="16" stroke-linecap="round" />
-        <circle cx="245" cy="205" r="20" fill="#1045a4" />
-        <circle cx="315" cy="228" r="20" fill="#ff8de4" />
-        <rect x="440" y="170" width="170" height="140" rx="24" fill="#ff8720" />
+        <rect width="800" height="500" fill="#fff3ec" />
+        <circle cx="180" cy="165" r="90" fill="#f36e36" opacity="0.14" />
+        <circle cx="610" cy="330" r="115" fill="#6d28d9" opacity="0.13" />
+        <rect x="180" y="150" width="220" height="170" rx="24" fill="#ffffff" stroke="#ffe3d4" stroke-width="6" />
+        <path d="M220 238c26-42 76-59 120-38" stroke="#f36e36" stroke-width="16" stroke-linecap="round" />
+        <circle cx="245" cy="205" r="20" fill="#29124d" />
+        <circle cx="315" cy="228" r="20" fill="#14b8a6" />
+        <rect x="440" y="170" width="170" height="140" rx="24" fill="#f36e36" />
         <path d="M470 240h110" stroke="#fff" stroke-width="14" stroke-linecap="round" />
         <path d="M470 272h70" stroke="#fff" stroke-width="14" stroke-linecap="round" />
       </svg>
@@ -55,14 +55,14 @@ const benefits = [
     detail: 'Chúng tôi không chỉ dạy kiến thức mà còn đồng hành cùng học viên, giúp họ vượt qua khó khăn và giữ động lực học tập lâu dài.',
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-        <rect width="800" height="500" fill="#f5f7ff" />
-        <circle cx="185" cy="175" r="95" fill="#1045a4" opacity="0.14" />
-        <circle cx="625" cy="345" r="120" fill="#ff8720" opacity="0.12" />
-        <rect x="150" y="150" width="240" height="180" rx="24" fill="#ffffff" stroke="#e0e7ff" stroke-width="6" />
-        <circle cx="230" cy="220" r="38" fill="#448cfd" />
-        <circle cx="295" cy="220" r="30" fill="#ff8de4" />
-        <path d="M210 272c18 28 55 38 90 22" stroke="#1045a4" stroke-width="14" stroke-linecap="round" />
-        <rect x="450" y="170" width="170" height="140" rx="24" fill="#448cfd" />
+        <rect width="800" height="500" fill="#f5f3ff" />
+        <circle cx="185" cy="175" r="95" fill="#29124d" opacity="0.14" />
+        <circle cx="625" cy="345" r="120" fill="#f36e36" opacity="0.12" />
+        <rect x="150" y="150" width="240" height="180" rx="24" fill="#ffffff" stroke="#ede9fe" stroke-width="6" />
+        <circle cx="230" cy="220" r="38" fill="#6d28d9" />
+        <circle cx="295" cy="220" r="30" fill="#14b8a6" />
+        <path d="M210 272c18 28 55 38 90 22" stroke="#29124d" stroke-width="14" stroke-linecap="round" />
+        <rect x="450" y="170" width="170" height="140" rx="24" fill="#6d28d9" />
         <path d="M490 235c16-18 42-18 58 0" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
         <path d="M485 275h68" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
       </svg>
