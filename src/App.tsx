@@ -1,14 +1,14 @@
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import PainPoints from '@/components/PainPoints';
-import AboutUs from '@/components/AboutUs';
-import Courses from '@/components/Courses';
-import Instructor from '@/components/Instructor';
-import LeadForm from '@/components/LeadForm';
+import Hero from '@/sections/Hero';
+import PainPoints from '@/sections/PainPoints';
+import AboutUs from '@/sections/AboutUs';
+import Courses from '@/sections/Courses';
+import Instructor from '@/sections/Instructor';
+import LeadForm from '@/sections/LeadForm';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
-import { useSmoothScroll } from '@/lib/useSmoothScroll';
-import { useScrollAnimation } from '@/lib/useScrollAnimation';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function App() {
   useSmoothScroll();

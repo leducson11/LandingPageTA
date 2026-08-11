@@ -33,13 +33,13 @@ const benefits = [
     image: `data:image/svg+xml;utf8,${encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
         <rect width="800" height="500" fill="#fff3ec" />
-        <circle cx="180" cy="165" r="90" fill="#f36e36" opacity="0.14" />
+        <circle cx="180" cy="165" r="90" fill="#05a6a6" opacity="0.14" />
         <circle cx="610" cy="330" r="115" fill="#6d28d9" opacity="0.13" />
         <rect x="180" y="150" width="220" height="170" rx="24" fill="#ffffff" stroke="#ffe3d4" stroke-width="6" />
-        <path d="M220 238c26-42 76-59 120-38" stroke="#f36e36" stroke-width="16" stroke-linecap="round" />
+        <path d="M220 238c26-42 76-59 120-38" stroke="#05a6a6" stroke-width="16" stroke-linecap="round" />
         <circle cx="245" cy="205" r="20" fill="#29124d" />
         <circle cx="315" cy="228" r="20" fill="#14b8a6" />
-        <rect x="440" y="170" width="170" height="140" rx="24" fill="#f36e36" />
+        <rect x="440" y="170" width="170" height="140" rx="24" fill="#05a6a6" />
         <path d="M470 240h110" stroke="#fff" stroke-width="14" stroke-linecap="round" />
         <path d="M470 272h70" stroke="#fff" stroke-width="14" stroke-linecap="round" />
       </svg>
@@ -57,7 +57,7 @@ const benefits = [
       <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
         <rect width="800" height="500" fill="#f5f3ff" />
         <circle cx="185" cy="175" r="95" fill="#29124d" opacity="0.14" />
-        <circle cx="625" cy="345" r="120" fill="#f36e36" opacity="0.12" />
+        <circle cx="625" cy="345" r="120" fill="#05a6a6" opacity="0.12" />
         <rect x="150" y="150" width="240" height="180" rx="24" fill="#ffffff" stroke="#ede9fe" stroke-width="6" />
         <circle cx="230" cy="220" r="38" fill="#6d28d9" />
         <circle cx="295" cy="220" r="30" fill="#14b8a6" />

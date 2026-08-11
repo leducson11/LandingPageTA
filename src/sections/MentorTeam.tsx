@@ -6,10 +6,10 @@ type Mentor = {
 };
 
 const mentors: Mentor[] = [
-  { id: 1, name: 'Nguyễn Mai', title: 'Senior IELTS Instructor', portrait: '' },
-  { id: 2, name: 'Trần Hồng', title: 'Speaking Coach', portrait: '' },
-  { id: 3, name: 'Lê Thu', title: 'Listening Specialist', portrait: '' },
-  { id: 4, name: 'Phạm Anh', title: 'Writing Expert', portrait: '' },
+  { id: 1, name: 'Nguyễn Mai', title: 'Giảng viên IELTS Cao cấp', portrait: '' },
+  { id: 2, name: 'Trần Hồng', title: 'Huấn luyện viên Kỹ năng Nói', portrait: '' },
+  { id: 3, name: 'Lê Thu', title: 'Chuyên gia Kỹ năng Nghe', portrait: '' },
+  { id: 4, name: 'Phạm Anh', title: 'Chuyên gia Kỹ năng Viết', portrait: '' },
 ];
 
 export default function MentorTeam() {
@@ -28,11 +28,11 @@ export default function MentorTeam() {
                   <img src={m.portrait} alt={m.name} className="w-full h-64 object-cover rounded-lg" />
                 ) : (
                   <div className="w-full h-64 rounded-lg border-2 border-dashed border-slate-200 bg-white flex items-center justify-center">
-                    <span className="text-slate-300">No photo</span>
+                    <span className="text-slate-300">Chưa có ảnh</span>
                   </div>
                 )}
                 <div className="absolute left-3 top-3 inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white">
-                  MENTOR
+                  GIẢNG VIÊN
                 </div>
               </div>
 
