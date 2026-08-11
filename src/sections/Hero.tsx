@@ -1,4 +1,17 @@
-import { PlayCircle, ShieldCheck, ArrowRight } from "lucide-react";
+import { PlayCircle, ShieldCheck, ArrowRight, Target, GraduationCap } from "lucide-react";
+
+const heroBenefits = [
+  {
+    icon: Target,
+    title: "Lộ trình cá nhân hóa",
+    desc: "Học đúng năng lực, tối ưu thời gian",
+  },
+  {
+    icon: GraduationCap,
+    title: "Giáo viên 8.0+ đồng hành 1-1",
+    desc: "Tương tác, sửa lỗi trực tiếp",
+  },
+];
 
 export default function Hero() {
   return (
@@ -48,15 +61,30 @@ export default function Hero() {
               chỉ sau 90 ngày
             </h1>
 
-            {/* Fade In — mô tả */}
-            <p
-              data-anim="fade"
-              className="scroll-hidden mt-5 text-lg text-ink-600 leading-relaxed max-w-xl anim-delay-200"
-            >
-              Lộ trình học cá nhân hóa, giáo viên 8.0+ IELTS & 900+ TOEIC đồng
-              hành 1-1, luyện tập trên nền tảng AI chấm chữa chi tiết. Cam kết
-              đầu ra bằng văn bản — không đạt, học lại miễn phí.
-            </p>
+            {/* 2-column benefit grid — Desktop */}
+            <div className="mt-6 grid sm:grid-cols-2 gap-4 lg:gap-5">
+              {heroBenefits.map((benefit) => {
+                const Icon = benefit.icon;
+                return (
+                  <div
+                    key={benefit.title}
+                    className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/70 ring-1 ring-ink-100 hover:ring-brand-200 hover:shadow-md transition-all"
+                  >
+                    <span className="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-brand-50 text-brand-600">
+                      <Icon className="w-5 h-5" />
+                    </span>
+                    <div>
+                      <p className="text-[15px] font-bold text-ink-900 leading-snug">
+                        {benefit.title}
+                      </p>
+                      <p className="mt-0.5 text-sm text-ink-600 leading-relaxed">
+                        {benefit.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
 
             {/* Bounce — CTA buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
