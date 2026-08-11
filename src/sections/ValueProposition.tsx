@@ -66,7 +66,7 @@ export default function ValueProposition() {
           </div>
 
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+            <div className="relative rounded-[20px] overflow-hidden shadow-2xl ring-1 ring-black/5">
               <img
                 src="https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=1000"
                 alt="Giáo viên kèm học viên 1-1"

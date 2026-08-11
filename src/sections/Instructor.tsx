@@ -8,7 +8,7 @@ export default function Instructor() {
         className="absolute inset-0 opacity-30"
         style={{
           background: `
-            linear-gradient(135deg, #e8f4f8 0%, #f0f4f8 50%, #e6e9ef 100%),
+            linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #ede9fe 100%),
             url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 90 Q 30 60 50 80 T 90 70' stroke='%23b8c4d1' stroke-width='0.5' fill='none' opacity='0.4'/%3E%3Cpath d='M5 80 Q 25 50 45 70 T 85 60' stroke='%23c8d4e1' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3C/svg%3E")
           `
         }}
@@ -17,7 +17,7 @@ export default function Instructor() {
       <div className="max-w-7xl mx-auto container-px relative">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
+          <span className="pill-label inline-block px-4 py-1.5 rounded-full text-sm font-semibold">
             Gặp gỡ giảng viên
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
@@ -32,7 +32,7 @@ export default function Instructor() {
             {/* Decorative orange circle */}
             <div 
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 rounded-full opacity-60"
-              style={{ background: 'linear-gradient(135deg, #ffcc80, #ffb74d)' }}
+              style={{ background: 'linear-gradient(135deg, #a78bfa, #6d28d9)' }}
             />
             
             {/* Instructor image */}
@@ -40,7 +40,7 @@ export default function Instructor() {
               <img
                 src="/src/assets/ThayHuy.jpg"
                 alt="Thầy Huy"
-                className="w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl"
+                className="w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-[20px] shadow-2xl"
               />
             </div>
           </div>

@@ -41,7 +41,7 @@ export default function PainPoints() {
       <div className="max-w-7xl mx-auto container-px">
         {/* Fade In — header text */}
         <div className="max-w-2xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-100 text-accent-700 text-sm font-semibold">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 text-sm font-semibold">
             Thực trạng & Nỗi đau
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
@@ -63,10 +63,10 @@ export default function PainPoints() {
             <div
               key={p.title}
               data-anim="fade"
-              className={`scroll-hidden group bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:ring-accent-200 hover:shadow-xl hover:-translate-y-1 transition-all ${staggerDelays[i]}`}
+              className={`scroll-hidden group bg-white rounded-[20px] p-6 ring-1 ring-ink-100 hover:ring-brand-200 hover:shadow-xl hover:-translate-y-1 transition-all ${staggerDelays[i]}`}
             >
               <div className="flex items-start gap-4">
-                <span className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-accent-50 text-accent-600 group-hover:bg-accent-100 transition-colors">
+                <span className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-brand-50 text-brand-600 group-hover:bg-brand-100 transition-colors">
                   <p.icon className="w-6 h-6" />
                 </span>
                 <div>

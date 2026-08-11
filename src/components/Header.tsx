@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-ink-100' : 'bg-transparent'
+        scrolled ? 'bg-white shadow-[0_2px_8px_#0000000d]' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto container-px">
@@ -33,7 +33,7 @@ export default function Header() {
           <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-center gap-2.5 group shrink-0">
             <span
               className="grid place-items-center w-10 h-10 rounded-xl text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform"
-              style={{ background: 'linear-gradient(135deg, #448cfd, #ff8de4)' }}
+              style={{ background: 'linear-gradient(135deg, #6d28d9, #29124d)' }}
             >
               <GraduationCap className="w-6 h-6" />
             </span>
@@ -71,7 +71,7 @@ export default function Header() {
             <a
               href="#dang-ky"
               onClick={(e) => go(e, '#dang-ky')}
-              className="btn-g3 inline-flex items-center px-5 py-2.5 rounded-full text-white text-sm font-semibold shadow-lg hover:-translate-y-0.5 transition-all cta-pulse"
+              className="btn-g3 inline-flex items-center px-5 py-2.5 text-white text-sm font-semibold transition-all cta-pulse"
             >
               Đăng ký học thử miễn phí
             </a>
@@ -114,7 +114,7 @@ export default function Header() {
             <a
               href="#dang-ky"
               onClick={(e) => go(e, '#dang-ky')}
-              className="btn-g3 mt-2 mx-1 inline-flex items-center justify-center px-5 py-3 rounded-full text-white text-sm font-semibold shadow-md"
+              className="btn-g3 mt-2 mx-1 inline-flex items-center justify-center px-5 py-3 text-white text-sm font-semibold"
             >
               Đăng ký học thử miễn phí
             </a>

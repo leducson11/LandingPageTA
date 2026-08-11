@@ -17,12 +17,12 @@ export default function MentorTeam() {
     <section id="mentor-team" className="py-16 bg-white">
       <div className="container-px max-w-7xl mx-auto">
         <div className="mb-6 text-center">
-          <h2 className="mt-3 text-3xl font-extrabold text-[#031A6B]">Đội ngũ giảng viên</h2>
+          <h2 className="mt-3 text-3xl font-extrabold text-ink-900">Đội ngũ giảng viên</h2>
         </div>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {mentors.map((m) => (
-            <article key={m.id} className="relative group rounded-xl border border-slate-100 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+            <article key={m.id} className="relative group rounded-[20px] border border-ink-100 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
               <div className="relative">
                 {m.portrait ? (
                   <img src={m.portrait} alt={m.name} className="w-full h-64 object-cover rounded-lg" />
@@ -31,13 +31,13 @@ export default function MentorTeam() {
                     <span className="text-slate-300">Chưa có ảnh</span>
                   </div>
                 )}
-                <div className="absolute left-3 top-3 inline-flex items-center rounded-full bg-[#031A6B] px-2.5 py-1 text-xs font-semibold text-white">
+                <div className="absolute left-3 top-3 inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white">
                   GIẢNG VIÊN
                 </div>
               </div>
 
               <header className="mt-4">
-                <h3 className="text-lg font-bold text-[#031A6B]">{m.name}</h3>
+                <h3 className="text-lg font-bold text-ink-900">{m.name}</h3>
                 <p className="mt-1 text-sm text-slate-500">{m.title}</p>
               </header>
 

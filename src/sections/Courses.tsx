@@ -80,7 +80,7 @@ export default function Courses() {
             <div
               key={course.title}
               data-anim="fade"
-              className={`scroll-hidden bg-gradient-to-br from-ink-50 to-white rounded-3xl p-8 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all ${cardDelays[index]}`}
+              className={`scroll-hidden bg-gradient-to-br from-ink-50 to-white rounded-[20px] p-8 ring-1 ring-ink-100 hover:shadow-xl hover:-translate-y-1 transition-all ${cardDelays[index]}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="grid place-items-center w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg shadow-brand-500/30">
