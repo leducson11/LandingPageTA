@@ -75,11 +75,10 @@ export default function Features() {
               <button
                 key={m.name}
                 onClick={() => setActive(i)}
-                className={`text-left rounded-2xl p-5 ring-1 transition-all ${
-                  active === i
+                className={`text-left rounded-2xl p-5 ring-1 transition-all ${active === i
                     ? 'bg-white ring-brand-300 shadow-lg'
                     : 'bg-white/60 ring-ink-100 hover:ring-brand-200 hover:bg-white'
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-4">
                   <span className={`grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br ${m.color} text-white shadow-md`}>

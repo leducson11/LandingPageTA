@@ -3,7 +3,7 @@ import { Menu, X, GraduationCap, ChevronDown, ArrowRight } from 'lucide-react';
 import { scrollToHash } from '@/hooks/useSmoothScroll';
 
 export default function Header() {
-  const [scrolled, setScrolled]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
@@ -22,9 +22,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-[0_2px_8px_#0000000d]' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-[0_2px_8px_#0000000d]' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto container-px">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -96,8 +95,8 @@ export default function Header() {
               const href = label === 'Tại sao chọn chúng tôi'
                 ? '#tai-sao-chon-chung-toi'
                 : label === 'Các khóa học'
-                ? '#cac-khoa-hoc'
-                : '#gap-gop-giang-vien';
+                  ? '#cac-khoa-hoc'
+                  : '#gap-gop-giang-vien';
               return (
                 <a
                   key={label}
