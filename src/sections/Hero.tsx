@@ -1,4 +1,5 @@
-import { PlayCircle, ShieldCheck, ArrowRight, Target, GraduationCap } from "lucide-react";
+import { PlayCircle, ArrowRight, Target, GraduationCap } from "lucide-react";
+import thayHuyImg from "../assets/ThayHuy1-removebg.png";
 
 const heroBenefits = [
   {
@@ -18,6 +19,7 @@ export default function Hero() {
     <section
       id="top"
       className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-24"
+      style={{ aspectRatio: "16/9", minHeight: "600px" }}
     >
       {/* background */}
       <div className="absolute inset-0 -z-10">
@@ -46,135 +48,97 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto container-px">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* left */}
-          <div className="animate-fade-up">
-            <div className="mt-6 flex items-center gap-2">
-              <span className="pill-label text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                Huyway English • English to go far.
-              </span>
-            </div>
+      {/* Left half - white with diagonal stripes */}
+      <div className="absolute inset-0 bg-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "repeating-linear-gradient(45deg, #6d28d9 0px, #6d28d9 1px, transparent 1px, transparent 24px)",
+            opacity: 0.04,
+          }}
+        />
+      </div>
 
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
-              Chinh phục <span className="gradient-text">IELTS & TOEIC</span>{" "}
-              chỉ sau 90 ngày
-            </h1>
+      {/* Right half - brand color with diagonal clip */}
+      <div
+        className="absolute inset-0 bg-brand-600"
+        style={{
+          clipPath: "polygon(70% 0%, 100% 0%, 100% 100%, 50% 100%)",
+        }}
+      />
 
-            {/* 2-column benefit grid — Desktop */}
-            <div className="mt-6 grid sm:grid-cols-2 gap-4 lg:gap-5">
-              {heroBenefits.map((benefit) => {
-                const Icon = benefit.icon;
-                return (
-                  <div
-                    key={benefit.title}
-                    className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/70 ring-1 ring-ink-100 hover:ring-brand-200 hover:shadow-md transition-all"
-                  >
-                    <span className="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-brand-50 text-brand-600">
-                      <Icon className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <p className="text-[15px] font-bold text-ink-900 leading-snug">
-                        {benefit.title}
-                      </p>
-                      <p className="mt-0.5 text-sm text-ink-600 leading-relaxed">
-                        {benefit.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+      {/* Portrait image on right side - separate from background */}
+      <div
+        className="absolute right-0 bottom-0"
+        style={{ width: "50%", height: "90%" }}
+      >
+        <img
+          src={thayHuyImg}
+          alt="Thay Huy"
+          className="h-full w-full object-contain object-bottom"
+        />
+      </div>
 
-            {/* Bounce — CTA buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a
-                href="#dang-ky"
-                data-anim="bounce"
-                className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold anim-delay-300"
-              >
-                Đăng ký học thử miễn phí
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#cac-khoa-hoc"
-                data-anim="bounce"
-                className="btn-outline-violet scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold transition-all anim-delay-400"
-              >
-                <PlayCircle className="w-5 h-5" />
-                Xem lộ trình học
-              </a>
-            </div>
+      {/* Content on left side */}
+      <div className="relative z-10 max-w-7xl mx-auto container-px h-full flex items-center">
+        <div className="max-w-xl animate-fade-up">
+          <div className="mt-6 flex items-center gap-2">
+            <span className="pill-label text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+              Huyway English • English to go far.
+            </span>
           </div>
 
-          {/* right - hero shot — Fly In từ phải */}
-          <div className="relative scroll-hidden animate-fade-up [animation-delay:150ms]" data-anim="fly">
-            <div className="relative rounded-[20px] overflow-hidden shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
-              <img
-                src="https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Học viên đang học tiếng Anh online"
-                className="w-full h-[26rem] lg:h-[34rem] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
+          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
+            Chinh phục <span className="gradient-text">IELTS & TOEIC</span>{" "}
+            chỉ sau 90 ngày
+          </h1>
 
-              {/* play button */}
-              <button
-                className="absolute inset-0 grid place-items-center group"
-                aria-label="Xem video giới thiệu"
-              >
-                <span className="relative">
-                  <span className="absolute inset-0 rounded-full bg-white/40 animate-pulse-ring" />
-                  <span className="relative grid place-items-center w-16 h-16 rounded-full bg-white/90 backdrop-blur shadow-xl group-hover:scale-110 transition-transform">
-                    <PlayCircle className="w-9 h-9 text-brand-600" />
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            {/* floating card */}
-            <div className="absolute -bottom-5 -left-3 lg:-left-8 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-56 animate-float-slow">
-              <div className="flex items-center gap-3">
-                <div className="grid place-items-center w-11 h-11 rounded-xl bg-success/10 text-success-600">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-ink-900">
-                    Cam kết đầu ra
-                  </p>
-                  <p className="text-xs text-ink-500">
-                    Không đạt — học lại free
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -top-4 -right-2 lg:-right-6 bg-white rounded-[20px] shadow-xl ring-1 ring-ink-100 p-4 w-52 animate-float-slow [animation-delay:1.5s]">
-              <p className="text-xs text-ink-500 font-medium">
-                Điểm trung bình
-              </p>
-              <p className="text-2xl font-extrabold text-ink-900 mt-0.5">
-                IELTS 7.5{" "}
-                <span className="text-sm font-semibold text-success-600">
-                  +1.5
-                </span>
-              </p>
-              <p className="text-sm font-bold text-ink-900 mt-1">
-                TOEIC 850+{" "}
-                <span className="text-xs font-semibold text-success-600">
-                  +150
-                </span>
-              </p>
-              <div className="mt-2 h-1.5 rounded-full bg-ink-100 overflow-hidden">
+          {/* 2-column benefit grid — Desktop */}
+          <div className="mt-6 grid sm:grid-cols-2 gap-4 lg:gap-5">
+            {heroBenefits.map((benefit) => {
+              const Icon = benefit.icon;
+              return (
                 <div
-                  className="h-full w-[85%] rounded-full"
-                  style={{ background: 'linear-gradient(90deg, #6d28d9, #5b21b6, #29124d)' }}
-                />
-              </div>
-            </div>
+                  key={benefit.title}
+                  className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/70 ring-1 ring-ink-100 hover:ring-brand-200 hover:shadow-md transition-all"
+                >
+                  <span className="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-brand-50 text-brand-600">
+                    <Icon className="w-5 h-5" />
+                  </span>
+                  <div>
+                    <p className="text-[15px] font-bold text-ink-900 leading-snug">
+                      {benefit.title}
+                    </p>
+                    <p className="mt-0.5 text-sm text-ink-600 leading-relaxed">
+                      {benefit.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bounce — CTA buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="#dang-ky"
+              data-anim="bounce"
+              className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold anim-delay-300"
+            >
+              Đăng ký học thử miễn phí
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#cac-khoa-hoc"
+              data-anim="bounce"
+              className="btn-outline-violet scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold transition-all anim-delay-400"
+            >
+              <PlayCircle className="w-5 h-5" />
+              Xem lộ trình học
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-
