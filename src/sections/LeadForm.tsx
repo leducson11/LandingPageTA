@@ -85,10 +85,10 @@ export default function LeadForm() {
               Đăng ký học thử miễn phí
             </span>
             <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-balance">
-              Để lại thông tin — chuyên gia Huyway English gọi cho bạn trong 5 phút
+              Để lại thông tin — chuyên gia Huyway English gọi bạn trong 5 phút
             </h2>
             <p className="mt-4 text-brand-100 text-lg leading-relaxed">
-              Bạn sẽ nhận được: lộ trình học cá nhân hóa, đánh giá trình độ miễn phí và ưu đãi giảm 40% chỉ dành cho 50 đăng ký đầu tiên.
+              Nhận lộ trình cá nhân hóa, đánh giá trình độ miễn phí và ưu đãi giảm 40% cho 50 đăng ký đầu tiên.
             </p>
             <ul className="mt-8 space-y-3">
               {[
@@ -104,6 +104,19 @@ export default function LeadForm() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 w-full h-[240px] rounded-xl ring-1 ring-white/20 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1611.8161420234019!2d105.82368264690159!3d21.01538266221133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7ec6074ac9%3A0x38ee12a7b61db8d6!2zNThCIFAuIFbDtSBWxINuIETFqW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1786539752605!5m2!1svi!2s"
+                width="100%"
+                height="100%"
+                className="border-0"
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Bản đồ Huyway English"
+              />
+            </div>
           </div>
 
           {/* form card */}

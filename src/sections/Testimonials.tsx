@@ -50,8 +50,8 @@ export default function Testimonials() {
     <section id="hoc-vien" className="relative py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto container-px">
         <div className="max-w-2xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-100 text-accent-700 text-sm font-semibold">
-            Chứng thực xã hội
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
+            Nhận xét từ học viên
           </span>
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
             Học viên Huyway English nói gì?

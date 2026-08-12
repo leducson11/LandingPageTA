@@ -45,7 +45,7 @@ const slides = [
 
 export default function CenterCardCarousel() {
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section id="ve-huyway" className="relative py-20 lg:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto container-px">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold">
