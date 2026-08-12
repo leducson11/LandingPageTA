@@ -44,11 +44,11 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center gap-5 lg:gap-6">
             <a
-              href="#tai-sao-chon-chung-toi"
-              onClick={(e) => go(e, '#tai-sao-chon-chung-toi')}
+              href="#ve-huyway"
+              onClick={(e) => go(e, '#ve-huyway')}
               className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
             >
-              Tại sao chọn chúng tôi
+              Về Huyway English
             </a>
             <a
               href="#cac-khoa-hoc"
@@ -63,6 +63,13 @@ export default function Header() {
               className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
             >
               Gặp gỡ giảng viên
+            </a>
+            <a
+              href="#hoc-vien"
+              onClick={(e) => go(e, '#hoc-vien')}
+              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
+            >
+              Nhận xét từ học viên
             </a>
           </nav>
 
@@ -92,23 +99,21 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
           <nav className="container-px max-w-7xl mx-auto py-3 flex flex-col gap-1">
-            {['Tại sao chọn chúng tôi', 'Các khóa học', 'Gặp gỡ giảng viên'].map((label) => {
-              const href = label === 'Tại sao chọn chúng tôi'
-                ? '#tai-sao-chon-chung-toi'
-                : label === 'Các khóa học'
-                  ? '#cac-khoa-hoc'
-                  : '#gap-gop-giang-vien';
-              return (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={(e) => go(e, href)}
-                  className="block px-4 py-3 rounded-lg text-ink-700 font-medium hover:bg-brand-50 hover:text-brand-700"
-                >
-                  {label}
-                </a>
-              );
-            })}
+            {[
+              { label: 'Về Huyway English', href: '#ve-huyway' },
+              { label: 'Các khóa học', href: '#cac-khoa-hoc' },
+              { label: 'Gặp gỡ giảng viên', href: '#gap-gop-giang-vien' },
+              { label: 'Nhận xét từ học viên', href: '#hoc-vien' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => go(e, item.href)}
+                className="block px-4 py-3 rounded-lg text-ink-700 font-medium hover:bg-brand-50 hover:text-brand-700"
+              >
+                {item.label}
+              </a>
+            ))}
 
             {/* Mobile CTA */}
             <a
