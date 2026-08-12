@@ -67,16 +67,15 @@ export default function Hero() {
         }}
       />
 
-      {/* Portrait image on right side */}
+      {/* Portrait image on right side - separate from background */}
       <div
-        className="absolute inset-0 flex items-center justify-end"
-        style={{ clipPath: "polygon(80% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+        className="absolute right-0 bottom-0"
+        style={{ width: "50%", height: "90%" }}
       >
         <img
           src={thayHuyImg}
           alt="Thay Huy"
-          className="h-full w-full object-contain object-center"
-          style={{ maxHeight: "100%", maxWidth: "60%", objectPosition: "right bottom" }}
+          className="h-full w-full object-contain object-bottom"
         />
       </div>
 
