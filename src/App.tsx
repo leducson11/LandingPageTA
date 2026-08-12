@@ -2,15 +2,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import Hero from '@/sections/Hero';
-import Features from '@/sections/Features';
+import CenterCardCarousel from '@/sections/CenterCardCarousel';
 import PainPoints from '@/sections/PainPoints';
-import ValueProposition from '@/sections/ValueProposition';
-import AboutUs from '@/sections/AboutUs';
 import Courses from '@/sections/Courses';
 import Testimonials from '@/sections/Testimonials';
-import Feedback from '@/sections/Feedback';
 import SocialProof from '@/sections/SocialProof';
-import Pricing from '@/sections/Pricing';
 import FAQ from '@/sections/FAQ';
 import Instructor from '@/sections/Instructor';
 import LeadForm from '@/sections/LeadForm';
@@ -26,16 +22,12 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <CenterCardCarousel />
         <PainPoints />
-        <ValueProposition />
-        <AboutUs />
-        <Features />
         <Courses />
         <Instructor />
-        <Feedback />
         <SocialProof />
         <Testimonials />
-        <Pricing />
         <FAQ />
         <LeadForm />
       </main>

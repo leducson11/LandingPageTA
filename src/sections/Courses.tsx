@@ -1,4 +1,4 @@
-import { Zap, BookOpen, GraduationCap, Clock, Users, Smartphone, Globe } from 'lucide-react';
+import { Zap, BookOpen, GraduationCap, Clock } from 'lucide-react';
 
 const courses = [
   {
@@ -27,31 +27,7 @@ const courses = [
   },
 ];
 
-const benefits = [
-  {
-    icon: Users,
-    title: 'Mô hình lớp học nhỏ',
-    description: 'Chỉ từ 5–10 học viên, đảm bảo sự tương tác tối đa và giáo viên có thể chăm sóc kỹ lưỡng từng cá nhân.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Tư duy hệ thống',
-    description: 'Không dạy "mẹo" đối phó thi cử mà tập trung vào khả năng sử dụng thực tế và tư duy xử lý ngôn ngữ chủ động.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Hệ sinh thái công nghệ',
-    description: 'Cung cấp App/Website tự học giúp luyện phản xạ nói, học từ vựng qua bài hát và theo dõi tiến độ cá nhân mọi lúc mọi nơi.',
-  },
-  {
-    icon: Globe,
-    title: 'Hỗ trợ du học',
-    description: 'Lộ trình tiếp nối từ đào tạo ngôn ngữ đến tư vấn hồ sơ du học và săn học bổng.',
-  },
-];
-
 const cardDelays = ['', 'anim-delay-100', 'anim-delay-200'];
-const benefitDelays = ['', 'anim-delay-100', 'anim-delay-200', 'anim-delay-100'];
 
 export default function Courses() {
   return (
@@ -106,38 +82,6 @@ export default function Courses() {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Benefits */}
-        <div>
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">
-              Lợi ích khi học tại trung tâm
-            </h3>
-            <p
-              data-anim="fade"
-              className="scroll-hidden mt-4 text-ink-600 text-lg anim-delay-150"
-            >
-              Học viên sẽ nhận được những giá trị khác biệt mà các trung tâm đại trà chưa chú trọng
-            </p>
-          </div>
-
-          {/* Fade In stagger — benefit cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                data-anim="fade"
-                className={`scroll-hidden bg-white rounded-2xl p-6 ring-1 ring-ink-100 hover:shadow-lg hover:ring-brand-200 transition-all ${benefitDelays[index]}`}
-              >
-                <span className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg shadow-brand-500/30 mb-4">
-                  <benefit.icon className="w-6 h-6" />
-                </span>
-                <h4 className="font-bold text-ink-900 text-base mb-2">{benefit.title}</h4>
-                <p className="text-ink-600 text-sm leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
