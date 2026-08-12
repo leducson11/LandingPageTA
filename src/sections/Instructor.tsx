@@ -41,12 +41,12 @@ export default function Instructor() {
         </div>
 
         {/* Instructor card */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
           {/* Left side - Image with decorative circle */}
-          <div className="relative flex justify-center lg:justify-start">
+          <div className="relative flex justify-center">
             {/* Decorative purple circle */}
             <div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 rounded-full opacity-60"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full opacity-60"
               style={{ background: 'linear-gradient(135deg, #a78bfa, #6d28d9)' }}
             />
             
@@ -55,7 +55,7 @@ export default function Instructor() {
               <img
                 src={thayHuyImg}
                 alt="Thầy Lưu Tiến Huy"
-                className="w-72 h-72 lg:w-96 lg:h-96 object-contain rounded-[20px] shadow-2xl"
+                className="w-full max-w-[360px] h-auto mx-auto object-contain rounded-[20px] shadow-2xl"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Instructor() {
             <h3 className="text-3xl font-extrabold text-ink-900 tracking-tight">Đội ngũ giảng viên</h3>
           </div>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {mentors.map((m) => (
               <article key={m.id} className="relative group rounded-[20px] border border-ink-100 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative">

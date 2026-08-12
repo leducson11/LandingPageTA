@@ -27,7 +27,7 @@ export default function Header() {
         }`}
     >
       <div className="max-w-7xl mx-auto container-px">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 xl:h-20">
 
           {/* Logo */}
           <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-center gap-2.5 group shrink-0">
@@ -42,7 +42,7 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-5 lg:gap-6">
+          <nav className="hidden xl:flex items-center gap-5 xl:gap-6">
             <a
               href="#ve-huyway"
               onClick={(e) => go(e, '#ve-huyway')}
@@ -74,7 +74,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
             <a
               href="#dang-ky"
               onClick={(e) => go(e, '#dang-ky')}
@@ -87,7 +87,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden grid place-items-center w-10 h-10 rounded-lg text-ink-700 hover:bg-ink-100"
+            className="xl:hidden grid place-items-center w-10 h-10 rounded-lg text-ink-700 hover:bg-ink-100"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,7 +97,7 @@ export default function Header() {
 
       {/* ── Mobile menu ── */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
           <nav className="container-px max-w-7xl mx-auto py-3 flex flex-col gap-1">
             {[
               { label: 'Về Huyway English', href: '#ve-huyway' },

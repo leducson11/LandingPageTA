@@ -75,11 +75,11 @@ export default function CenterCardCarousel() {
           pagination={{ clickable: true }}
           navigation
           modules={[EffectCoverflow, Pagination, Navigation]}
-          className="w-full"
+          className="w-full [&_.swiper-slide]:w-auto"
         >
           {slides.map((slide, index) => (
-            <SwiperSlide key={index} className="w-[672px] max-w-[90vw]">
-              <div className="relative w-full h-[480px] rounded-[24px] shadow-lg overflow-hidden group">
+            <SwiperSlide key={index} className="w-[90vw] sm:w-[672px]">
+              <div className="relative w-full h-[320px] sm:h-[480px] rounded-[24px] shadow-lg overflow-hidden group">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -87,14 +87,14 @@ export default function CenterCardCarousel() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                <div className="relative z-10 flex h-full flex-col justify-end p-8 text-white">
+                <div className="relative z-10 flex h-full flex-col justify-end p-6 sm:p-8 text-white">
                   <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold backdrop-blur-md">
                     {slide.badge}
                   </span>
-                  <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold leading-tight">
+                  <h3 className="mt-3 text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">
                     {slide.title}
                   </h3>
-                  <p className="mt-3 text-sm sm:text-base text-white/90 leading-relaxed max-w-lg">
+                  <p className="mt-2 text-xs sm:text-sm sm:text-base text-white/90 leading-relaxed max-w-lg">
                     {slide.desc}
                   </p>
                 </div>

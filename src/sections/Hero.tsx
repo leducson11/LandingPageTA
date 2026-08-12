@@ -19,7 +19,7 @@ export default function Hero() {
     <section
       id="top"
       className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-24"
-      style={{ aspectRatio: "16/9", minHeight: "600px" }}
+      style={{ minHeight: "500px" }}
     >
       {/* background */}
       <div className="absolute inset-0 -z-10">
@@ -61,7 +61,7 @@ export default function Hero() {
 
       {/* Right half - brand color with diagonal clip */}
       <div
-        className="absolute inset-0 bg-brand-600"
+        className="absolute inset-0 bg-brand-600 hidden sm:block"
         style={{
           clipPath: "polygon(70% 0%, 100% 0%, 100% 100%, 50% 100%)",
         }}
@@ -69,13 +69,12 @@ export default function Hero() {
 
       {/* Portrait image on right side - separate from background */}
       <div
-        className="absolute right-0 bottom-0"
-        style={{ width: "50%", height: "90%" }}
+        className="hidden md:flex absolute right-0 bottom-0 md:w-1/2 md:h-[90%]"
       >
         <img
           src={thayHuyImg}
           alt="Thay Huy"
-          className="h-full w-full object-contain object-bottom"
+          className="h-full w-full object-contain object-right-bottom"
         />
       </div>
 
