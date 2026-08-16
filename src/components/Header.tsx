@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white ${
+      className={`fixed top-11 md:top-14 inset-x-0 z-40 transition-all duration-300 bg-white ${
         scrolled ? 'shadow-[0_2px_8px_#0000000d]' : 'border-b border-ink-50'
         }`}
     >

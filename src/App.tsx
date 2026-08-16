@@ -1,3 +1,4 @@
+import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <TopBar />
       <Header />
       <main>
         <Hero />
