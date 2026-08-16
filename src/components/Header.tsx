@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, GraduationCap, ChevronDown, ArrowRight } from 'lucide-react';
+import { BookOpen, Phone } from 'lucide-react';
 import { scrollToHash } from '@/hooks/useSmoothScroll';
 
 export default function Header() {
@@ -22,82 +22,81 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-11 md:top-14 inset-x-0 z-40 transition-all duration-300 bg-white ${
-        scrolled ? 'shadow-[0_2px_8px_#0000000d]' : 'border-b border-ink-50'
+      className={`fixed top-11 md:top-14 inset-x-0 z-40 transition-all duration-300 bg-white border-b border-slate-200 ${
+        scrolled ? 'shadow-[0_2px_8px_#0000000d]' : ''
         }`}
     >
-      <div className="max-w-7xl mx-auto container-px">
-        <div className="flex items-center justify-between h-16 xl:h-20">
+      {/* Desktop Header */}
+      <div className="hidden md:flex items-center justify-between h-20 px-20">
+        {/* Logo */}
+        <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-center gap-2 group shrink-0">
+          <span className="grid place-items-center w-10 h-10 rounded-xl bg-blue-600 text-white group-hover:scale-105 transition-transform">
+            <BookOpen className="w-5 h-5" />
+          </span>
+          <span>
+            <span className="text-blue-800 text-xl font-extrabold font-['Inter']">HuyWay</span>
+            <span className="text-orange-600 text-xl font-extrabold font-['Inter']">English</span>
+          </span>
+        </a>
 
-          {/* Logo */}
-          <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-center gap-2.5 group shrink-0">
-            <span
-              className="grid place-items-center w-10 h-10 rounded-xl text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform"
-              style={{ background: 'linear-gradient(135deg, #6d28d9, #29124d)' }}
-            >
-              <GraduationCap className="w-6 h-6" />
-            </span>
-            <span className="font-extrabold text-lg tracking-tight text-ink-900">
-              Huyway <span className="text-brand-600">English</span>
-            </span>
+        {/* Navigation */}
+        <nav className="flex items-center gap-8">
+          <a href="#l-tr-n-hoc" onClick={(e) => go(e, '#l-tr-n-hoc')} className="text-blue-800 text-base font-semibold font-['Inter']">
+            Lộ Trình Học
           </a>
+          <a href="#i-ng-gi-o-vi-n" onClick={(e) => go(e, '#i-ng-gi-o-vi-n')} className="text-slate-600 text-base font-medium font-['Inter']">
+            Đội Ngũ Giáo Viên
+          </a>
+          <a href="#c-m-nh-n-hoc-vi-n" onClick={(e) => go(e, '#c-m-nh-n-hoc-vi-n')} className="text-slate-600 text-base font-medium font-['Inter']">
+            Cảm Nhận Học Viên
+          </a>
+          <a href="#v-ch-ng-t-i" onClick={(e) => go(e, '#v-ch-ng-t-i')} className="text-slate-600 text-base font-medium font-['Inter']">
+            Về Chúng Tôi
+          </a>
+        </nav>
 
-          <nav className="hidden xl:flex items-center gap-5 xl:gap-6">
-            <a
-              href="#ve-huyway"
-              onClick={(e) => go(e, '#ve-huyway')}
-              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
-            >
-              Về Huyway English
-            </a>
-            <a
-              href="#cac-khoa-hoc"
-              onClick={(e) => go(e, '#cac-khoa-hoc')}
-              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
-            >
-              Các khóa học
-            </a>
-            <a
-              href="#gap-gop-giang-vien"
-              onClick={(e) => go(e, '#gap-gop-giang-vien')}
-              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
-            >
-              Gặp gỡ giảng viên
-            </a>
-            <a
-              href="#hoc-vien"
-              onClick={(e) => go(e, '#hoc-vien')}
-              className="text-sm font-medium text-ink-700 hover:text-brand-600 transition-colors"
-            >
-              Nhận xét từ học viên
-            </a>
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden xl:flex items-center gap-3 shrink-0">
-            <a
-              href="#dang-ky"
-              onClick={(e) => go(e, '#dang-ky')}
-              className="btn-g3 inline-flex items-center px-5 py-2.5 text-white text-sm font-semibold transition-all cta-pulse"
-            >
-              Đăng ký học thử miễn phí
-            </a>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="xl:hidden grid place-items-center w-10 h-10 rounded-lg text-ink-700 hover:bg-ink-100"
-            aria-label="Menu"
+        {/* Right Section */}
+        <div className="flex items-center gap-6">
+          <a href="tel:0963073488" className="flex items-center gap-2">
+            <div className="grid place-items-center w-4 h-4">
+              <Phone className="w-3.5 h-3.5 text-blue-600" />
+            </div>
+            <span className="text-slate-900 text-base font-bold font-['Inter']">0963 073 488</span>
+          </a>
+          <a
+            href="#dang-ky"
+            onClick={(e) => go(e, '#dang-ky')}
+            className="px-5 py-2.5 bg-blue-600 rounded-lg text-white text-sm font-semibold"
           >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            Đăng ký tư vấn
+          </a>
         </div>
       </div>
 
-      {/* ── Mobile menu ── */}
+      {/* Mobile Header */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3">
+        <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-center gap-1.5">
+          <span className="grid place-items-center w-8 h-8 rounded-lg bg-blue-600">
+            <div className="w-4 h-4 bg-white" />
+          </span>
+          <span>
+            <span className="text-blue-800 text-xl font-extrabold font-['Inter']">HuyWay</span>
+            <span className="text-orange-600 text-xl font-extrabold font-['Inter']">English</span>
+          </span>
+        </a>
+        <button
+          onClick={() => setMobileOpen((v) => !v)}
+          className="flex items-center gap-1"
+          aria-label="Tư vấn"
+        >
+          <div className="w-4 h-4 bg-blue-600" />
+          <span className="text-slate-900 text-xs font-bold font-['Inter']">Tư vấn</span>
+        </button>
+      </div>
+
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden bg-white border-t border-ink-100 shadow-lg max-h-[80vh] overflow-y-auto">
           <nav className="container-px max-w-7xl mx-auto py-3 flex flex-col gap-1">
             {[
               { label: 'Về Huyway English', href: '#ve-huyway' },
@@ -114,8 +113,6 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-
-            {/* Mobile CTA */}
             <a
               href="#dang-ky"
               onClick={(e) => go(e, '#dang-ky')}
