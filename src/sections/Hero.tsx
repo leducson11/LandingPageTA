@@ -1,141 +1,123 @@
-import { PlayCircle, ArrowRight, Target, GraduationCap } from "lucide-react";
-import thayHuyImg from "../assets/ThayHuy1-removebg.png";
+import { CheckCircle2, User, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { scrollToHash } from '@/hooks/useSmoothScroll';
 
-const heroBenefits = [
+const benefits = [
   {
-    icon: Target,
-    title: "Lộ trình cá nhân hóa",
-    desc: "Học đúng năng lực, tối ưu thời gian",
+    icon: CheckCircle2,
+    title: 'Giảng viên 8.0+ IELTS',
   },
   {
-    icon: GraduationCap,
-    title: "Giáo viên 8.0+ đồng hành 1-1",
-    desc: "Tương tác, sửa lỗi trực tiếp",
+    icon: CheckCircle2,
+    title: 'Lộ trình cá nhân hóa',
+  },
+  {
+    icon: CheckCircle2,
+    title: 'Học online linh hoạt',
   },
 ];
 
 export default function Hero() {
+  const [form, setForm] = useState({ name: '', phone: '' });
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-24"
-      style={{ minHeight: "500px" }}
-    >
-      {/* background */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f5f3ff 55%, #ede9fe 100%)' }}
-        />
-        <div
-          className="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-40"
-          style={{ background: 'radial-gradient(circle, rgba(109,40,217,0.20), transparent 70%)' }}
-        />
-        <div
-          className="absolute top-40 -left-32 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-30"
-          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.20), transparent 70%)' }}
-        />
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, rgba(54,93,255,0.16), transparent 70%)' }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, #6d28d9 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-      </div>
-
-      {/* Left half - white with diagonal stripes */}
-      <div className="absolute inset-0 bg-white">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "repeating-linear-gradient(45deg, #6d28d9 0px, #6d28d9 1px, transparent 1px, transparent 24px)",
-            opacity: 0.04,
-          }}
-        />
-      </div>
-
-      {/* Right half - brand color with diagonal clip */}
-      <div
-        className="absolute inset-0 bg-brand-600 hidden sm:block"
-        style={{
-          clipPath: "polygon(70% 0%, 100% 0%, 100% 100%, 50% 100%)",
-        }}
-      />
-
-      {/* Portrait image on right side - separate from background */}
-      <div
-        className="hidden md:flex absolute right-0 bottom-0 md:w-1/2 md:h-[90%]"
-      >
-        <img
-          src={thayHuyImg}
-          alt="Thay Huy"
-          className="h-full w-full object-contain object-right-bottom"
-        />
-      </div>
-
-      {/* Content on left side */}
-      <div className="relative z-10 max-w-7xl mx-auto container-px h-full flex items-center">
-        <div className="max-w-xl animate-fade-up">
-          <div className="mt-6 flex items-center gap-2">
-            <span className="pill-label text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-              Huyway English • English to go far.
-            </span>
-          </div>
-
-          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.1] text-balance">
-            Chinh phục <span className="gradient-text">IELTS & TOEIC</span>{" "}
-            chỉ sau 90 ngày
-          </h1>
-
-          {/* 2-column benefit grid — Desktop */}
-          <div className="mt-6 grid sm:grid-cols-2 gap-4 lg:gap-5">
-            {heroBenefits.map((benefit) => {
-              const Icon = benefit.icon;
-              return (
-                <div
-                  key={benefit.title}
-                  className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/70 ring-1 ring-ink-100 hover:ring-brand-200 hover:shadow-md transition-all"
-                >
-                  <span className="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-brand-50 text-brand-600">
-                    <Icon className="w-5 h-5" />
-                  </span>
-                  <div>
-                    <p className="text-[15px] font-bold text-ink-900 leading-snug">
-                      {benefit.title}
-                    </p>
-                    <p className="mt-0.5 text-sm text-ink-600 leading-relaxed">
-                      {benefit.desc}
-                    </p>
+    <section id="top" className="relative bg-slate-50 pt-24 md:pt-32">
+      {/* Desktop */}
+      <div className="hidden md:block self-stretch p-20">
+        <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-12">
+          {/* Left content */}
+          <div className="w-[660px] flex flex-col justify-start items-start gap-5">
+            <h1 className="self-stretch text-indigo-900 text-4xl font-extrabold font-['Inter'] leading-[48px]">
+              Chưa biết nên bắt đầu IELTS từ đâu?
+            </h1>
+            <p className="self-stretch text-slate-500 text-base font-normal font-['Inter'] leading-6">
+              Kiểm tra trình độ và nhận tư vấn lộ trình phù hợp với bạn.
+            </p>
+            <p className="self-stretch text-indigo-900 text-sm font-bold font-['Inter']">
+              Hơn 10,000+ học viên đã đạt mục tiêu IELTS
+            </p>
+            <div className="flex flex-wrap justify-start items-center gap-6">
+              {benefits.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex justify-start items-center gap-2.5">
+                    <span className="grid place-items-center w-8 h-8 rounded-2xl bg-blue-50 outline outline-1 outline-offset-[-1px] outline-blue-100 text-indigo-900">
+                      <Icon className="w-4 h-4" />
+                    </span>
+                    <span className="text-slate-900 text-sm font-semibold font-['Inter']">{item.title}</span>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
-          {/* Bounce — CTA buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a
-              href="#dang-ky"
-              data-anim="bounce"
-              className="btn-g3 scroll-hidden cta-pulse group inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold anim-delay-300"
-            >
-              Đăng ký học thử miễn phí
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#cac-khoa-hoc"
-              data-anim="bounce"
-              className="btn-outline-violet scroll-hidden inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold transition-all anim-delay-400"
-            >
-              <PlayCircle className="w-5 h-5" />
-              Xem lộ trình học
-            </a>
+          {/* Right form card */}
+          <div className="w-[492px] p-8 bg-white rounded-[20px] shadow-[0px_12px_24px_-8px_rgba(15,23,42,0.08)] outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-4">
+            <div className="self-stretch flex flex-col justify-start items-start gap-1.5">
+              <h2 className="self-stretch text-indigo-900 text-xl font-extrabold font-['Inter']">Nhận lộ trình IELTS miễn phí</h2>
+              <p className="self-stretch text-slate-500 text-sm font-normal font-['Inter']">Chỉ trong 60 giây</p>
+            </div>
+            <form onSubmit={onSubmit} className="self-stretch flex flex-col justify-start items-start gap-3">
+              <div className="self-stretch h-12 px-3.5 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-start items-center gap-2.5">
+                <User className="w-4 h-4 text-slate-500" />
+                <input
+                  type="text"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Họ và tên của bạn"
+                  className="flex-1 bg-transparent text-slate-500 text-sm font-normal font-['Inter'] outline-none placeholder:text-slate-500"
+                />
+              </div>
+              <div className="self-stretch h-12 px-3.5 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-start items-center gap-2.5">
+                <Phone className="w-4 h-4 text-slate-500" />
+                <span className="text-slate-900 text-sm font-bold font-['Inter']">+84</span>
+                <input
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  placeholder="Số điện thoại"
+                  className="flex-1 bg-transparent text-slate-500 text-sm font-normal font-['Inter'] outline-none placeholder:text-slate-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="self-stretch h-12 bg-orange-500 rounded-xl shadow-[0px_8px_16px_0px_rgba(246,140,31,0.25)] flex justify-center items-center"
+              >
+                <span className="text-white text-base font-bold font-['Inter']">Kiểm tra trình độ miễn phí</span>
+              </button>
+            </form>
+            <p className="self-stretch text-slate-500 text-xs font-normal font-['Inter']">🔒 100% miễn phí • Bảo mật thông tin</p>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col justify-start items-start">
+        <div className="self-stretch h-14 px-4 bg-indigo-900 inline-flex justify-between items-center">
+          <div className="flex justify-start items-center gap-2">
+            <div className="grid place-items-center w-7 h-7 rounded-lg bg-white">
+              <div className="w-4 h-4 bg-indigo-900" />
+            </div>
+            <span className="text-white text-base font-extrabold font-['Inter']">HuyWayEnglish</span>
+          </div>
+          <button
+            onClick={() => scrollToHash('#dang-ky')}
+            className="h-9 px-3.5 bg-white rounded-[10px] flex justify-center items-center"
+          >
+            <span className="text-indigo-900 text-xs font-bold font-['Inter']">Tư vấn</span>
+          </button>
+        </div>
+        <div className="self-stretch px-4 py-6 flex flex-col justify-start items-start gap-3">
+          <h1 className="self-stretch text-blue-800 text-3xl font-extrabold font-['Inter'] leading-8">
+            Chưa biết nên bắt đầu IELTS từ đâu?
+          </h1>
+          <p className="self-stretch text-slate-600 text-sm font-medium font-['Inter'] leading-5">
+            Kiểm tra trình độ và nhận tư vấn lộ trình phù hợp với bạn. Hơn 10,000+ học viên đã đạt mục tiêu IELTS
+          </p>
         </div>
       </div>
     </section>

@@ -1,151 +1,131 @@
-import { BadgeCheck, Building, Quote } from 'lucide-react';
-import thayHuyImg from '../assets/ThayHuy1-removebg.png';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-type Mentor = {
+type Instructor = {
   id: number;
   name: string;
-  title: string;
-  portrait?: string;
+  score: string;
+  details: string;
+  cert: string;
+  experience: string;
 };
 
-const mentors: Mentor[] = [
-  { id: 1, name: 'Nguyễn Mai', title: 'Giảng viên IELTS Cao cấp', portrait: '' },
-  { id: 2, name: 'Trần Hồng', title: 'Huấn luyện viên Kỹ năng Nói', portrait: '' },
-  { id: 3, name: 'Lê Thu', title: 'Chuyên gia Kỹ năng Nghe', portrait: '' },
-  { id: 4, name: 'Phạm Anh', title: 'Chuyên gia Kỹ năng Viết', portrait: '' },
+const instructors: Instructor[] = [
+  {
+    id: 1,
+    name: 'Nguyễn Hoàng Long',
+    score: '8.5 IELTS',
+    details: 'L8.5 • R8.0 • W8.0 • S8.0',
+    cert: 'CELTA Certificate',
+    experience: '6+ năm kinh nghiệm',
+  },
+  {
+    id: 2,
+    name: 'Trần Thu Hà',
+    score: '8.5 IELTS',
+    details: 'L8.5 • R8.5 • W8.0 • S8.0',
+    cert: 'CELTA Certificate',
+    experience: '5+ năm kinh nghiệm',
+  },
+  {
+    id: 3,
+    name: 'Lê Minh Khoa',
+    score: '8.0 IELTS',
+    details: 'L8.0 • R8.0 • W8.0 • S8.0',
+    cert: 'TESOL Certificate',
+    experience: '5+ năm kinh nghiệm',
+  },
 ];
 
 export default function Instructor() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const container = document.getElementById('instructor-scroll');
+    if (container) {
+      const scrollAmount = 300;
+      const newPosition = direction === 'left' ? scrollPosition - scrollAmount : scrollPosition + scrollAmount;
+      container.scrollTo({ left: newPosition, behavior: 'smooth' });
+      setScrollPosition(newPosition);
+    }
+  };
+
   return (
-    <section id="gap-gop-giang-vien" className="relative py-20 lg:py-28 overflow-hidden">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: `
-            linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #ede9fe 100%),
-            url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 90 Q 30 60 50 80 T 90 70' stroke='%23b8c4d1' stroke-width='0.5' fill='none' opacity='0.4'/%3E%3Cpath d='M5 80 Q 25 50 45 70 T 85 60' stroke='%23c8d4e1' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3C/svg%3E")
-          `
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto container-px relative">
-        {/* Section header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="pill-label inline-block px-4 py-1.5 rounded-full text-sm font-semibold">
-            Gặp gỡ giảng viên
-          </span>
-          <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight text-balance">
-            Ai sẽ hướng dẫn bạn?
-          </h2>
-        </div>
-
-        {/* Instructor card */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
-          {/* Left side - Image with decorative circle */}
-          <div className="relative flex justify-center">
-            {/* Decorative purple circle */}
-            <div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full opacity-60"
-              style={{ background: 'linear-gradient(135deg, #a78bfa, #6d28d9)' }}
-            />
-            
-            {/* Instructor image */}
-            <div className="relative z-10">
-              <img
-                src={thayHuyImg}
-                alt="Thầy Lưu Tiến Huy"
-                className="w-full max-w-[360px] h-auto mx-auto object-contain rounded-[20px] shadow-2xl"
-              />
-            </div>
-          </div>
-
-          {/* Right side - Information */}
-          <div className="text-left">
-            <h3 className="text-4xl lg:text-5xl font-extrabold text-ink-900 mb-8">
-              Thầy Lưu Tiến Huy
-            </h3>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg">
-                  <BadgeCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-ink-900 text-lg mb-1">Chứng chỉ</h4>
-                  <p className="text-ink-600 leading-relaxed">
-                    IELTS 8.5 (Reading & Listening 9.0), TOEIC 990/990
-                  </p>
+    <section id="gap-gop-giang-vien">
+      {/* Desktop */}
+      <div className="hidden md:flex self-stretch px-20 py-16 bg-white flex-col justify-start items-center gap-8">
+        <h2 className="self-stretch text-center text-blue-800 text-3xl font-extrabold font-['Inter']">Đội ngũ giảng viên</h2>
+        <div className="w-[1200px] inline-flex justify-start items-start gap-6">
+          {instructors.map((instructor) => (
+            <div key={instructor.id} className="w-96 p-5 bg-white rounded-[20px] outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-3.5">
+              <div className="self-stretch h-44 bg-slate-200 rounded-2xl flex flex-col justify-center items-center">
+                <div className="size-12 relative overflow-hidden">
+                  <div className="w-7 h-9 left-[10px] top-[6px] absolute outline outline-2 outline-offset-[-1px] outline-slate-500" />
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg">
-                  <Building className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-ink-900 text-lg mb-1">Vị trí</h4>
-                  <p className="text-ink-600 leading-relaxed">
-                    Nhà sáng lập Huyway English
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-lg">
-                  <Quote className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-ink-900 text-lg mb-1">Châm ngôn</h4>
-                  <p className="text-ink-600 leading-relaxed">
-                    "Hãy học tiếng Anh như một ngôn ngữ sống, không chỉ để thi cử. Mỗi câu nói sai hôm nay là một bước tiến để ngày mai bạn tự tin chinh phục thế giới."
-                  </p>
-                </div>
+              <div className="self-stretch text-slate-900 text-lg font-extrabold font-['Inter']">{instructor.name}</div>
+              <div className="self-stretch text-orange-600 text-base font-extrabold font-['Inter']">{instructor.score}</div>
+              <div className="self-stretch text-slate-500 text-sm font-normal font-['Inter']">{instructor.details}</div>
+              <div className="self-stretch flex flex-col justify-start items-start gap-2">
+                <div className="self-stretch text-slate-900 text-sm font-semibold font-['Inter']">• {instructor.cert}</div>
+                <div className="self-stretch text-slate-900 text-sm font-semibold font-['Inter']">• {instructor.experience}</div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-
-        {/* Mentor team */}
-        <div className="mt-24">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h3 className="text-3xl font-extrabold text-ink-900 tracking-tight">Đội ngũ giảng viên</h3>
+        <div className="w-[1200px] inline-flex justify-between items-center">
+          <button
+            onClick={() => scroll('left')}
+            className="size-11 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-slate-200 inline-flex flex-col justify-center items-center hover:bg-slate-50 transition-colors"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-5 h-5 text-blue-600" />
+          </button>
+          <div className="flex items-center gap-2">
+            <div className="size-2 bg-blue-600 rounded-sm" />
+            <div className="size-2 bg-slate-200 rounded-sm" />
+            <div className="size-2 bg-slate-200 rounded-sm" />
           </div>
+          <button
+            onClick={() => scroll('right')}
+            className="size-11 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-slate-200 inline-flex flex-col justify-center items-center hover:bg-slate-50 transition-colors"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-5 h-5 text-blue-600" />
+          </button>
+        </div>
+        <div className="w-[1200px] text-center text-slate-500 text-sm font-normal font-['Inter']">Vuốt sang trái để xem thêm giảng viên</div>
+      </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            {mentors.map((m) => (
-              <article key={m.id} className="relative group rounded-[20px] border border-ink-100 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative">
-                  {m.portrait ? (
-                    <img src={m.portrait} alt={m.name} className="w-full h-64 object-cover rounded-lg" />
-                  ) : (
-                    <div className="w-full h-64 rounded-lg border-2 border-dashed border-slate-200 bg-white flex items-center justify-center">
-                      <span className="text-slate-300">Chưa có ảnh</span>
-                    </div>
-                  )}
-                  <div className="absolute left-3 top-3 inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white">
-                    GIẢNG VIÊN
-                  </div>
-                </div>
+      {/* Desktop CTA Banner */}
+      <div className="hidden md:flex self-stretch px-20 py-10 bg-indigo-900 justify-between items-center">
+        <div className="flex-1 text-white text-xl font-extrabold font-['Inter']">Bắt band hiện tại, Nhận lộ trình phù hợp và target của bạn.</div>
+        <div className="flex flex-col justify-start items-end gap-2">
+          <div className="px-6 py-3 bg-orange-600 rounded-xl inline-flex justify-center items-center">
+            <div className="text-white text-base font-bold font-['Inter']">Kiểm tra trình độ miễn phí</div>
+          </div>
+          <div className="text-white/80 text-sm font-normal font-['Inter']">Chỉ mất 60 giây</div>
+        </div>
+      </div>
 
-                <header className="mt-4">
-                  <h3 className="text-lg font-bold text-ink-900">{m.name}</h3>
-                  <p className="mt-1 text-sm text-slate-500">{m.title}</p>
-                </header>
-
-                <div className="mt-6 relative h-0">
-                  <div
-                    className="absolute left-0 right-0 bottom-0 transform translate-y-full opacity-0 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300"
-                  >
-                    <div className="rounded-b-xl border-t border-slate-100 bg-white p-4 shadow-lg">
-                      <p className="text-sm text-slate-600">Kinh nghiệm: 5+ năm giảng dạy · Chuyên môn: {m.title}</p>
-                      <p className="mt-2 text-xs text-slate-500">Phương pháp: cá nhân hoá, luyện tập thực tế và phản hồi trực tiếp.</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col justify-start items-start">
+        <div className="self-stretch px-4 py-6 flex flex-col justify-start items-start gap-4">
+          <h2 className="self-stretch text-blue-800 text-xl font-extrabold font-['Inter']">Đội ngũ giảng viên</h2>
+          <div id="instructor-scroll" className="self-stretch flex gap-3 overflow-x-auto scrollbar-hide">
+            {instructors.map((instructor) => (
+              <div key={instructor.id} className="w-28 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-2.5 shrink-0">
+                <img
+                  className="self-stretch h-28 rounded-xl object-cover"
+                  src="https://placehold.co/96x120"
+                  alt={instructor.name}
+                />
+                <div className="self-stretch text-slate-900 text-xs font-bold font-['Inter']">{instructor.name}</div>
+                <div className="self-stretch text-slate-500 text-xs font-normal font-['Inter']">{instructor.score}</div>
+              </div>
             ))}
           </div>
+          <div className="self-stretch text-center text-slate-500 text-xs font-normal font-['Inter']">Vuốt sang trái để xem thêm</div>
         </div>
       </div>
     </section>

@@ -1,99 +1,79 @@
-import { GraduationCap, Phone, Mail, MapPin, Facebook, Youtube, Instagram, Send } from 'lucide-react';
-
-const cols = [
-  {
-    title: 'Khóa học',
-    links: ['IELTS Foundation', 'IELTS Skill Building', 'IELTS Intensive', 'IELTS Combo 1-1', 'Toeic Cơ bản'],
-  },
-  {
-    title: 'Huyway English',
-    links: ['Về chúng tôi', 'Đội ngũ giáo viên', 'Tuyển dụng', 'Câu chuyện học viên', 'Báo chí nói về Huyway English'],
-  },
-  {
-    title: 'Hỗ trợ',
-    links: ['Câu hỏi thường gặp', 'Chính sách bảo mật', 'Điều khoản sử dụng', 'Chính sách hoàn tiền', 'Liên hệ'],
-  },
-];
+import { Facebook, Youtube, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-950 text-ink-300">
-      <div className="max-w-7xl mx-auto container-px py-14 lg:py-20">
-        <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
+    <footer className="bg-slate-900">
+      {/* Desktop */}
+      <div className="hidden md:flex self-stretch px-20 pt-16 pb-10 flex-col justify-start items-start gap-10">
+        <div className="self-stretch inline-flex justify-between items-start">
+          <div className="w-96 flex flex-col justify-start items-start gap-4">
             <a href="#top" className="flex items-center gap-2.5">
-              <span
-                className="grid place-items-center w-10 h-10 rounded-xl text-white"
-                style={{ background: 'linear-gradient(135deg, #6d28d9, #29124d)' }}
-              >
-                <GraduationCap className="w-6 h-6" />
-              </span>
-              <span className="font-extrabold text-lg text-white">
-                Huyway <span className="text-brand-400">English</span>
-              </span>
+              <span className="text-white text-2xl font-extrabold font-['Inter']">HuyWay</span>
+              <span className="text-orange-600 text-2xl font-extrabold font-['Inter']">English</span>
             </a>
-            <p className="mt-1.5 text-xs font-semibold text-brand-400 uppercase tracking-wider">
-              English to go far.
+            <p className="self-stretch text-slate-500 text-sm font-normal font-['Inter'] leading-6">
+              Hệ thống đào tạo tiếng Anh chuẩn quốc tế giúp người Việt tự tin chinh phục mục tiêu IELTS trong thời gian ngắn nhất.
             </p>
-            <p className="mt-4 text-sm text-ink-400 leading-relaxed max-w-sm">
-              Nền tảng học IELTS online hàng đầu Việt Nam — kết hợp giáo viên 8.0+ IELTS và AI chấm chữa,
-              cam kết đầu ra cho mọi học viên.
-            </p>
-            <div className="mt-6 space-y-2.5 text-sm">
-              <a href="tel:19001234" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-brand-400" /> Hotline: 1900 1234 (8h - 21h)
+            <div className="flex items-center gap-3">
+              <a href="#" className="grid place-items-center w-10 h-10 rounded-[20px] bg-white/10 text-white hover:bg-white/20 transition-colors" aria-label="Facebook">
+                <Facebook className="w-5 h-5" />
               </a>
-              <a href="mailto:hello@huyway.vn" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 text-brand-400" /> hello@huyway.vn
+              <a href="#" className="grid place-items-center w-10 h-10 rounded-[20px] bg-white/10 text-white hover:bg-white/20 transition-colors" aria-label="Youtube">
+                <Youtube className="w-5 h-5" />
               </a>
-              <p className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-brand-400 mt-0.5 shrink-0" />
-                <span>58B Võ Văn Dũng, Hà Nội</span>
-              </p>
-            </div>
-            <div className="mt-6 flex items-center gap-3">
-              {[Facebook, Youtube, Instagram, Send].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="grid place-items-center w-10 h-10 rounded-xl bg-white/5 text-ink-300 hover:text-white transition-all"
-                  aria-label="social"
-                  style={{ transition: 'background 0.2s' }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                      'linear-gradient(135deg,#6d28d9,#5b21b6,#29124d)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)';
-                  }}
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="#" className="grid place-items-center w-10 h-10 rounded-[20px] bg-white/10 text-white hover:bg-white/20 transition-colors" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
-
-          <div className="lg:col-span-8 grid sm:grid-cols-3 gap-8">
-            {cols.map((c) => (
-              <div key={c.title}>
-                <h4 className="font-bold text-white text-sm uppercase tracking-wider">{c.title}</h4>
-                <ul className="mt-4 space-y-2.5">
-                  {c.links.map((l) => (
-                    <li key={l}>
-                      <a href="#" className="text-sm text-ink-400 hover:text-white transition-colors">
-                        {l}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="flex flex-col justify-start items-start gap-3">
+            <div className="text-white text-base font-bold font-['Inter']">Chương Trình</div>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-sm font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Foundation</a>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-sm font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Intermediate</a>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-sm font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Advanced</a>
+          </div>
+          <div className="flex flex-col justify-start items-start gap-3">
+            <div className="text-white text-base font-bold font-['Inter']">Liên Hệ</div>
+            <a href="tel:0963073488" className="text-slate-500 text-sm font-normal font-['Inter'] hover:text-white transition-colors">Hotline: 0963 073 488</a>
+            <a href="mailto:contact@huywayenglish.edu.vn" className="text-slate-500 text-sm font-normal font-['Inter'] hover:text-white transition-colors">Email: contact@huywayenglish.edu.vn</a>
+            <p className="text-slate-500 text-sm font-normal font-['Inter']">Địa chỉ: Số 9 LK11 Tổng Cục V, Yên Xá, Thanh Liệt, Thanh Trì</p>
           </div>
         </div>
+        <div className="self-stretch h-0 border border-slate-700"></div>
+        <div className="self-stretch text-center text-slate-500 text-sm font-normal font-['Inter']">
+          © 2025 HuyWayEnglish. Đồng hành cùng bạn chinh phục IELTS
+        </div>
+      </div>
 
-        <div className="mt-12 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
-          <p>© 2025 Huyway English. Doanh nghiệp hoạt động minh bạch, rõ ràng.</p>
-          <p>Mã số doanh nghiệp: 0123456789 — Sở KH&amp;ĐT TP. HCM cấp ngày 01/01/2025</p>
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col justify-start items-start px-5 py-8 gap-7">
+        <div className="flex flex-col justify-start items-start gap-3">
+          <a href="#top" className="flex items-center gap-2.5">
+            <span className="text-white text-xl font-extrabold font-['Inter']">HuyWay</span>
+            <span className="text-orange-600 text-xl font-extrabold font-['Inter']">English</span>
+          </a>
+          <p className="text-slate-500 text-xs font-normal font-['Inter'] leading-5">
+            Hệ thống đào tạo tiếng Anh chuẩn quốc tế giúp người Việt tự tin bứt phá điểm số IELTS tối ưu trong thời gian ngắn nhất.
+          </p>
+        </div>
+        <div className="self-stretch h-0 border border-slate-700"></div>
+        <div className="flex flex-col justify-start items-start gap-5">
+          <div className="flex flex-col justify-start items-start gap-2">
+            <div className="text-white text-sm font-bold font-['Inter']">Chương Trình Học</div>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-xs font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Foundation (3.5 - 4.5)</a>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-xs font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Intermediate (5.0 - 6.0)</a>
+            <a href="#l-tr-n-hoc" className="text-slate-500 text-xs font-normal font-['Inter'] hover:text-white transition-colors">Lộ Trình Advanced (6.5 - 7.5+)</a>
+          </div>
+          <div className="flex flex-col justify-start items-start gap-2">
+            <div className="text-white text-sm font-bold font-['Inter']">Liên Hệ</div>
+            <a href="tel:0963073488" className="text-slate-500 text-xs font-normal font-['Inter'] hover:text-white transition-colors">Hotline: 0963 073 488</a>
+            <a href="mailto:contact@huywayenglish.edu.vn" className="text-slate-500 text-xs font-normal font-['Inter'] hover:text-white transition-colors">Email: contact@huywayenglish.edu.vn</a>
+            <p className="text-slate-500 text-xs font-normal font-['Inter']">Địa chỉ: Số 9 LK11 Tổng Cục V, Yên Xá, Thanh Liệt, Thanh Trì</p>
+          </div>
+        </div>
+        <div className="self-stretch h-0 border border-slate-700"></div>
+        <div className="self-stretch text-center text-slate-500 text-xs font-normal font-['Inter']">
+          © 2025 HuyWayEnglish. Đồng hành cùng bạn chinh phục IELTS
         </div>
       </div>
     </footer>
