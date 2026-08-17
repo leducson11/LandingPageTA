@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, GraduationCap, Building2, Quote } from 'lucide-react';
+import thayHuyImg from '../assets/ThayHuy1-removebg.png';
 
 type Instructor = {
   id: number;
@@ -55,6 +56,47 @@ export default function Instructor() {
       {/* Desktop */}
       <div className="hidden md:flex self-stretch px-20 py-16 bg-white flex-col justify-start items-center gap-8">
         <h2 className="self-stretch text-center text-blue-800 text-3xl font-extrabold font-['Inter']">Đội ngũ giảng viên</h2>
+        
+        {/* Desktop Instructor Showcase */}
+        <div className="hidden xl:grid grid-cols-1 xl:grid-cols-2 gap-10 items-center w-[1200px]">
+          <div className="relative flex justify-center">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full opacity-60 bg-indigo-900" />
+            <img src={thayHuyImg} alt="Thầy Lưu Tiến Huy" className="relative z-10 w-full max-w-[360px] h-auto object-contain" />
+          </div>
+          <div className="text-left">
+            <h3 className="text-4xl font-extrabold text-indigo-900 mb-6">Thầy Lưu Tiến Huy</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-indigo-900 text-white shadow-lg">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-indigo-900 text-lg mb-1">Chứng chỉ</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">IELTS 8.5 (Reading & Listening 9.0), TOEIC 990/990</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-indigo-900 text-white shadow-lg">
+                  <Building2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-indigo-900 text-lg mb-1">Vị trí</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">Nhà sáng lập Huyway English</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="grid place-items-center w-12 h-12 shrink-0 rounded-xl bg-indigo-900 text-white shadow-lg">
+                  <Quote className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-indigo-900 text-lg mb-1">Châm ngôn</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">"Hãy học tiếng Anh như một ngôn ngữ sống, không chỉ để thi cử. Mỗi câu nói sai hôm nay là một bước tiến để ngày mai bạn tự tin chinh phục thế giới."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="w-[1200px] inline-flex justify-start items-start gap-6">
           {instructors.map((instructor) => (
             <div key={instructor.id} className="w-96 p-5 bg-white rounded-[20px] outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-3.5">
