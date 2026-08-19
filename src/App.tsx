@@ -1,42 +1,16 @@
-import TopBar from '@/components/TopBar';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
-import Hero from '@/sections/Hero';
-import Stats from '@/sections/Stats';
-import CenterCardCarousel from '@/sections/CenterCardCarousel';
-import PainPoints from '@/sections/PainPoints';
-import Steps from '@/sections/Steps';
-import Courses from '@/sections/Courses';
-import Testimonials from '@/sections/Testimonials';
-import SocialProof from '@/sections/SocialProof';
-import FAQ from '@/sections/FAQ';
-import Instructor from '@/sections/Instructor';
-import { useSmoothScroll } from '@/hooks/useSmoothScroll';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from '@/pages/LandingPage';
+import LoginPage from '@/pages/LoginPage';
+import AdminDashboard from '@/pages/AdminDashboard';
 
 export default function App() {
-  useSmoothScroll();
-  useScrollAnimation();
-
   return (
-    <div className="min-h-screen bg-white">
-      <TopBar />
-      <Header />
-      <main>
-        <Hero />
-        <Stats />
-        <CenterCardCarousel />
-        <PainPoints />
-        <Steps />
-        <Courses />
-        <Instructor />
-        <SocialProof />
-        <Testimonials />
-        <FAQ />
-      </main>
-      <Footer />
-      <FloatingCTA />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
