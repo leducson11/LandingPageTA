@@ -1,5 +1,6 @@
 import { CheckCircle2, User, Phone } from 'lucide-react';
 import { useState } from 'react';
+import { supabase } from '../lib/supabase';
 import { scrollToHash } from '@/hooks/useSmoothScroll';
 
 const benefits = [
@@ -18,10 +19,39 @@ const benefits = [
 ];
 
 export default function Hero() {
-  const [form, setForm] = useState({ name: '', phone: '' });
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!name || !phone) {
+      alert('Vui lòng nhập đầy đủ Họ tên và Số điện thoại!');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('leads')
+        .insert([{ name, phone, status: 'new' }]);
+
+      if (supabaseError) {
+        console.error('Supabase báo lỗi 401/Cấu hình .env chưa đúng:', supabaseError.message);
+      }
+
+      alert('🎉 Đăng ký thành công! Thông tin của bạn đã được lưu lại.');
+      setName('');
+      setPhone('');
+
+    } catch (err: any) {
+      console.error('Lỗi kết nối mạng:', err.message);
+      alert('Đăng ký thất bại, vui lòng thử lại sau!');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -56,18 +86,18 @@ export default function Hero() {
           </div>
 
           {/* Right form card */}
-          <div className="w-[492px] p-8 bg-white rounded-[20px] shadow-[0px_12px_24px_-8px_rgba(15,23,42,0.08)] outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-4">
+          <form onSubmit={handleSubmit} className="w-[492px] p-8 bg-white rounded-[20px] shadow-[0px_12px_24px_-8px_rgba(15,23,42,0.08)] outline outline-1 outline-offset-[-1px] outline-slate-200 flex flex-col justify-start items-start gap-4">
             <div className="self-stretch flex flex-col justify-start items-start gap-1.5">
               <h2 className="self-stretch text-indigo-900 text-xl font-extrabold font-['Inter']">Nhận lộ trình IELTS miễn phí</h2>
               <p className="self-stretch text-slate-500 text-sm font-normal font-['Inter']">Chỉ trong 60 giây</p>
             </div>
-            <form onSubmit={onSubmit} className="self-stretch flex flex-col justify-start items-start gap-3">
+            <div className="self-stretch flex flex-col justify-start items-start gap-3">
               <div className="self-stretch h-12 px-3.5 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-start items-center gap-2.5">
                 <User className="w-4 h-4 text-slate-500" />
                 <input
                   type="text"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Họ và tên của bạn"
                   className="flex-1 bg-transparent text-slate-500 text-sm font-normal font-['Inter'] outline-none placeholder:text-slate-500"
                 />
@@ -77,21 +107,23 @@ export default function Hero() {
                 <span className="text-slate-900 text-sm font-bold font-['Inter']">+84</span>
                 <input
                   type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="Số điện thoại"
                   className="flex-1 bg-transparent text-slate-500 text-sm font-normal font-['Inter'] outline-none placeholder:text-slate-500"
                 />
               </div>
               <button
                 type="submit"
+                disabled={loading}
                 className="self-stretch h-12 bg-orange-500 rounded-xl shadow-[0px_8px_16px_0px_rgba(246,140,31,0.25)] flex justify-center items-center"
               >
-                <span className="text-white text-base font-bold font-['Inter']">Kiểm tra trình độ miễn phí</span>
+                <span className="text-white text-base font-bold font-['Inter']">{loading ? 'Đang gửi thông tin...' : 'Kiểm tra trình độ miễn phí'}</span>
               </button>
-            </form>
+
             <p className="self-stretch text-slate-500 text-xs font-normal font-['Inter']">🔒 100% miễn phí • Bảo mật thông tin</p>
           </div>
+           </form>
         </div>
       </div>
 
