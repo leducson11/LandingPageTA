@@ -7,6 +7,19 @@ export default {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
       },
       colors: {
+        blue: {
+          50:  '#F1F2FC',
+          100: '#E1E4F5',
+          600: '#2C3481',
+          800: '#2C3481',
+        },
+        indigo: {
+          900: '#2C3481',
+        },
+        orange: {
+          500: '#F68C1F',
+          600: '#F68C1F',
+        },
         ink: {
           50:  '#f8f8f9',
           100: '#f1f3f4',
@@ -20,18 +33,18 @@ export default {
           900: '#000000',
           950: '#000000',
         },
-        // Brand = LadiPage violet (#6d28d9)
+        // Brand palette
         brand: {
-          50:  '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#6d28d9',   // primary
-          700: '#5b21b6',
-          800: '#4c1d95',
-          900: '#29124d',   // deep violet dùng cho khối tối
+          50:  '#F1F2FC',
+          100: '#E1E4F5',
+          200: '#C5CAEA',
+          300: '#9FA7D5',
+          400: '#737CBF',
+          500: '#4E579F',
+          600: '#2C3481',
+          700: '#242A6B',
+          800: '#1D2358',
+          900: '#171B45',
         },
         // Accent phụ của theme: xanh dương, teal, cam
         azure: {
@@ -44,14 +57,14 @@ export default {
           600: '#05a6a6',
         },
         accent: {
-          50:  '#fff3ec',
-          100: '#ffe3d4',
-          200: '#ffc9ad',
-          300: '#ffb489',
-          400: '#ff9761',
-          500: '#f97b41',
-          600: '#f36e36',
-          700: '#d1541f',
+          50:  '#FFF4E8',
+          100: '#FFE5C7',
+          200: '#FFCB91',
+          300: '#FFB15A',
+          400: '#F99D3D',
+          500: '#F68C1F',
+          600: '#F68C1F',
+          700: '#D86F0C',
         },
         success: {
           600: '#16a34a',
@@ -66,14 +79,14 @@ export default {
         },
       },
       backgroundImage: {
-        // Gradient chủ đạo của theme — violet
-        'g3':      'linear-gradient(135deg, #6d28d9 0%, #5b21b6 55%, #29124d 100%)',
-        'g3-r':    'linear-gradient(90deg,  #6d28d9 0%, #5b21b6 55%, #29124d 100%)',
-        'g3-blue': 'linear-gradient(135deg, #365dff 0%, #1c00c2 100%)',
-        'g3-warm': 'linear-gradient(135deg, #6d28d9 0%, #f36e36 100%)',
-        'g3-cool': 'linear-gradient(135deg, #6d28d9 0%, #00dcdc 100%)',
+        // Brand gradients
+        'g3':      'linear-gradient(135deg, #2C3481 0%, #242A6B 55%, #171B45 100%)',
+        'g3-r':    'linear-gradient(90deg,  #2C3481 0%, #242A6B 55%, #171B45 100%)',
+        'g3-blue': 'linear-gradient(135deg, #2C3481 0%, #171B45 100%)',
+        'g3-warm': 'linear-gradient(135deg, #2C3481 0%, #F68C1F 100%)',
+        'g3-cool': 'linear-gradient(135deg, #2C3481 0%, #737CBF 100%)',
         // Hero section bg
-        'hero-bg': 'linear-gradient(160deg, #ffffff 0%, #f5f3ff 55%, #ede9fe 100%)',
+        'hero-bg': 'linear-gradient(160deg, #ffffff 0%, #F1F2FC 55%, #E1E4F5 100%)',
       },
       animation: {
         'fade-up':    'fade-up 0.6s ease-out',
