@@ -8,6 +8,7 @@ import {
   Users2,
   ShieldCheck,
   UserCog,
+  KeyRound,
   GraduationCap,
   Target,
   BarChart3,
@@ -27,6 +28,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: "courses", label: "Quản lý khóa học", icon: GraduationCap },
   { id: "leads", label: "Quản lý Leads", icon: Target },
   { id: "reports", label: "Báo cáo & Thống kê", icon: BarChart3 },
+  { id: "accounts", label: "Quản lý tài khoản", icon: KeyRound },
 ];
 
 const LEADS_7D = [

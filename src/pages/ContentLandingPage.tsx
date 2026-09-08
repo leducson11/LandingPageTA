@@ -12,8 +12,8 @@ import { canEdit } from "@/data/mockAuth";
 import { INITIAL_LANDING_BLOCKS, type LandingBlock } from "@/data/mockContent";
 
 export function ContentLandingPage() {
-  const { currentUser } = useAuth();
-  const isEditor = currentUser ? canEdit("content", currentUser.role) : false;
+  const { profile } = useAuth();
+  const isEditor = profile ? canEdit("content", profile.role) : false;
 
   const [blocks, setBlocks] = useState<LandingBlock[]>(INITIAL_LANDING_BLOCKS);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -36,7 +36,7 @@ export function ContentLandingPage() {
     setBlocks((prev) =>
       prev.map((b) =>
         b.id === draft.id
-          ? { ...draft, updatedAt: "Vừa xong", updatedBy: currentUser?.name ?? b.updatedBy }
+          ? { ...draft, updatedAt: "Vừa xong", updatedBy: profile?.full_name ?? b.updatedBy }
           : b,
       ),
     );

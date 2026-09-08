@@ -1,27 +1,5 @@
-/** MODULE 4 — Về chúng tôi & Giá trị khác biệt (design export: design export/code.html) */
-
-const PILLARS = [
-  {
-    icon: 'contract',
-    title: 'Cam kết đầu ra bằng văn bản',
-    body: 'Mỗi học viên khi bắt đầu lộ trình đều ký hợp đồng bảo đảm quyền lợi. Hoàn 100% học phí hoặc đào tạo lại miễn phí không giới hạn nếu không đạt mục tiêu đã đề ra theo điều kiện cam kết.',
-    tag: 'Rõ ràng • Pháp lý minh bạch',
-  },
-  {
-    icon: 'route',
-    title: 'Lộ trình cá nhân hóa',
-    body: 'Thiết kế riêng biệt dựa trên kết quả kiểm tra 4 kỹ năng chi tiết. Tuyệt đối không bắt học viên học lại kiến thức đã nắm vững, tiết kiệm tối đa thời gian và chi phí ôn luyện.',
-    tag: 'Tập trung điểm yếu cốt lõi',
-  },
-  {
-    icon: 'school',
-    title: 'Giảng viên 8.0+ IELTS',
-    body: 'Đội ngũ giàu kinh nghiệm thực chiến từ 6 đến 10 năm, sở hữu chứng chỉ giảng dạy quốc tế (TESOL, CELTA). Sửa bài Writing & Speaking chi tiết từng tiêu chí chấm thi của IDP/BC.',
-    tag: 'Đồng hành sát sao 1-kèm-1',
-  },
-];
-
-export default function About() {
+// MODULE 4: VỀ CHÚNG TÔI & GIÁ TRỊ KHÁC BIỆT — port 1:1 từ docs/design export/code.html.
+export default function AboutValues() {
   return (
     <section className="w-full bg-surface py-space-64" id="ve-chung-toi">
       <div className="max-w-[1240px] mx-auto px-space-20 md:px-space-32">
@@ -34,7 +12,6 @@ export default function About() {
             Hệ thống đào tạo xây dựng trên nền tảng tư duy ngôn ngữ học thuật thực chiến, kiên định với chất lượng đầu ra thực chất thay vì các mẹo vặt ngắn hạn.
           </p>
         </div>
-
         {/* Sứ mệnh & Tầm nhìn */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-space-24 mb-space-32">
           <div className="p-space-32 bg-surface-slate rounded-2xl border border-hairline flex flex-col justify-between shadow-xs">
@@ -68,21 +45,42 @@ export default function About() {
             </div>
           </div>
         </div>
-
         {/* 3 Card Giá trị cốt lõi */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-space-24">
-          {PILLARS.map((p) => (
-            <div key={p.title} className="p-space-24 bg-surface rounded-2xl border border-hairline shadow-xs hover:border-primary/40 hover:-translate-y-1 transition-all flex flex-col justify-between">
+          {[
+            {
+              icon: 'contract',
+              title: 'Cam kết đầu ra bằng văn bản',
+              desc: 'Mỗi học viên khi bắt đầu lộ trình đều ký hợp đồng bảo đảm quyền lợi. Hoàn 100% học phí hoặc đào tạo lại miễn phí không giới hạn nếu không đạt mục tiêu đã đề ra theo điều kiện cam kết.',
+              tag: 'Rõ ràng • Pháp lý minh bạch',
+            },
+            {
+              icon: 'route',
+              title: 'Lộ trình cá nhân hóa',
+              desc: 'Thiết kế riêng biệt dựa trên kết quả kiểm tra 4 kỹ năng chi tiết. Tuyệt đối không bắt học viên học lại kiến thức đã nắm vững, tiết kiệm tối đa thời gian và chi phí ôn luyện.',
+              tag: 'Tập trung điểm yếu cốt lõi',
+            },
+            {
+              icon: 'school',
+              title: 'Giảng viên 8.0+ IELTS',
+              desc: 'Đội ngũ giàu kinh nghiệm thực chiến từ 6 đến 10 năm, sở hữu chứng chỉ giảng dạy quốc tế (TESOL, CELTA). Sửa bài Writing & Speaking chi tiết từng tiêu chí chấm thi của IDP/BC.',
+              tag: 'Đồng hành sát sao 1-kèm-1',
+            },
+          ].map((v) => (
+            <div
+              key={v.title}
+              className="p-space-24 bg-surface rounded-2xl border border-hairline shadow-xs hover:border-primary/40 hover:-translate-y-1 transition-all flex flex-col justify-between"
+            >
               <div>
                 <div className="w-12 h-12 rounded-xl bg-indigo-wash text-primary flex items-center justify-center mb-space-20 border border-primary/10">
-                  <span className="material-symbols-outlined text-[24px]">{p.icon}</span>
+                  <span className="material-symbols-outlined text-[24px]">{v.icon}</span>
                 </div>
-                <h4 className="font-headline text-title-sm text-ink font-semibold mb-space-8">{p.title}</h4>
-                <p className="font-body-sm text-body-sm text-ink-body leading-relaxed text-justify">{p.body}</p>
+                <h4 className="font-headline text-title-sm text-ink font-semibold mb-space-8">{v.title}</h4>
+                <p className="font-body-sm text-body-sm text-ink-body leading-relaxed text-justify">{v.desc}</p>
               </div>
               <div className="mt-space-20 pt-space-16 border-t border-hairline flex items-center text-primary font-label-sm text-label-sm font-semibold">
                 <span className="material-symbols-outlined text-[16px] mr-1">check_circle</span>
-                <span>{p.tag}</span>
+                <span>{v.tag}</span>
               </div>
             </div>
           ))}

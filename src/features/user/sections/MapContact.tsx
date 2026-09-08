@@ -1,7 +1,5 @@
-/** MODULE 13 — Khối bản đồ & liên hệ địa chỉ (design export: design export/code.html)
- *  Bản đồ: dùng placeholder + link Google Maps tới khi nhúng iframe thật. */
-
-export default function Contact() {
+// MODULE 13: KHỐI BẢN ĐỒ & LIÊN HỆ ĐỊA CHỈ — port 1:1 từ docs/design export/code.html.
+export default function MapContact() {
   return (
     <section className="w-full bg-surface-slate py-space-64 border-t border-hairline">
       <div className="max-w-[1240px] mx-auto px-space-20 md:px-space-32">
@@ -42,30 +40,34 @@ export default function Contact() {
               </div>
             </div>
             <div className="pt-space-8">
-              <a className="inline-flex items-center gap-space-8 px-space-24 py-space-12 rounded-xl bg-primary text-on-primary hover:bg-indigo-hover font-label-lg text-label-lg transition-colors shadow-xs" href="#dang-ky">
+              <a
+                className="inline-flex items-center gap-space-8 px-space-24 py-space-12 rounded-xl bg-primary text-on-primary hover:bg-indigo-hover font-label-lg text-label-lg transition-colors shadow-xs"
+                href="#dang-ky"
+              >
                 <span>Đặt lịch hẹn tư vấn trực tiếp</span>
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </div>
           </div>
-
-          {/* Cột phải: Bản đồ (placeholder) */}
+          {/* Cột phải: Bản đồ */}
           <div className="lg:col-span-7">
             <div className="w-full h-[400px] md:h-[460px] rounded-3xl overflow-hidden shadow-md relative bg-surface border border-hairline">
-              <div className="w-full h-full bg-surface-slate flex flex-col items-center justify-center gap-space-8 text-center px-space-24">
-                <span className="material-symbols-outlined text-[40px] text-ink-muted">map</span>
-                <span className="font-body-sm text-body-sm text-ink-muted">Bản đồ Google Maps sẽ được nhúng tại đây</span>
-              </div>
-              {/* Overlay Card */}
+              <div
+                className="w-full h-full bg-cover bg-center"
+                style={{
+                  backgroundImage:
+                    'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAL0Q0Y1EPLUl4ZqvvV6SXPZ_wp_NLgAHOlmRamigv0PQwYWOgyoN-VPi440ae9EgEKi1DAICxAdE9cycAgmGv0XtkF02kfEvu_qLTCjWxs-lCWw2LEi-RymCxIH1Ct-P8j49R9FayAFJnK8HZOMzDMkQfzjPDofe8zSnFnKwrpmZywu0niLUdBSeI3SiyBewWfscFEUtyJTgGwXt29DLN5d84YyQuyMq9VskSIwytputkNZaWzBn9diQ")',
+                }}
+              />
               <div className="absolute bottom-space-16 left-space-16 right-space-16 md:right-auto md:max-w-xs bg-surface/95 backdrop-blur-md p-space-16 rounded-2xl shadow-md border border-hairline">
                 <div className="flex items-center gap-space-8 mb-space-4">
-                  <span className="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-secondary-container" />
                   <span className="font-label-sm text-label-sm text-primary font-bold">Huyway English Center</span>
                 </div>
                 <p className="font-body-sm text-[12px] text-ink-body">Số 9 LK11 Tổng Cục V, Yên Xá, Thanh Trì</p>
                 <a
                   className="mt-space-8 inline-flex items-center gap-space-4 font-label-sm text-[12px] text-primary hover:underline font-semibold"
-                  href="https://maps.google.com/?q=Số+9+LK11+Tổng+Cục+V+Yên+Xá+Thanh+Trì+Hà+Nội"
+                  href="https://maps.google.com"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

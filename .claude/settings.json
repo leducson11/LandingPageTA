@@ -1,0 +1,19 @@
+{
+  "description": "Project hooks. PostToolUse(Edit|Write): ghi file vừa sửa vào docs/process/01-nen-tang-process.md (module Auth). Chạy song song với hook impeccable ở settings.local.json.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/log-process-edit.mjs\"",
+            "async": true,
+            "timeout": 10,
+            "statusMessage": "Ghi nhật ký process"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -147,7 +147,44 @@
         "value": "inter",
         "createdAt": "2026-09-08T20:35:28.773Z",
         "reason": "pre-existing project font for admin UI (src/index.css --font-sans); not introduced by the Stitch-export conversion"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "createdAt": "2026-09-08T21:10:22.020Z",
+        "reason": "design.json typographyMeta.label sanctions Montserrat 600 / 12-14px for chips/badges/nav/table headers; admin surface uses 13px pervasively (src/pages/*, src/components/*)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11px",
+        "createdAt": "2026-09-08T21:12:26.754Z",
+        "reason": "existing admin table-header/secondary-text convention (src/components/layout/Header.tsx, Sidebar.tsx, pages/BudgetPermissionsPage.tsx); admin<->DESIGN.md reconciliation tracked in project_design_system_rollout, not this Auth task"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "createdAt": "2026-09-08T21:12:27.132Z",
+        "reason": "existing admin card-heading convention (matches src/pages/BudgetPermissionsPage.tsx h3); admin<->DESIGN.md reconciliation tracked separately"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "17px",
+        "createdAt": "2026-09-08T21:28:22.812Z",
+        "reason": "user confirmed 2026-09-09: pre-existing admin responsive heading (src/components/layout/Header.tsx), kept to avoid destabilizing admin UI; admin<->DESIGN.md reconciliation tracked separately"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "4px",
+        "createdAt": "2026-09-08T21:47:47.728Z",
+        "reason": "pre-existing :focus-visible outline corner in src/index.css (not a component radius); DESIGN.md rounded scale starts at 8px for surfaces"
       }
     ]
+  },
+  "hook": {
+    "enabled": true,
+    "limits": {
+      "maxFindings": 5,
+      "maxChars": 8000
+    }
   }
 }
