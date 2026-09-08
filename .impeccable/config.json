@@ -1,0 +1,153 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#ffe3d4",
+        "createdAt": "2026-09-03T07:41:11.664Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#16a34a",
+        "createdAt": "2026-09-03T07:41:12.320Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#15803d",
+        "createdAt": "2026-09-03T07:41:13.192Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(22, 163, 74, 0.10)",
+        "createdAt": "2026-09-03T07:41:13.386Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d97706",
+        "createdAt": "2026-09-03T07:41:13.532Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#92400e",
+        "createdAt": "2026-09-03T07:41:13.733Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#78350f",
+        "createdAt": "2026-09-03T07:41:13.940Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fef3c7",
+        "createdAt": "2026-09-03T07:41:14.522Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fde68a",
+        "createdAt": "2026-09-03T07:41:15.035Z",
+        "reason": "DESIGN.md explicitly sanctions greens/ambers as status (success/warning) utilities, never brand — src/features/user/user.css status-color block"
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "text-indigo-900",
+        "createdAt": "2026-09-03T07:49:13.905Z",
+        "reason": "tailwind.config.js remaps indigo-900 to #2C3481 (Scholar's Indigo), the project's real brand color, not generic AI purple/violet — confirmed live via getComputedStyle during critique"
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-09-03T07:49:14.015Z",
+        "reason": "Montserrat is DESIGN.md's explicitly documented sole brand typeface (The One-Family Rule), not incidental AI-generated-UI font drift"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "material symbols outlined",
+        "createdAt": "2026-09-08T20:21:20.956Z",
+        "reason": "icon font: Stitch design export uses material-symbols-outlined for all iconography; user asked to port export keeping classes intact"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "inter",
+        "createdAt": "2026-09-08T20:21:21.422Z",
+        "reason": "pre-existing project font for admin UI (src/index.css --font-sans); not introduced by this change"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12px",
+        "createdAt": "2026-09-08T20:22:57.043Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "createdAt": "2026-09-08T20:22:59.426Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "16px",
+        "createdAt": "2026-09-08T20:23:00.178Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "18px",
+        "createdAt": "2026-09-08T20:23:00.824Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "20px",
+        "createdAt": "2026-09-08T20:23:01.371Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "createdAt": "2026-09-08T20:23:01.877Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "24px",
+        "createdAt": "2026-09-08T20:23:02.288Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "34px",
+        "createdAt": "2026-09-08T20:23:02.699Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "36px",
+        "createdAt": "2026-09-08T20:23:03.101Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "40px",
+        "createdAt": "2026-09-08T20:23:03.489Z",
+        "reason": "verbatim from Stitch design export (design export/code.html); user asked to port keeping Tailwind classes intact"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-08T20:35:28.773Z",
+        "reason": "pre-existing project font for admin UI (src/index.css --font-sans); not introduced by the Stitch-export conversion"
+      }
+    ]
+  }
+}
