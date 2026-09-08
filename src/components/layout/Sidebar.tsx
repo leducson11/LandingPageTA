@@ -1,8 +1,9 @@
 import { ChevronsLeft, ChevronsRight, X } from "lucide-react";
-import { NAV_ITEMS } from "@/data/mockDashboard";
+import type { NavItem } from "@/types/dashboard";
 import { cn } from "@/lib/utils";
 
 interface SidebarProps {
+  items: NavItem[];
   activeId: string;
   onSelect: (id: string) => void;
   isMobileOpen: boolean;
@@ -12,6 +13,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({
+  items,
   activeId,
   onSelect,
   isMobileOpen,
@@ -72,7 +74,7 @@ export function Sidebar({
             </p>
           )}
           <ul className="flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => {
+            {items.map((item) => {
               const Icon = item.icon;
               const isActive = item.id === activeId;
               return (
