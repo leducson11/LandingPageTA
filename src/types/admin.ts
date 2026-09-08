@@ -10,16 +10,8 @@ export interface StatMini {
 }
 
 // ---- Content Landing ----
-export type ContentStatus = "published" | "draft";
-
-export interface LandingSection {
-  id: string;
-  name: string;
-  type: string;
-  status: ContentStatus;
-  updatedAt: string;
-  updatedBy: string;
-}
+// (moved to src/types/content.ts — LandingSection replaced by the richer
+// per-block CMS model used by ContentLandingPage)
 
 // ---- Customers ----
 export type CustomerStatus = "new" | "in-progress" | "won" | "lost";
@@ -72,15 +64,6 @@ export interface ChannelBudget {
 
 export type PermissionLevel = "full" | "edit" | "view" | "none";
 
-export interface PermissionRow {
-  id: string;
-  module: string;
-  superAdmin: PermissionLevel;
-  marketing: PermissionLevel;
-  cskh: PermissionLevel;
-  teacher: PermissionLevel;
-}
-
 // ---- Leads management ----
 export type LeadStatus = "new" | "in-progress" | "deposited" | "dropped";
 
@@ -93,6 +76,8 @@ export interface LeadRow {
   status: LeadStatus;
   assignee: string;
   lastContact: string;
+  createdAtISO: string;
+  note?: string;
 }
 
 // ---- Reports ----

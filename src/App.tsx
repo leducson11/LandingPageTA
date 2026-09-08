@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useMemo, useState, type ComponentType } from "react";
+import { AuthProvider } from "@/lib/auth-context";
+import { useAuth } from "@/lib/use-auth";
+import { getPermissionLevel } from "@/data/mockAuth";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { LoginPage } from "@/pages/LoginPage";
 import { Dashboard } from "@/pages/Dashboard";
 import { ContentLandingPage } from "@/pages/ContentLandingPage";
 import { CustomersPage } from "@/pages/CustomersPage";
@@ -10,7 +14,7 @@ import { LeadsManagementPage } from "@/pages/LeadsManagementPage";
 import { ReportsPage } from "@/pages/ReportsPage";
 import { NAV_ITEMS } from "@/data/mockDashboard";
 
-const PAGES: Record<string, React.ComponentType> = {
+const PAGES: Record<string, ComponentType> = {
   overview: Dashboard,
   content: ContentLandingPage,
   customers: CustomersPage,
@@ -21,18 +25,38 @@ const PAGES: Record<string, React.ComponentType> = {
   reports: ReportsPage,
 };
 
-export default function App() {
+function AuthenticatedApp() {
+  const { currentUser } = useAuth();
   const [activeId, setActiveId] = useState("overview");
-  const activeItem = NAV_ITEMS.find((item) => item.id === activeId);
-  const ActivePage = PAGES[activeId] ?? Dashboard;
+
+  const visibleNavItems = useMemo(() => {
+    if (!currentUser) return [];
+    return NAV_ITEMS.filter((item) => getPermissionLevel(item.id, currentUser.role) !== "none");
+  }, [currentUser]);
+
+  if (!currentUser) return <LoginPage />;
+
+  const isAllowed = visibleNavItems.some((item) => item.id === activeId);
+  const safeActiveId = isAllowed ? activeId : (visibleNavItems[0]?.id ?? "overview");
+  const activeItem = visibleNavItems.find((item) => item.id === safeActiveId);
+  const ActivePage = PAGES[safeActiveId] ?? Dashboard;
 
   return (
     <DashboardLayout
-      activeId={activeId}
+      navItems={visibleNavItems}
+      activeId={safeActiveId}
       onSelect={setActiveId}
-      breadcrumb={["Tổng quan", activeId === "overview" ? "Dashboard Thống kê" : activeItem?.label ?? ""]}
+      breadcrumb={["Tổng quan", safeActiveId === "overview" ? "Dashboard Thống kê" : activeItem?.label ?? ""]}
     >
       <ActivePage />
     </DashboardLayout>
+  );
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AuthenticatedApp />
+    </AuthProvider>
   );
 }

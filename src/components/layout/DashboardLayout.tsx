@@ -2,21 +2,24 @@ import { useState, type ReactNode } from "react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { cn } from "@/lib/utils";
+import type { NavItem } from "@/types/dashboard";
 
 interface DashboardLayoutProps {
+  navItems: NavItem[];
   activeId: string;
   onSelect: (id: string) => void;
   breadcrumb: [string, string];
   children: ReactNode;
 }
 
-export function DashboardLayout({ activeId, onSelect, breadcrumb, children }: DashboardLayoutProps) {
+export function DashboardLayout({ navItems, activeId, onSelect, breadcrumb, children }: DashboardLayoutProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <Sidebar
+        items={navItems}
         activeId={activeId}
         onSelect={(id) => {
           onSelect(id);

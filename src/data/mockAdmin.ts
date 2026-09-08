@@ -2,30 +2,17 @@ import type {
   AdminCourse,
   ChannelBudget,
   Customer,
-  LandingSection,
   LeadRow,
-  PermissionRow,
   RevenuePoint,
   StaffMember,
   StaffPerformance,
 } from "@/types/admin";
 
-export const LANDING_SECTIONS: LandingSection[] = [
-  { id: "hero", name: "Hero Banner", type: "Banner chính", status: "published", updatedAt: "05/09/2026", updatedBy: "Admin HuyWay" },
-  { id: "teacher", name: "Giới thiệu Giảng viên", type: "Profile", status: "published", updatedAt: "03/09/2026", updatedBy: "Thầy Huy" },
-  { id: "courses", name: "Khóa Học Nổi Bật", type: "Danh sách khóa học", status: "published", updatedAt: "01/09/2026", updatedBy: "Admin HuyWay" },
-  { id: "testimonial", name: "Cảm Nhận Học Viên", type: "Testimonial", status: "draft", updatedAt: "30/08/2026", updatedBy: "Marketing Team" },
-  { id: "achievements", name: "Thành Tích IELTS", type: "Số liệu nổi bật", status: "published", updatedAt: "28/08/2026", updatedBy: "Admin HuyWay" },
-  { id: "cta", name: "CTA Đăng Ký Tư Vấn", type: "Form đăng ký", status: "published", updatedAt: "27/08/2026", updatedBy: "Marketing Team" },
-  { id: "faq", name: "Câu Hỏi Thường Gặp", type: "FAQ", status: "draft", updatedAt: "20/08/2026", updatedBy: "Admin HuyWay" },
-  { id: "footer", name: "Footer & Liên hệ", type: "Footer", status: "published", updatedAt: "15/08/2026", updatedBy: "Admin HuyWay" },
-];
-
 const FIRST_NAMES = ["Nguyễn Văn", "Trần Thị", "Lê Hoàng", "Phạm Thị", "Đỗ Minh", "Vũ Thu", "Hoàng Anh", "Bùi Ngọc", "Đặng Gia", "Ngô Thảo", "Dương Quốc", "Lý Kim"];
 const LAST_NAMES = ["An", "Bình", "Chi", "Dũng", "Hà", "Khang", "Linh", "Minh", "Nam", "Phương", "Quân", "Trang"];
-const COURSES = ["IELTS Intensive", "Giao tiếp Doanh nghiệp", "TOEIC 550+", "Tiếng Anh Nền tảng"];
+export const COURSES = ["IELTS Intensive", "Giao tiếp Doanh nghiệp", "TOEIC 550+", "Tiếng Anh Nền tảng"];
 const SOURCES = ["Facebook Ads IELTS Camp", "Google Search (Brand + SEO)", "TikTok Social Link", "Direct / Other"];
-const CSKH = ["Thu Hà", "Minh Quân", "Bảo Trân"];
+export const CSKH = ["Thu Hà", "Minh Quân", "Bảo Trân"];
 
 function nameAt(i: number) {
   return `${FIRST_NAMES[i % FIRST_NAMES.length]} ${LAST_NAMES[(i * 3) % LAST_NAMES.length]}`;
@@ -79,21 +66,21 @@ export const CHANNEL_BUDGETS: ChannelBudget[] = [
   { id: "b4", channel: "Direct / Referral Program", budget: 15_000_000, spent: 6_100_000 },
 ];
 
-export const PERMISSION_ROWS: PermissionRow[] = [
-  { id: "p1", module: "Tổng quan Dashboard", superAdmin: "full", marketing: "view", cskh: "view", teacher: "none" },
-  { id: "p2", module: "Quản lý Content Landing", superAdmin: "full", marketing: "edit", cskh: "none", teacher: "none" },
-  { id: "p3", module: "Danh sách khách hàng", superAdmin: "full", marketing: "view", cskh: "edit", teacher: "none" },
-  { id: "p4", module: "Ngân sách & Quyền", superAdmin: "full", marketing: "view", cskh: "none", teacher: "none" },
-  { id: "p5", module: "Quản lý nhân viên", superAdmin: "full", marketing: "none", cskh: "none", teacher: "none" },
-  { id: "p6", module: "Quản lý khóa học", superAdmin: "full", marketing: "view", cskh: "view", teacher: "edit" },
-  { id: "p7", module: "Quản lý Leads", superAdmin: "full", marketing: "view", cskh: "edit", teacher: "none" },
-  { id: "p8", module: "Báo cáo & Thống kê", superAdmin: "full", marketing: "view", cskh: "view", teacher: "view" },
-];
-
 const LEAD_STATUSES: LeadRow["status"][] = ["new", "in-progress", "deposited", "dropped"];
+
+// Reference "today" for the mock dataset — keep in sync with the app's
+// current-date context so "X ngày trước" style filters look sensible.
+const TODAY = new Date("2026-09-08T00:00:00");
+
+function isoDaysAgo(days: number) {
+  const d = new Date(TODAY);
+  d.setDate(d.getDate() - days);
+  return d.toISOString().slice(0, 10);
+}
 
 export const LEAD_ROWS: LeadRow[] = Array.from({ length: 20 }, (_, i) => {
   const name = nameAt(i + 5);
+  const daysAgo = (i * 3) % 30;
   return {
     id: `lead-${i + 1}`,
     name,
@@ -102,7 +89,8 @@ export const LEAD_ROWS: LeadRow[] = Array.from({ length: 20 }, (_, i) => {
     source: SOURCES[(i + 2) % SOURCES.length],
     status: LEAD_STATUSES[i % LEAD_STATUSES.length],
     assignee: CSKH[(i + 1) % CSKH.length],
-    lastContact: `${(i % 12) + 1} giờ trước`,
+    lastContact: daysAgo === 0 ? "Hôm nay" : `${daysAgo} ngày trước`,
+    createdAtISO: isoDaysAgo(daysAgo),
   };
 });
 
