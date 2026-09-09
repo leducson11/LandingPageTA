@@ -20,13 +20,11 @@ interface NavPermissionEntry {
   cskh: PermissionLevel;
 }
 
-// Single source of truth for menu visibility (Sidebar) AND the
-// "Phân quyền" matrix shown on the Ngân sách & Quyền page.
+// Single source of truth for menu visibility and access levels.
 export const NAV_PERMISSIONS: Record<string, NavPermissionEntry> = {
   overview: { label: "Tổng quan Dashboard", superAdmin: "full", marketing: "view", cskh: "view" },
   content: { label: "Quản lý Content Landing", superAdmin: "full", marketing: "edit", cskh: "none" },
   customers: { label: "Danh sách khách hàng", superAdmin: "full", marketing: "view", cskh: "edit" },
-  budget: { label: "Ngân sách & Quyền", superAdmin: "full", marketing: "view", cskh: "none" },
   staff: { label: "Quản lý nhân viên", superAdmin: "full", marketing: "none", cskh: "none" },
   courses: { label: "Quản lý khóa học", superAdmin: "full", marketing: "view", cskh: "view" },
   leads: { label: "Quản lý Leads", superAdmin: "full", marketing: "view", cskh: "edit" },
