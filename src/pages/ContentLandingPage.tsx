@@ -44,8 +44,8 @@ function groupFieldsIntoRows(fields: FieldSchema[]) {
 }
 
 export function ContentLandingPage() {
-  const { currentUser } = useAuth();
-  const isEditor = currentUser ? canEdit("content", currentUser.role) : false;
+  const { profile } = useAuth();
+  const isEditor = profile ? canEdit("content", profile.role) : false;
 
   const [blocks, setBlocks] = useState<LandingBlock[]>(INITIAL_LANDING_BLOCKS);
   const [selectedId, setSelectedId] = useState<string | null>(null);
