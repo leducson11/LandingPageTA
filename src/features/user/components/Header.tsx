@@ -1,3 +1,5 @@
+import logoIcon from '@user/assets/logo-icon-color.png';
+
 // MODULE 1: HEADER — port 1:1 từ docs/design export/code.html (TopBar cam đã bỏ theo thiết kế gốc).
 export default function Header() {
   return (
@@ -5,9 +7,11 @@ export default function Header() {
       <div className="h-[90px] max-w-[1240px] mx-auto px-space-20 md:px-space-32 flex items-center justify-between gap-space-24">
         {/* Logo Brand */}
         <a className="flex items-center gap-space-12 group flex-shrink-0" href="#top">
-          <div className="w-11 h-11 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline text-[22px] font-bold shadow-sm group-hover:scale-105 transition-transform">
-            H
-          </div>
+          <img
+            src={logoIcon}
+            alt="HuyWay English"
+            className="w-11 h-11 object-contain group-hover:scale-105 transition-transform"
+          />
           <div className="flex flex-col">
             <span className="font-headline text-title-lg text-primary tracking-tight font-bold group-hover:text-indigo-hover transition-colors">HuyWay English</span>
             <span className="text-label-sm font-label-sm text-ink-muted tracking-wide">IELTS &amp; Academic Core</span>

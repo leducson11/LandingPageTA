@@ -35,3 +35,4 @@ docs/
 .npm-cache/
 # TypeScript build cache
 *.tsbuildinfo
+.tmp-logo-extract

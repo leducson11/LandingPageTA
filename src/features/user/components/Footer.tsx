@@ -1,3 +1,5 @@
+import logoIconWhite from '@user/assets/logo-icon-white.png';
+
 // FOOTER — port 1:1 từ docs/design export/code.html.
 export default function Footer() {
   return (
@@ -6,9 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-32 lg:gap-space-48">
           <div className="space-y-space-16">
             <div className="flex items-center gap-space-12">
-              <div className="w-9 h-9 rounded-xl bg-on-primary text-primary flex items-center justify-center font-headline text-title-lg font-bold">
-                H
-              </div>
+              <img src={logoIconWhite} alt="HuyWay English" className="w-9 h-9 object-contain" />
               <span className="font-headline text-title-lg text-on-primary tracking-tight font-bold">HuyWay English</span>
             </div>
             <p className="text-body-sm font-body-sm text-on-primary/80 leading-relaxed">Học để dùng. Học để đi xa.</p>
