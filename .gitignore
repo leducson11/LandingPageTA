@@ -21,7 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
-docs/
 .agent/
 .agents/
 .claude/
@@ -30,7 +29,6 @@ docs/
 .gemini/
 .impeccable/
 .kiro/
-.vscode/
 .bolt/
 .npm-cache/
 # TypeScript build cache
